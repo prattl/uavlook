@@ -1,0 +1,1 @@
+/srv/uavlook/local_settings.py
