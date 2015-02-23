@@ -24,9 +24,9 @@ sudo apt-get install postgresql-9.4 pgadmin3
 ```
 
 #### Config
-Login as postgres user: `sudo -u postgres psql`
-Create database and user uavlook
-http://stackoverflow.com/questions/1471571/how-to-configure-postgresql-for-the-first-time
-sudo apt-get install libpq-dev
-apt-get install python-dev
-http://michal.karzynski.pl/blog/2013/06/09/django-nginx-gunicorn-virtualenv-supervisor/
+- Login as postgres user: `sudo -u postgres psql`
+- Create database and user uavlook
+- http://stackoverflow.com/questions/1471571/how-to-configure-postgresql-for-the-first-time
+- `sudo apt-get install libpq-dev`
+- `sudo apt-get install python-dev`
+- http://michal.karzynski.pl/blog/2013/06/09/django-nginx-gunicorn-virtualenv-supervisor/
