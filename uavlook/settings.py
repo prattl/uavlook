@@ -26,6 +26,8 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SITE_ID = 1
+
 
 # Application definition
 
@@ -36,7 +38,13 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'uavlook_app',
+    'cms',
+    'mptt',
+    'menus',
+    'sekizai',
+    'djangocms_admin_style',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -47,6 +55,10 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'cms.middleware.user.CurrentUserMiddleware',
+    'cms.middleware.page.CurrentPageMiddleware',
+    'cms.middleware.toolbar.ToolbarMiddleware',
+    'cms.middleware.language.LanguageCookieMiddleware',
 )
 
 ROOT_URLCONF = 'uavlook.urls'
@@ -57,6 +69,9 @@ WSGI_APPLICATION = 'uavlook.wsgi.application'
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+LANGUAGES = [
+    ('en-us', 'English'),
+]
 
 TIME_ZONE = 'UTC'
 
@@ -76,10 +91,46 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 TEMPLATE_DIRS = [
     os.path.join(BASE_DIR, 'templates'),
-    # os.path.join(BASE_DIR, 'uavlook_app/templates'),
 ]
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.contrib.messages.context_processors.messages',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.request',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'sekizai.context_processors.sekizai',
+    'cms.context_processors.cms_settings',
+)
+
+# Django-CMS Settings
+CMS_TEMPLATES = (
+    ('template_1.html', 'Template One'),
+)
+
+MIGRATION_MODULES = {
+    'cms': 'cms.migrations_django',
+    'menus': 'menus.migrations_django',
+
+    # Add also the following modules if you're using these plugins:
+    # 'djangocms_file': 'djangocms_file.migrations_django',
+    # 'djangocms_flash': 'djangocms_flash.migrations_django',
+    # 'djangocms_googlemap': 'djangocms_googlemap.migrations_django',
+    # 'djangocms_inherit': 'djangocms_inherit.migrations_django',
+    # 'djangocms_link': 'djangocms_link.migrations_django',
+    # 'djangocms_picture': 'djangocms_picture.migrations_django',
+    # 'djangocms_snippet': 'djangocms_snippet.migrations_django',
+    # 'djangocms_teaser': 'djangocms_teaser.migrations_django',
+    # 'djangocms_video': 'djangocms_video.migrations_django',
+    # 'djangocms_text_ckeditor': 'djangocms_text_ckeditor.migrations_django',
+}
+
 
 try:
     from uavlook.local_settings import *
