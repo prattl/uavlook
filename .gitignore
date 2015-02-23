@@ -1,5 +1,6 @@
 manage.py
 __pycache__/
-.sass-cache
+.sass-cache/
 *.swp
 *.py[cod]
+*.scssc
