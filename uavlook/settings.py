@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-print('BASE_DIR: ', BASE_DIR)
 
 
 # Quick-start development settings - unsuitable for production
@@ -40,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'uavlook_app',
+    'djangocms_text_ckeditor',
     'cms',
     'mptt',
     'menus',
@@ -88,7 +88,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    # os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'local_static'),
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -111,7 +111,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 # Django-CMS Settings
 CMS_TEMPLATES = (
-    ('template_1.html', 'Template One'),
+    ('page.html', 'Page Template'),
 )
 
 MIGRATION_MODULES = {
@@ -128,7 +128,7 @@ MIGRATION_MODULES = {
     # 'djangocms_snippet': 'djangocms_snippet.migrations_django',
     # 'djangocms_teaser': 'djangocms_teaser.migrations_django',
     # 'djangocms_video': 'djangocms_video.migrations_django',
-    # 'djangocms_text_ckeditor': 'djangocms_text_ckeditor.migrations_django',
+    'djangocms_text_ckeditor': 'djangocms_text_ckeditor.migrations_django',
 }
 
 

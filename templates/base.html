@@ -1,13 +1,91 @@
-{% load cms_tags sekizai_tags %}
-<html>
-  <head>
-      <title>{% page_attribute "page_title" %}</title>
-      {% render_block "css" %}
-  </head>
-  <body>
-      {% cms_toolbar %}
-      {% placeholder base_content %}
-      {% block base_content %}{% endblock %}
-      {% render_block "js" %}
-  </body>
+{% load cms_tags sekizai_tags staticfiles %}
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{% page_attribute "page_title" %} | UAVLook</title>
+{% render_block "css" %}
+<link rel="stylesheet" href="{% static "stylesheets/app.css" %}" />
+<script src="{% static "bower_components/modernizr/modernizr.js" %}"></script>
+</head>
+<body>
+
+<div class="page-wrapper">
+    {% cms_toolbar %}
+    <!-- <div class="off&#45;canvas&#45;wrap" data&#45;offcanvas> -->
+    <!--     <div class="inner&#45;wrap"> -->
+            <!-- Small screen navigation -->
+            <!-- <div class="fixed show&#45;for&#45;small hide&#45;for&#45;small"> -->
+            <!--     <nav class="tab&#45;bar"> -->
+            <!--         <section class="left&#45;small"> -->
+            <!--             <a class="left&#45;off&#45;canvas&#45;toggle menu&#45;icon" href="#"><span></span></a> -->
+            <!--         </section> -->
+            <!--  -->
+            <!--         <section class="middle tab&#45;bar&#45;section"> -->
+            <!--             <h1 class="title">{% page_attribute "page_title" %}</h1> -->
+            <!--         </section> -->
+            <!--  -->
+            <!--         <section class="right&#45;small"> -->
+            <!--             <a class="right&#45;off&#45;canvas&#45;toggle menu&#45;icon" href="#"><span></span></a> -->
+            <!--         </section> -->
+            <!--     </nav> -->
+            <!-- </div> -->
+
+            <!-- Medium and Large screen navigation -->
+            <nav class="top-bar" data-topbar role="navigation">
+                <ul class="title-area">
+                    <li class="name">
+                        <h1 class="show-for-small"><a href="#">UAV Look</a></h1>
+                    </li>
+                    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+                    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                </ul>
+
+                <section class="top-bar-section">
+                    <ul class="right">
+                        <li class="active"><a href="#">Nav Button 1</a></li>
+                        <li><a href="#">Nav Button 2</a></li>
+                        <li><a href="#">Nav Button 3</a></li>
+                        <li><a href="#">Nav Button 4</a></li>
+                    </ul>
+                </section>
+            </nav>
+
+            <aside class="left-off-canvas-menu">
+                <ul class="off-canvas-list">
+                    <li><label>UAV Look</label></li>
+                    <li><a href="#">menu item 1</a></li>
+                    <li><a href="#">...</a></li>
+                </ul>
+            </aside>
+
+
+            <section class="main-section">
+                <header>
+                </header>
+
+                <main>
+                </main>
+
+                <footer>
+                    <hr />
+                    {% static_placeholder 'footer' %}
+                </footer>
+            </section>
+
+        <!-- </div> -->
+    </div>
+
+    {% placeholder base_content %}
+    {% block base_content %}{% endblock %}
+    {% render_block "js" %}
+
+
+    <script src="{% static "bower_components/jquery/dist/jquery.min.js" %}"></script>
+    <script src="{% static "bower_components/foundation/js/foundation.min.js" %}"></script>
+    <script src="{% static "bower_components/foundation/js/foundation/foundation.offcanvas.js" %}"></script>
+    <script src="{% static "bower_components/foundation/js/foundation/foundation.topbar.js" %}"></script>
+    <script src="{% static "js/app.js" %}"></script>
+    </body>
 </html>

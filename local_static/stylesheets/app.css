@@ -9157,3 +9157,22 @@ th.hide-for-touch {
     display: table-cell !important;
   }
 }
+/* line 43, ../scss/app.scss */
+div.page-wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+@media only screen and (min-width: 40.063em) {
+  /* line 50, ../scss/app.scss */
+  nav.top-bar {
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 40.063em) {
+  /* line 56, ../scss/app.scss */
+  section.top-bar-section {
+    display: inline-block;
+  }
+}

@@ -38,3 +38,23 @@
 //   "foundation/components/type",
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
+
+// Page components
+div.page-wrapper {
+    min-height: 100%;
+    position: relative;
+}
+
+
+// Navigation components
+nav.top-bar {
+    @media #{$medium-up} { 
+        text-align: center;
+    }
+}
+
+section.top-bar-section {
+    @media #{$medium-up} { 
+        display: inline-block;
+    }
+}
