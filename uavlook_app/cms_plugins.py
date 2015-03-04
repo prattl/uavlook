@@ -4,7 +4,7 @@ from cms.plugin_base import CMSPluginBase
 from django.utils.translation import ugettext_lazy as _
 from djangocms_picture.cms_plugins import PicturePlugin
 
-from uavlook_app.models import BackgroundPicture, ContentSection
+from uavlook_app.models import BackgroundPicture, ContentSection, ThreeColumns
 
 
 class BackgroundPicturePlugin(CMSPluginBase):
@@ -41,6 +41,7 @@ class ContentSectionPlugin(CMSPluginBase):
 
 
 class ThreeColumnsPlugin(CMSPluginBase):
+    model = ThreeColumns
     name = _('Three Columns')
     render_template = 'cms/plugins/three_columns.html'
     allow_children = True

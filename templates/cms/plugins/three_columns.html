@@ -1,16 +1,19 @@
 {% load cms_tags %}
-<div class="row">
-    {% if instance.child_plugin_instances|length == 3 %}
-    <div class="small-4 columns">
-        {% render_plugin instance.child_plugin_instances.0 %}
+<div class="three-columns-plugin">
+    {% if instance.header %}<h3>{{ instance.header }}</h3>{% endif %}
+    <div class="row">
+        {% if instance.child_plugin_instances|length == 3 %}
+        <div class="small-4 columns">
+            {% render_plugin instance.child_plugin_instances.0 %}
+        </div>
+        <div class="small-4 columns">
+            {% render_plugin instance.child_plugin_instances.1 %}
+        </div>
+        <div class="small-4 columns">
+            {% render_plugin instance.child_plugin_instances.2 %}
+        </div>
+        {% else %}
+        <p>Make sure there are exactly 3 plugins within the Three Columns plugin.</p>
+        {% endif %}
     </div>
-    <div class="small-4 columns">
-        {% render_plugin instance.child_plugin_instances.1 %}
-    </div>
-    <div class="small-4 columns">
-        {% render_plugin instance.child_plugin_instances.2 %}
-    </div>
-    {% else %}
-    <p>Make sure there are exactly 3 plugins within the Three Columns plugin.</p>
-    {% endif %}
 </div>

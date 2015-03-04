@@ -9201,15 +9201,21 @@ div.content-section {
   max-width: 960px;
 }
 
+/* line 85, ../scss/app.scss */
+div.three-columns-plugin {
+  padding-top: 2rem;
+  text-align: left;
+}
+
 @media only screen and (min-width: 40.063em) {
-  /* line 88, ../scss/app.scss */
+  /* line 92, ../scss/app.scss */
   nav.top-bar {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 94, ../scss/app.scss */
+  /* line 98, ../scss/app.scss */
   section.top-bar-section {
     display: inline-block;
   }
