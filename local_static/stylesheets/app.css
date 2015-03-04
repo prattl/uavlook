@@ -9195,15 +9195,21 @@ div.background-image div.headers {
   margin-right: -50%;
 }
 
+/* line 80, ../scss/app.scss */
+div.content-section {
+  margin: 5rem auto;
+  max-width: 960px;
+}
+
 @media only screen and (min-width: 40.063em) {
-  /* line 83, ../scss/app.scss */
+  /* line 88, ../scss/app.scss */
   nav.top-bar {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 89, ../scss/app.scss */
+  /* line 94, ../scss/app.scss */
   section.top-bar-section {
     display: inline-block;
   }

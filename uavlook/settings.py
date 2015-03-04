@@ -132,9 +132,6 @@ MIGRATION_MODULES = {
     'djangocms_text_ckeditor': 'djangocms_text_ckeditor.migrations_django',
 }
 
-CKEDITOR_SETTINGS = {
-    'autoParagraph': False
-}
 
 
 try:
