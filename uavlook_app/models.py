@@ -43,3 +43,15 @@ class ContentSection(UAVPlugin):
 
 class ThreeColumns(UAVPlugin):
     header = models.CharField(_('header'), max_length=240, null=True, blank=True)
+
+
+class Footer(UAVPlugin):
+    pass
+
+
+class SocialMedia(UAVPlugin):
+    facebook = models.CharField(_('Facebook URL'), max_length=240, null=True, blank=True)
+    google_plus = models.CharField(_('Google Plus URL'), max_length=240, null=True, blank=True)
+    instagram = models.CharField(_('Instagram URL'), max_length=240, null=True, blank=True)
+    twitter = models.CharField(_('Twitter URL'), max_length=240, null=True, blank=True)
+    youtube = models.CharField(_('Youtube URL'), max_length=240, null=True, blank=True)

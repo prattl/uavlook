@@ -9157,13 +9157,53 @@ th.hide-for-touch {
     display: table-cell !important;
   }
 }
-/* line 43, ../scss/app.scss */
+/* line 48, ../scss/app.scss */
 div.page-wrapper {
   min-height: 100%;
   position: relative;
 }
+/* line 52, ../scss/app.scss */
+div.page-wrapper footer {
+  min-height: 15rem;
+  background: #333;
+  color: #FFF;
+}
+/* line 57, ../scss/app.scss */
+div.page-wrapper footer div.footer {
+  padding: 5rem 0.5rem 3rem 0.5rem;
+}
+/* line 60, ../scss/app.scss */
+div.page-wrapper footer div.footer p {
+  margin-bottom: 0;
+}
+/* line 64, ../scss/app.scss */
+div.page-wrapper footer div.footer div.social-media {
+  text-align: center;
+  padding: 0 4rem;
+}
+/* line 68, ../scss/app.scss */
+div.page-wrapper footer div.footer div.social-media div.social-media-top {
+  border-bottom: 1px solid #FFF;
+  padding-bottom: 0.25rem;
+}
+/* line 75, ../scss/app.scss */
+div.page-wrapper footer div.footer div.social-media div.social-media-buttons ul li {
+  font-size: 2rem;
+  min-width: 2.875rem;
+  margin-left: 0;
+  float: center;
+  display: inline-block;
+}
+/* line 82, ../scss/app.scss */
+div.page-wrapper footer div.footer div.social-media div.social-media-buttons ul li a {
+  color: #FFF;
+}
+/* line 86, ../scss/app.scss */
+div.page-wrapper footer div.footer div.social-media div.social-media-buttons ul li a:hover {
+  color: #0078a0 !important;
+}
 
-/* line 48, ../scss/app.scss */
+/* line 96, ../scss/app.scss */
 div.background-image {
   height: 25rem;
   width: 100%;
@@ -9172,21 +9212,21 @@ div.background-image {
   background-size: cover;
   position: relative;
 }
-/* line 56, ../scss/app.scss */
+/* line 104, ../scss/app.scss */
 div.background-image h1, div.background-image h2 {
   margin: 0;
   color: #FFF;
   text-align: center;
 }
-/* line 62, ../scss/app.scss */
+/* line 110, ../scss/app.scss */
 div.background-image h1 {
   font-size: 3rem;
 }
-/* line 66, ../scss/app.scss */
+/* line 114, ../scss/app.scss */
 div.background-image h2 {
   font-size: 1.5rem;
 }
-/* line 70, ../scss/app.scss */
+/* line 118, ../scss/app.scss */
 div.background-image div.headers {
   position: absolute;
   top: 50%;
@@ -9195,27 +9235,31 @@ div.background-image div.headers {
   margin-right: -50%;
 }
 
-/* line 80, ../scss/app.scss */
+/* line 128, ../scss/app.scss */
 div.content-section {
   margin: 5rem auto;
   max-width: 960px;
 }
 
-/* line 85, ../scss/app.scss */
+/* line 133, ../scss/app.scss */
 div.three-columns-plugin {
   padding-top: 2rem;
   text-align: left;
 }
+/* line 137, ../scss/app.scss */
+div.three-columns-plugin div.large-4 {
+  margin-bottom: 2rem;
+}
 
 @media only screen and (min-width: 40.063em) {
-  /* line 92, ../scss/app.scss */
+  /* line 144, ../scss/app.scss */
   nav.top-bar {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 98, ../scss/app.scss */
+  /* line 150, ../scss/app.scss */
   section.top-bar-section {
     display: inline-block;
   }

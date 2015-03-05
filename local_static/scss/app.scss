@@ -1,6 +1,11 @@
 @import "settings";
 @import "foundation";
 
+// @font-face {
+//     font-family: Delicious;
+//     src: url('"http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
+// } 
+
 // Or selectively include components
 // @import
 //   "foundation/components/accordion",
@@ -43,6 +48,49 @@
 div.page-wrapper {
     min-height: 100%;
     position: relative;
+
+    footer {
+        min-height: 15rem;
+        background: #333;
+        color: #FFF;
+
+        div.footer {
+            padding: 5rem 0.5rem 3rem 0.5rem;
+
+            p {
+                margin-bottom: 0;
+            }
+
+            div.social-media {
+                text-align: center;
+                padding: 0 4rem;
+
+                div.social-media-top {
+                    border-bottom: 1px solid #FFF;
+                    padding-bottom: 0.25rem;
+                }
+
+                div.social-media-buttons {
+
+                    ul li {
+                        font-size: 2rem;
+                        min-width: 2.875rem;
+                        margin-left: 0;
+                        float: center;
+                        display: inline-block;
+
+                        a {
+                            color: #FFF;
+                        }
+
+                        a:hover {
+                            color: #0078a0 !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 div.background-image {
@@ -85,6 +133,10 @@ div.content-section {
 div.three-columns-plugin {
     padding-top: 2rem;
     text-align: left;
+
+    div.large-4 {
+        margin-bottom: 2rem;
+    }
 }
 
 

@@ -1,0 +1,15 @@
+{% load cms_tags %}
+<div class="footer">
+    <div class="row">
+        {% if instance.child_plugin_instances|length == 2 %}
+        <div class="large-6 medium-6 columns text-left">
+            {% render_plugin instance.child_plugin_instances.0 %}
+        </div>
+        <div class="large-6 medium-6 columns">
+            {% render_plugin instance.child_plugin_instances.1 %}
+        </div>
+        {% else %}
+        <p>Make sure there are exactly 2 plugins within the Footer plugin.</p>
+        {% endif %}
+    </div>
+</div>

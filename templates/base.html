@@ -1,4 +1,4 @@
-{% load cms_tags sekizai_tags staticfiles %}
+{% load cms_tags sekizai_tags staticfiles menu_tags %}
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -7,75 +7,43 @@
 <title>{% page_attribute "page_title" %} | UAVLook</title>
 {% render_block "css" %}
 <link rel="stylesheet" href="{% static "stylesheets/app.css" %}" />
+<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
 <script src="{% static "bower_components/modernizr/modernizr.js" %}"></script>
 </head>
 <body>
 
 <div class="page-wrapper">
-    {% cms_toolbar %}
-    <!-- <div class="off&#45;canvas&#45;wrap" data&#45;offcanvas> -->
-    <!--     <div class="inner&#45;wrap"> -->
-            <!-- Small screen navigation -->
-            <!-- <div class="fixed show&#45;for&#45;small hide&#45;for&#45;small"> -->
-            <!--     <nav class="tab&#45;bar"> -->
-            <!--         <section class="left&#45;small"> -->
-            <!--             <a class="left&#45;off&#45;canvas&#45;toggle menu&#45;icon" href="#"><span></span></a> -->
-            <!--         </section> -->
-            <!--  -->
-            <!--         <section class="middle tab&#45;bar&#45;section"> -->
-            <!--             <h1 class="title">{% page_attribute "page_title" %}</h1> -->
-            <!--         </section> -->
-            <!--  -->
-            <!--         <section class="right&#45;small"> -->
-            <!--             <a class="right&#45;off&#45;canvas&#45;toggle menu&#45;icon" href="#"><span></span></a> -->
-            <!--         </section> -->
-            <!--     </nav> -->
-            <!-- </div> -->
+{% cms_toolbar %}
+    <!-- Medium and Large screen navigation -->
+    <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+            <li class="name">
+                <h1 class="show-for-small"><a href="#">UAV Look</a></h1>
+            </li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
 
-            <!-- Medium and Large screen navigation -->
-            <nav class="top-bar" data-topbar role="navigation">
-                <ul class="title-area">
-                    <li class="name">
-                        <h1 class="show-for-small"><a href="#">UAV Look</a></h1>
-                    </li>
-                    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-                </ul>
+        <section class="top-bar-section">
+            <ul class="right">
+                {% show_menu %}
+            </ul>
+        </section>
+    </nav>
 
-                <section class="top-bar-section">
-                    <ul class="right">
-                        <li class="active"><a href="#">Nav Button 1</a></li>
-                        <li><a href="#">Nav Button 2</a></li>
-                        <li><a href="#">Nav Button 3</a></li>
-                        <li><a href="#">Nav Button 4</a></li>
-                    </ul>
-                </section>
-            </nav>
+    <section class="main-section">
+        {% block main_content %}
+        <main>
+            {% block page_content %}{% endblock %}
+        </main>
 
-            <aside class="left-off-canvas-menu">
-                <ul class="off-canvas-list">
-                    <li><label>UAV Look</label></li>
-                    <li><a href="#">menu item 1</a></li>
-                    <li><a href="#">...</a></li>
-                </ul>
+        <footer>
+            {% static_placeholder 'footer' %}
+        </footer>
+        {% endblock %}
+    </section>
+</div>
 
-            </aside>
-
-
-            <section class="main-section">
-                <main>
-                    {% block base_content %}{% endblock %}
-                </main>
-
-                <footer>
-                    <hr />
-                    {% static_placeholder 'footer' %}
-                </footer>
-            </section>
-
-        <!-- </div> -->
-    </div>
-
-    {% render_block "js" %}
+{% render_block "js" %}
 
 
     <script src="{% static "bower_components/jquery/dist/jquery.min.js" %}"></script>

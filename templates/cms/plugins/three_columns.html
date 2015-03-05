@@ -3,13 +3,13 @@
     {% if instance.header %}<h3>{{ instance.header }}</h3>{% endif %}
     <div class="row">
         {% if instance.child_plugin_instances|length == 3 %}
-        <div class="small-4 columns">
+        <div class="large-4 medium-4 columns">
             {% render_plugin instance.child_plugin_instances.0 %}
         </div>
-        <div class="small-4 columns">
+        <div class="large-4 medium-4 columns">
             {% render_plugin instance.child_plugin_instances.1 %}
         </div>
-        <div class="small-4 columns">
+        <div class="large-4 medium-4 columns">
             {% render_plugin instance.child_plugin_instances.2 %}
         </div>
         {% else %}

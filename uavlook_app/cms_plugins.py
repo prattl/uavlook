@@ -4,7 +4,7 @@ from cms.plugin_base import CMSPluginBase
 from django.utils.translation import ugettext_lazy as _
 from djangocms_picture.cms_plugins import PicturePlugin
 
-from uavlook_app.models import BackgroundPicture, ContentSection, ThreeColumns
+from uavlook_app.models import BackgroundPicture, ContentSection, ThreeColumns, Footer, SocialMedia
 
 
 class BackgroundPicturePlugin(CMSPluginBase):
@@ -69,8 +69,35 @@ class ContainerPlugin(CMSPluginBase):
         return context
         
 
+class FooterPlugin(CMSPluginBase):
+    name = _('Footer')
+    render_template = 'cms/plugins/footer.html'
+    allow_children = True
 
+
+    def render(self, context, instance, placeholder):
+        children = instance.child_plugin_instances
+        print("Number of children in footer: %s" % len(children))
+        context.update({
+            'instance': instance,
+        })
+        return context
+
+
+class SocialMediaPlugin(CMSPluginBase):
+    model = SocialMedia
+    name = _('Social Media')
+    render_template = 'cms/plugins/social_media.html'
+
+
+    def render(self, context, instance, placeholder):
+        context.update({
+            'instance': instance,
+        })
+        return context
 
 plugin_pool.register_plugin(BackgroundPicturePlugin)
 plugin_pool.register_plugin(ContentSectionPlugin)
 plugin_pool.register_plugin(ThreeColumnsPlugin)
+plugin_pool.register_plugin(FooterPlugin)
+plugin_pool.register_plugin(SocialMediaPlugin)
