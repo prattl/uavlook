@@ -133,7 +133,6 @@ MIGRATION_MODULES = {
 }
 
 
-
 try:
     from uavlook.local_settings import *
 except ImportError as e:

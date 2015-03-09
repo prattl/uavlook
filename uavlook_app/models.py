@@ -1,8 +1,4 @@
 from django.db import models
-import os
-
-from django.core.exceptions import ValidationError
-from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 from cms.models import CMSPlugin, Page
@@ -19,10 +15,16 @@ except ImportError:
 
 
 class UAVPlugin(CMSPlugin):
+    """
+    Abstract plugin that adds a title field.
+    """
     title = models.CharField(_('title'), max_length=240, null=True, blank=True)
 
     class Meta:
         abstract = True
+
+    def __str__(self):
+        return str(self.title)
 
 
 class BackgroundPicture(UAVPlugin):
@@ -30,15 +32,14 @@ class BackgroundPicture(UAVPlugin):
     header = models.CharField(_('header'), max_length=240, null=True, blank=True)
     subheader = models.CharField(_('subheader'), max_length=240, null=True, blank=True)
     top = models.BooleanField(default=False, help_text='Check if this image should appear at the top of the page.')
-    shade_amount = models.DecimalField(default=0.00, max_digits=3, decimal_places=2, help_text='The amount of shading to add to the image. 0.00 is no shading, and 1.00 is all black. Use up to 2 decimal places.')
+    shade_amount = models.DecimalField(default=0.00, max_digits=3, decimal_places=2,
+                                       help_text='The amount of shading to add to the image. 0.00 is no shading, and 1.00 is all black. Use up to 2 decimal places.')
 
 
 class ContentSection(UAVPlugin):
     header = models.CharField(_('header'), max_length=240, null=True, blank=True)
-    center = models.BooleanField(_('center'), default=False, help_text='Check if the contents of this section should be centered. If not, they will be left-justified.')
-
-    def __unicode__(self):
-        return unicode(self.title)
+    center = models.BooleanField(_('center'), default=False,
+                                 help_text='Check if the contents of this section should be centered. If not, they will be left-justified.')
 
 
 class ThreeColumns(UAVPlugin):
@@ -55,3 +56,8 @@ class SocialMedia(UAVPlugin):
     instagram = models.CharField(_('Instagram URL'), max_length=240, null=True, blank=True)
     twitter = models.CharField(_('Twitter URL'), max_length=240, null=True, blank=True)
     youtube = models.CharField(_('Youtube URL'), max_length=240, null=True, blank=True)
+
+
+class BlockQuote(UAVPlugin):
+    quote = models.TextField(_('Quote'))
+    attribution = models.CharField(_('Attribution'), max_length=240, null=True, blank=True)
