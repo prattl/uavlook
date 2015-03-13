@@ -7,4 +7,5 @@ class HomeView(TemplateView):
     template_name = 'uavlook_app/index.html'
 
 
-
+class ContactFormAjaxView(View):
+    pass

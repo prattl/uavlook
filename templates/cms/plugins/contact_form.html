@@ -1,0 +1,6 @@
+{% load cms_tags %}
+<div class="contact-form-plugin">
+    <form action="{% url 'contact_form' %}" method="post">{% csrf_token %}
+
+    </form>
+</div>

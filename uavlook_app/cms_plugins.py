@@ -3,7 +3,7 @@ from cms.plugin_base import CMSPluginBase
 
 from django.utils.translation import ugettext_lazy as _
 
-from .models import BackgroundPicture, ContentSection, ThreeColumns, Footer, SocialMedia, BlockQuote
+from uavlook_app.models import BackgroundPicture, ContentSection, ThreeColumns, Footer, SocialMedia, BlockQuote, ContactForm
 
 
 class BackgroundPicturePlugin(CMSPluginBase):
@@ -103,9 +103,21 @@ class BlockQuotePlugin(CMSPluginBase):
         return context
 
 
+class ContactFormPlugin(CMSPluginBase):
+    name = _('Contact Form')
+    render_template = 'cms/plugins/contact_form.html'
+
+    def render(self, context, instance, placeholder):
+        context.update({
+            'instance': instance,
+        })
+        return context
+
+
 plugin_pool.register_plugin(BackgroundPicturePlugin)
 plugin_pool.register_plugin(ContentSectionPlugin)
 plugin_pool.register_plugin(ThreeColumnsPlugin)
 plugin_pool.register_plugin(FooterPlugin)
 plugin_pool.register_plugin(SocialMediaPlugin)
 plugin_pool.register_plugin(BlockQuotePlugin)
+plugin_pool.register_plugin(ContactFormPlugin)

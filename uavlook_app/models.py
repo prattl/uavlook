@@ -61,3 +61,18 @@ class SocialMedia(UAVPlugin):
 class BlockQuote(UAVPlugin):
     quote = models.TextField(_('Quote'))
     attribution = models.CharField(_('Attribution'), max_length=240, null=True, blank=True)
+
+
+class ContactForm(UAVPlugin):
+    pass
+
+
+class ContactFormSubmission(models.Model):
+    name = models.CharField(_('Name'), max_length=240)
+    email = models.CharField(_('Email'), max_length=240)
+    phone = models.CharField(_('Phone Number'), max_length=240, null=True, blank=True)
+    message = models.CharField(_('Message'), max_length=2400, null=True, blank=True)
+
+    def save(self, *args, **kwargs):
+        # TODO: Send email to staff
+        super(ContactFormSubmission, self).save(*args, **kwargs)
