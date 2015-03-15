@@ -58,6 +58,10 @@ footer.page-footer {
     div.footer {
         padding: 5rem 0.5rem 3rem 0.5rem;
 
+        @media #{$small-only} {
+            padding: 3rem 0.5rem 3rem 0.5rem;
+        }
+
         p {
             margin-bottom: 0;
         }
@@ -65,6 +69,12 @@ footer.page-footer {
         div.social-media {
             text-align: center;
             float: right;
+
+            @media #{$small-only} {
+                text-align: left;
+                float: none;
+                margin-top: 1.5rem;
+            }
 
             div.social-media-top {
                 border-bottom: 1px solid #FFF;

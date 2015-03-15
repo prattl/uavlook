@@ -9173,26 +9173,40 @@ footer.page-footer {
 footer.page-footer div.footer {
   padding: 5rem 0.5rem 3rem 0.5rem;
 }
-/* line 61, ../scss/app.scss */
+@media only screen and (max-width: 40em) {
+  /* line 58, ../scss/app.scss */
+  footer.page-footer div.footer {
+    padding: 3rem 0.5rem 3rem 0.5rem;
+  }
+}
+/* line 65, ../scss/app.scss */
 footer.page-footer div.footer p {
   margin-bottom: 0;
 }
-/* line 65, ../scss/app.scss */
+/* line 69, ../scss/app.scss */
 footer.page-footer div.footer div.social-media {
   text-align: center;
   float: right;
 }
-/* line 69, ../scss/app.scss */
+@media only screen and (max-width: 40em) {
+  /* line 69, ../scss/app.scss */
+  footer.page-footer div.footer div.social-media {
+    text-align: left;
+    float: none;
+    margin-top: 1.5rem;
+  }
+}
+/* line 79, ../scss/app.scss */
 footer.page-footer div.footer div.social-media div.social-media-top {
   border-bottom: 1px solid #FFF;
   padding-bottom: 0.25rem;
 }
-/* line 76, ../scss/app.scss */
+/* line 86, ../scss/app.scss */
 footer.page-footer div.footer div.social-media div.social-media-buttons ul {
   list-style-position: inside;
   margin: 0;
 }
-/* line 80, ../scss/app.scss */
+/* line 90, ../scss/app.scss */
 footer.page-footer div.footer div.social-media div.social-media-buttons ul li {
   font-size: 1.5rem;
   min-width: 2.875rem;
@@ -9200,16 +9214,16 @@ footer.page-footer div.footer div.social-media div.social-media-buttons ul li {
   float: none;
   display: inline-block;
 }
-/* line 87, ../scss/app.scss */
+/* line 97, ../scss/app.scss */
 footer.page-footer div.footer div.social-media div.social-media-buttons ul li a {
   color: #FFF;
 }
-/* line 91, ../scss/app.scss */
+/* line 101, ../scss/app.scss */
 footer.page-footer div.footer div.social-media div.social-media-buttons ul li a:hover {
   color: #0078a0 !important;
 }
 
-/* line 102, ../scss/app.scss */
+/* line 112, ../scss/app.scss */
 div.background-image {
   height: 25rem;
   width: 100%;
@@ -9218,21 +9232,21 @@ div.background-image {
   background-size: cover;
   position: relative;
 }
-/* line 110, ../scss/app.scss */
+/* line 120, ../scss/app.scss */
 div.background-image h1, div.background-image h2 {
   margin: 0;
   color: #FFF;
   text-align: center;
 }
-/* line 116, ../scss/app.scss */
+/* line 126, ../scss/app.scss */
 div.background-image h1 {
   font-size: 3rem;
 }
-/* line 120, ../scss/app.scss */
+/* line 130, ../scss/app.scss */
 div.background-image h2 {
   font-size: 1.5rem;
 }
-/* line 124, ../scss/app.scss */
+/* line 134, ../scss/app.scss */
 div.background-image div.headers {
   position: absolute;
   top: 50%;
@@ -9241,45 +9255,45 @@ div.background-image div.headers {
   margin-right: -50%;
 }
 
-/* line 134, ../scss/app.scss */
+/* line 144, ../scss/app.scss */
 div.content-section {
   margin: 5rem auto;
   max-width: 960px;
 }
 
-/* line 140, ../scss/app.scss */
+/* line 150, ../scss/app.scss */
 div.three-columns-plugin {
   padding-top: 2rem;
   text-align: left;
 }
-/* line 144, ../scss/app.scss */
+/* line 154, ../scss/app.scss */
 div.three-columns-plugin div.large-4 {
   margin-bottom: 2rem;
 }
 
-/* line 151, ../scss/app.scss */
+/* line 161, ../scss/app.scss */
 div.block-quote-plugin blockquote {
   margin: 1rem 2rem;
 }
-/* line 154, ../scss/app.scss */
+/* line 164, ../scss/app.scss */
 div.block-quote-plugin blockquote footer {
   text-align: right;
   font-weight: 600;
 }
-/* line 158, ../scss/app.scss */
+/* line 168, ../scss/app.scss */
 div.block-quote-plugin blockquote footer span:before {
   content: "\2014\0020";
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 166, ../scss/app.scss */
+  /* line 176, ../scss/app.scss */
   nav.top-bar {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 172, ../scss/app.scss */
+  /* line 182, ../scss/app.scss */
   section.top-bar-section {
     display: inline-block;
   }
