@@ -1,6 +1,19 @@
 {% load cms_tags %}
 <div class="contact-form-plugin">
     <form action="{% url 'contact_form' %}" method="post">{% csrf_token %}
-
+        <div class="row">
+            <div class="large-6 medium-6 columns">
+                <label for="{{ contact_form.name.auto_id }}">{{ contact_form.name.label }}</label>
+                {{ contact_form.name }}
+                <label for="{{ contact_form.email.auto_id }}">{{ contact_form.email.label }}</label>
+                {{ contact_form.email }}
+                <label for="{{ contact_form.phone.auto_id }}">{{ contact_form.phone.label }}</label>
+                {{ contact_form.phone }}
+            </div>
+            <div class="large-6 medium-6 columns">
+                <label id="id_message_label" for="{{ contact_form.message.auto_id }}">{{ contact_form.message.label }}</label>
+                {{ contact_form.message }}
+            </div>
+        </div>
     </form>
 </div>

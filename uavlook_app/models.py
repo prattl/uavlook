@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
@@ -75,4 +76,5 @@ class ContactFormSubmission(models.Model):
 
     def save(self, *args, **kwargs):
         # TODO: Send email to staff
+        print('Sending email to: ', settings.STAFF_USERS)
         super(ContactFormSubmission, self).save(*args, **kwargs)

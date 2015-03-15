@@ -4,6 +4,7 @@ from cms.plugin_base import CMSPluginBase
 from django.utils.translation import ugettext_lazy as _
 
 from uavlook_app.models import BackgroundPicture, ContentSection, ThreeColumns, Footer, SocialMedia, BlockQuote, ContactForm
+from uavlook_app.forms import ContactFormSubmissionForm
 
 
 class BackgroundPicturePlugin(CMSPluginBase):
@@ -13,7 +14,7 @@ class BackgroundPicturePlugin(CMSPluginBase):
     text_enabled = True
 
     def render(self, context, instance, placeholder):
-        header= instance.header
+        header = instance.header
         subheader = instance.subheader
         context.update({
             'picture': instance,
@@ -108,8 +109,10 @@ class ContactFormPlugin(CMSPluginBase):
     render_template = 'cms/plugins/contact_form.html'
 
     def render(self, context, instance, placeholder):
+        form = ContactFormSubmissionForm()
         context.update({
             'instance': instance,
+            'contact_form': form,
         })
         return context
 
