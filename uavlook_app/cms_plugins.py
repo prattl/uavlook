@@ -1,9 +1,11 @@
 from cms.plugin_pool import plugin_pool
 from cms.plugin_base import CMSPluginBase
 
+from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 
-from uavlook_app.models import BackgroundPicture, ContentSection, ThreeColumns, Footer, SocialMedia, BlockQuote, ContactForm
+from uavlook_app.models import BackgroundPicture, ContentSection, ThreeColumns, \
+    Footer, SocialMedia, BlockQuote, ContactForm, Slideshow, SlideshowMedia
 from uavlook_app.forms import ContactFormSubmissionForm
 
 
@@ -47,7 +49,7 @@ class ThreeColumnsPlugin(CMSPluginBase):
 
     def render(self, context, instance, placeholder):
         children = instance.child_plugin_instances
-        print("Number of children in 3 cols: %s" % len(children))
+        print('Columns Instance ID: ', instance.pk)
         context.update({
             'instance': instance,
         })
@@ -117,6 +119,27 @@ class ContactFormPlugin(CMSPluginBase):
         return context
 
 
+class SlideshowMediaInlineAdmin(admin.StackedInline):
+    model = SlideshowMedia
+
+
+class SlideshowPlugin(CMSPluginBase):
+    model = Slideshow
+    name = _('Slideshow')
+    render_template = 'cms/plugins/slideshow.html'
+    inlines = (SlideshowMediaInlineAdmin,)
+
+    def render(self, context, instance, placeholder):
+        media = instance.slideshowmedia_set.all()
+        print('Returning media: ', media)
+        print('Instance ID: ', instance.pk)
+        context.update({
+            'instance': instance,
+            'media': media,
+        })
+        return context
+
+
 plugin_pool.register_plugin(BackgroundPicturePlugin)
 plugin_pool.register_plugin(ContentSectionPlugin)
 plugin_pool.register_plugin(ThreeColumnsPlugin)
@@ -124,3 +147,4 @@ plugin_pool.register_plugin(FooterPlugin)
 plugin_pool.register_plugin(SocialMediaPlugin)
 plugin_pool.register_plugin(BlockQuotePlugin)
 plugin_pool.register_plugin(ContactFormPlugin)
+plugin_pool.register_plugin(SlideshowPlugin)

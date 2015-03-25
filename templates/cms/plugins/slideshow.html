@@ -1,0 +1,8 @@
+{% load cms_tags %}
+<div class="slideshow-plugin fotorama" data-nav="thumbs">
+    {% for item in media %}
+        {% if item.image %}<div data-img="{{ item.image.url }}"><span></span></div>
+{#        {% elif item.video_url %}<a href="{{ item.video_url }}"></a>#}
+        {% endif %}
+    {% endfor %}
+</div>

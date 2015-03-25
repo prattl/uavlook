@@ -78,3 +78,24 @@ class ContactFormSubmission(models.Model):
         # TODO: Send email to staff
         print('Sending email to: ', settings.STAFF_USERS)
         super(ContactFormSubmission, self).save(*args, **kwargs)
+
+
+class Slideshow(UAVPlugin):
+    def copy_relations(self, oldinstance):
+        print('Running copy_relations')
+        for associated_item in oldinstance.slideshowmedia_set.all():
+            # instance.pk = None; instance.pk.save() is the slightly odd but
+            # standard Django way of copying a saved model instance
+            associated_item.pk = None
+            associated_item.slideshow = self
+            associated_item.save()
+
+
+class SlideshowMedia(models.Model):
+    image = models.ImageField(null=True, blank=True, help_text='Include either an image or a video URL, but not both.')
+    video_url = models.CharField(_('URL'), max_length=240, null=True, blank=True, help_text='The full URL to a YouTube or Vimeo video page (not embedded URL).')
+    slideshow = models.ForeignKey(Slideshow)
+    order = models.IntegerField()
+
+    class Meta:
+        ordering = ['order']

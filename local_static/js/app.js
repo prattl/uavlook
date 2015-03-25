@@ -18,4 +18,9 @@ $(function() {
         console.log($message_label_height);
         console.log($phone_margin_bottom);
     }
+
+    // Disable image right-click
+    $("body").on("contextmenu", "img", function(e) {
+        return false;
+    });
 });
