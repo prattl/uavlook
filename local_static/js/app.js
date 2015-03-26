@@ -20,7 +20,7 @@ $(function() {
     }
 
     // Disable image right-click
-    $("body").on("contextmenu", "img", function(e) {
-        return false;
-    });
+    //$("body").on("contextmenu", "img", function(e) {
+    //    return false;
+    //});
 });
