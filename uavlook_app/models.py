@@ -41,6 +41,8 @@ class ContentSection(UAVPlugin):
     header = models.CharField(_('header'), max_length=240, null=True, blank=True)
     center = models.BooleanField(_('center'), default=False,
                                  help_text='Check if the contents of this section should be centered. If not, they will be left-justified.')
+    # opacity = models.DecimalField(default=0.00, max_digits=3, decimal_places=2,
+    #                                 help_text='The opacity of this section\'s background. 0.00 is transparent, and 1.00 is all black. Use up to 2 decimal places.')
 
 
 class ThreeColumns(UAVPlugin):
@@ -99,3 +101,10 @@ class SlideshowMedia(models.Model):
 
     class Meta:
         ordering = ['order']
+
+
+class HomePage(UAVPlugin):
+    header = models.CharField(_('header'), max_length=240, null=True, blank=True)
+    subheader = models.CharField(_('sub header'), max_length=240, null=True, blank=True)
+    opacity = models.DecimalField(default=0.00, max_digits=3, decimal_places=2,
+                                    help_text='The opacity of this page\'s background. 0.00 is transparent, and 1.00 is all black. Use up to 2 decimal places.')

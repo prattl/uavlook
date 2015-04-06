@@ -15,7 +15,8 @@
 <body>
 
 <div class="page-wrapper">
-{% cms_toolbar %}
+    {% cms_toolbar %}
+    {% block entire_page %}
     <!-- Medium and Large screen navigation -->
     <nav class="top-bar" data-topbar role="navigation">
         <ul class="title-area">
@@ -43,6 +44,7 @@
         </footer>
         {% endblock %}
     </section>
+    {% endblock %}
 </div>
 
 {% render_block "js" %}

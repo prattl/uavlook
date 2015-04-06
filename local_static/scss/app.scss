@@ -180,6 +180,11 @@ div.block-quote-plugin {
     }
 }
 
+// Home Page Plugin
+div.home-page-plugin {
+    min-height: 100%;
+}
+
 // Navigation components
 nav.top-bar {
     @media #{$medium-up} { 

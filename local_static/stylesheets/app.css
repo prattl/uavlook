@@ -9275,25 +9275,42 @@ div.three-columns-plugin div.large-4 {
 div.block-quote-plugin blockquote {
   margin: 1rem 2rem;
 }
-/* line 164, ../scss/app.scss */
+@media only screen and (max-width: 40em) {
+  /* line 161, ../scss/app.scss */
+  div.block-quote-plugin blockquote {
+    margin: 1rem 0 1rem 1rem;
+  }
+}
+/* line 168, ../scss/app.scss */
 div.block-quote-plugin blockquote footer {
   text-align: right;
   font-weight: 600;
 }
-/* line 168, ../scss/app.scss */
+@media only screen and (max-width: 40em) {
+  /* line 168, ../scss/app.scss */
+  div.block-quote-plugin blockquote footer {
+    margin-top: 0.5rem;
+  }
+}
+/* line 176, ../scss/app.scss */
 div.block-quote-plugin blockquote footer span:before {
   content: "\2014\0020";
 }
 
+/* line 184, ../scss/app.scss */
+div.home-page-plugin {
+  min-height: 100%;
+}
+
 @media only screen and (min-width: 40.063em) {
-  /* line 176, ../scss/app.scss */
+  /* line 189, ../scss/app.scss */
   nav.top-bar {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 182, ../scss/app.scss */
+  /* line 195, ../scss/app.scss */
   section.top-bar-section {
     display: inline-block;
   }

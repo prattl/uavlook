@@ -5,7 +5,7 @@ from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 
 from uavlook_app.models import BackgroundPicture, ContentSection, ThreeColumns, \
-    Footer, SocialMedia, BlockQuote, ContactForm, Slideshow, SlideshowMedia
+    Footer, SocialMedia, BlockQuote, ContactForm, Slideshow, SlideshowMedia, HomePage
 from uavlook_app.forms import ContactFormSubmissionForm
 
 
@@ -140,6 +140,19 @@ class SlideshowPlugin(CMSPluginBase):
         return context
 
 
+class HomePagePlugin(CMSPluginBase):
+    model = HomePage
+    name = _('Home Page')
+    render_template = 'cms/plugins/homepage.html'
+    allow_children = True
+
+    def render(self, context, instance, placeholder):
+        context.update({
+            'instance': instance,
+        })
+        return context
+
+
 plugin_pool.register_plugin(BackgroundPicturePlugin)
 plugin_pool.register_plugin(ContentSectionPlugin)
 plugin_pool.register_plugin(ThreeColumnsPlugin)
@@ -148,3 +161,4 @@ plugin_pool.register_plugin(SocialMediaPlugin)
 plugin_pool.register_plugin(BlockQuotePlugin)
 plugin_pool.register_plugin(ContactFormPlugin)
 plugin_pool.register_plugin(SlideshowPlugin)
+plugin_pool.register_plugin(HomePagePlugin)
