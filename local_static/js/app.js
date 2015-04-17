@@ -8,6 +8,7 @@ $( window ).resize(function() {
     var nav_height = $(".top-bar").height();
     var screen_height = $(window).height();
     $(".home-page-plugin").height(screen_height - nav_height);
+    $(".home-page-plugin").find(".content-container").height(screen_height - nav_height);
     //console.log("Setting height to: " + screen_height + " - " + nav_height + " = " + (screen_height - nav_height));
 });
 

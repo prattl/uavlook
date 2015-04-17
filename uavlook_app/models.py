@@ -83,6 +83,7 @@ class ContactFormSubmission(models.Model):
 
 
 class Slideshow(UAVPlugin):
+    show_thumbnails = models.BooleanField(_('Show Thumbnails'), default=True, help_text='Check to display thmbnails below the slideshow.')
     def copy_relations(self, oldinstance):
         print('Running copy_relations')
         for associated_item in oldinstance.slideshowmedia_set.all():

@@ -1,5 +1,5 @@
 {% load cms_tags %}
-<div class="slideshow-plugin fotorama" data-nav="thumbs" data-fit="cover"
+<div class="slideshow-plugin fotorama" {% if instance.show_thumbnails %}data-nav="thumbs"{% endif %} data-fit="cover"
         data-width="100%" data-ratio="16/9">
     {% for item in media %}
         {% if item.image %}<div data-img="{{ item.image.url }}"><span></span></div>

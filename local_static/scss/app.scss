@@ -183,13 +183,33 @@ div.block-quote-plugin {
 
 // Home Page Plugin
 div.home-page-plugin {
-    min-height: 100%;
+//    min-height: 100%;
     width: 100%;
     margin: 0;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+
+    div.content-container {
+        color: #FFF;
+
+        h1, h2, h3, p {
+            color: inherit;
+        }
+
+        h1 {
+            font-size: 4rem;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+        }
+
+        p {
+            margin: 3rem 15rem 0 15rem;
+        }
+    }
 }
 
 // Navigation components

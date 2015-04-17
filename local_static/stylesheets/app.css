@@ -9300,7 +9300,6 @@ div.block-quote-plugin blockquote footer span:before {
 
 /* line 185, ../scss/app.scss */
 div.home-page-plugin {
-  min-height: 100%;
   width: 100%;
   margin: 0;
   background-position: center;
@@ -9308,16 +9307,36 @@ div.home-page-plugin {
   background-size: cover;
   position: relative;
 }
+/* line 194, ../scss/app.scss */
+div.home-page-plugin div.content-container {
+  color: #FFF;
+}
+/* line 197, ../scss/app.scss */
+div.home-page-plugin div.content-container h1, div.home-page-plugin div.content-container h2, div.home-page-plugin div.content-container h3, div.home-page-plugin div.content-container p {
+  color: inherit;
+}
+/* line 201, ../scss/app.scss */
+div.home-page-plugin div.content-container h1 {
+  font-size: 4rem;
+}
+/* line 205, ../scss/app.scss */
+div.home-page-plugin div.content-container h2 {
+  font-size: 1.75rem;
+}
+/* line 209, ../scss/app.scss */
+div.home-page-plugin div.content-container p {
+  margin: 3rem 15rem 0 15rem;
+}
 
 @media only screen and (min-width: 40.063em) {
-  /* line 196, ../scss/app.scss */
+  /* line 216, ../scss/app.scss */
   nav.top-bar {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 202, ../scss/app.scss */
+  /* line 222, ../scss/app.scss */
   section.top-bar-section {
     display: inline-block;
   }
