@@ -3,6 +3,7 @@
 <div class="home-page-plugin" style="{% if instance.image %}background-image: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) ), url('{{ instance.image.url }}');{% endif %}">
     <div class="row">
         <div class="large-12 columns content-container text-center" style="background: rgba(0, 0, 0, {% if instance.opacity %}{{ instance.opacity }}{% else %}0.5{% endif %});">
+            <div class="text-content" style="padding: 0 1rem;">
             <h1 style="margin-top: 2rem;">UAV Look</h1>
             <h2>Aerial Photography and Video</h2>
             <p>
@@ -10,16 +11,28 @@
                 estate, business marketing, and a variety of events.
             </p>
 
-            <div style="width: 22rem; margin: 0 auto;">
+            <div style="width: 22rem; height:auto; margin: 0 auto;">
             {% for plugin in instance.child_plugin_instances %}
                 {% render_plugin plugin %}
             {% endfor %}
             </div>
-        </div>
-{#        <div class="large-12 columns{% if instance.center %} text-center{% endif %}">#}
-{#            {% if header %}<h2>{{ header }}</h2>{% endif %}#}
+            </div>
 
-{#        </div>#}
+{#            <footer>#}
+{#                <div class="row">#}
+{#                    {% if instance.child_plugin_instances|length == 2 %}#}
+{#                    <div class="large-6 medium-6 columns text-left">#}
+{#                        {% render_plugin instance.child_plugin_instances.0 %}#}
+{#                    </div>#}
+{#                    <div class="large-6 medium-6 columns">#}
+{#                        {% render_plugin instance.child_plugin_instances.1 %}#}
+{#                    </div>#}
+{#                    {% else %}#}
+{#                    <p>Make sure there are exactly 2 plugins within the Footer plugin.</p>#}
+{#                    {% endif %}#}
+{#                </div>#}
+{#            </footer>#}
+        </div>
     </div>
 </div>
 

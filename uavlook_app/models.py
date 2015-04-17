@@ -83,7 +83,16 @@ class ContactFormSubmission(models.Model):
 
 
 class Slideshow(UAVPlugin):
+    ARROW_CHOICES = [
+        ('always', 'Always display arrows'),
+        ('true', 'Display arrows on hover'),
+        ('false', 'Never display arrows'),
+    ]
+
     show_thumbnails = models.BooleanField(_('Show Thumbnails'), default=True, help_text='Check to display thmbnails below the slideshow.')
+    show_arrows = models.CharField(_('Navigation Arrows'), default='true', help_text='Navigation Arrows',
+                                   choices=ARROW_CHOICES, max_length=240)
+
     def copy_relations(self, oldinstance):
         print('Running copy_relations')
         for associated_item in oldinstance.slideshowmedia_set.all():

@@ -31,9 +31,12 @@ $(function() {
 
     $(window).resize();
 
-
-    // Disable image right-click
-    //$("body").on("contextmenu", "img", function(e) {
-    //    return false;
+    // Fotorama API for slideshows
+    //var fotorama = $(".fotorama"). data("fotorama");
+    //$(".foto-next").click(function() {
+    //    fotorama.show(">");
     //});
+    //$(".foto-prev").click(function() {
+    //    fotorama.show("<");
+    //})
 });

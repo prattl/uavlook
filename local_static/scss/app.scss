@@ -193,6 +193,7 @@ div.home-page-plugin {
 
     div.content-container {
         color: #FFF;
+        padding: 0;
 
         h1, h2, h3, p {
             color: inherit;
@@ -207,7 +208,15 @@ div.home-page-plugin {
         }
 
         p {
-            margin: 3rem 15rem 0 15rem;
+            margin: 3rem 15rem;
+        }
+
+        footer {
+            height: 8rem;
+            width: 100%;
+            background-color: #CCC;
+            position: absolute;
+            bottom: 0;
         }
     }
 }
