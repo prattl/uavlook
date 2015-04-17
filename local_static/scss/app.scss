@@ -183,6 +183,15 @@ div.block-quote-plugin {
 // Home Page Plugin
 div.home-page-plugin {
     min-height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    div.container {
+        max-width: 960px;
+    }
 }
 
 // Navigation components

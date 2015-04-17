@@ -6,17 +6,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>{% page_attribute "page_title" %} | UAVLook</title>
 {% render_block "css" %}
-<link rel="stylesheet" href="{% static "stylesheets/app.css" %}" />
+<link rel="stylesheet" href="{% static 'stylesheets/app.css' %}" />
 <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
-<script src="{% static "bower_components/modernizr/modernizr.js" %}"></script>
+<script src="{% static 'bower_components/modernizr/modernizr.js' %}"></script>
 
 
 </head>
 <body>
-
+{% cms_toolbar %}
+{% block entire_page %}
 <div class="page-wrapper">
-    {% cms_toolbar %}
-    {% block entire_page %}
+
     <!-- Medium and Large screen navigation -->
     <nav class="top-bar" data-topbar role="navigation">
         <ul class="title-area">
@@ -44,19 +44,19 @@
         </footer>
         {% endblock %}
     </section>
-    {% endblock %}
 </div>
+{% endblock %}
 
 {% render_block "js" %}
 
 
-    <script src="{% static "bower_components/jquery/dist/jquery.min.js" %}"></script>
-    <script src="{% static "bower_components/foundation/js/foundation.min.js" %}"></script>
-    <script src="{% static "bower_components/foundation/js/foundation/foundation.offcanvas.js" %}"></script>
-    <script src="{% static "bower_components/foundation/js/foundation/foundation.topbar.js" %}"></script>
-    <!-- fotorama.css & fotorama.js. -->
-    <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.3/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.3/fotorama.js"></script> <!-- 16 KB -->
-    <script src="{% static "js/app.js" %}"></script>
-    </body>
+<script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
+<script src="{% static 'bower_components/foundation/js/foundation.min.js' %}"></script>
+<script src="{% static 'bower_components/foundation/js/foundation/foundation.offcanvas.js' %}"></script>
+<script src="{% static 'bower_components/foundation/js/foundation/foundation.topbar.js' %}"></script>
+<!-- fotorama.css & fotorama.js. -->
+<link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.3/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.3/fotorama.js"></script> <!-- 16 KB -->
+<script src="{% static 'js/app.js' %}"></script>
+</body>
 </html>

@@ -108,3 +108,4 @@ class HomePage(UAVPlugin):
     subheader = models.CharField(_('sub header'), max_length=240, null=True, blank=True)
     opacity = models.DecimalField(default=0.00, max_digits=3, decimal_places=2,
                                     help_text='The opacity of this page\'s background. 0.00 is transparent, and 1.00 is all black. Use up to 2 decimal places.')
+    background_image = models.ImageField(null=True, blank=True, help_text='Include either an image or a video URL, but not both.')

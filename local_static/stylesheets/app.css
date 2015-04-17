@@ -9300,17 +9300,26 @@ div.block-quote-plugin blockquote footer span:before {
 /* line 184, ../scss/app.scss */
 div.home-page-plugin {
   min-height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+/* line 192, ../scss/app.scss */
+div.home-page-plugin div.container {
+  max-width: 960px;
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 189, ../scss/app.scss */
+  /* line 198, ../scss/app.scss */
   nav.top-bar {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 195, ../scss/app.scss */
+  /* line 204, ../scss/app.scss */
   section.top-bar-section {
     display: inline-block;
   }
