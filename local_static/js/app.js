@@ -2,6 +2,15 @@
 // Documentation can be found at: http://foundation.zurb.com/docs
 $(document).foundation();
 
+// Expand home page height to use the full page
+$( window ).resize(function() {
+    //console.log("Window resizing.");
+    var nav_height = $(".top-bar").height();
+    var screen_height = $(window).height();
+    $(".home-page-plugin").height(screen_height - nav_height);
+    //console.log("Setting height to: " + screen_height + " - " + nav_height + " = " + (screen_height - nav_height));
+});
+
 $(function() {
     // Expand the height of the contact form message textarea to fill the entire
     // height, only if it is present on the page
@@ -18,6 +27,9 @@ $(function() {
         console.log($message_label_height);
         console.log($phone_margin_bottom);
     }
+
+    $(window).resize();
+
 
     // Disable image right-click
     //$("body").on("contextmenu", "img", function(e) {

@@ -1,18 +1,18 @@
 {% load cms_tags %}
 
-<div class="home-page-plugin" style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('{{ instance.background_image.url }}');">
-    <div class="container text-center">
-        <h1>{{ instance.header }}</h1>
-        <h2>{{ instance.subheader }}</h2>
+
+<div class="home-page-plugin" style="{% if instance.image %}background-image: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) ), url('{{ instance.image.url }}');{% endif %}">
+    <div class="row">
+        <div class="large-12 columns" style="background: #CCC;">
+
+        </div>
+{#        <div class="large-12 columns{% if instance.center %} text-center{% endif %}">#}
+{#            {% if header %}<h2>{{ header }}</h2>{% endif %}#}
+{#            {% for plugin in instance.child_plugin_instances %}#}
+{#                {% render_plugin plugin %}#}
+{#            {% endfor %}#}
+{#        </div>#}
     </div>
-    <!--<div class="row">-->
-        <!--<div class="large-12 columns{% if instance.center %} text-center{% endif %}">-->
-            <!--{% if header %}<h2>{{ header }}</h2>{% endif %}-->
-            <!--{% for plugin in instance.child_plugin_instances %}-->
-                <!--{% render_plugin plugin %}-->
-            <!--{% endfor %}-->
-        <!--</div>-->
-    <!--</div>-->
 </div>
 
 

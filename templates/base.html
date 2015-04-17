@@ -13,9 +13,9 @@
 
 </head>
 <body>
-{% cms_toolbar %}
 {% block entire_page %}
 <div class="page-wrapper">
+    {% cms_toolbar %}
 
     <!-- Medium and Large screen navigation -->
     <nav class="top-bar" data-topbar role="navigation">
@@ -32,6 +32,7 @@
             </ul>
         </section>
     </nav>
+    {% block entire_page %}
 
     <section class="main-section">
         {% block main_content %}
