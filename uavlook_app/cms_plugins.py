@@ -147,6 +147,14 @@ class HomePagePlugin(CMSPluginBase):
     allow_children = True
 
     def render(self, context, instance, placeholder):
+        for plugin in instance.child_plugin_instances:
+            # import pdb; pdb.set_trace()
+            if type(plugin) is Slideshow:
+                print('Rendering slideshow')
+                context.update({'slideshow': plugin})
+            if type(plugin) is SocialMedia:
+                print('Rendering social media')
+                context.update({'social_media': plugin})
         context.update({
             'instance': instance,
         })

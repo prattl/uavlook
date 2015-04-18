@@ -9187,47 +9187,48 @@ footer.page-footer div.footer {
 footer.page-footer div.footer p {
   margin-bottom: 0;
 }
-/* line 70, ../scss/app.scss */
-footer.page-footer div.footer div.social-media {
+
+/* line 74, ../scss/app.scss */
+div.social-media {
   text-align: center;
   float: right;
 }
 @media only screen and (max-width: 40em) {
-  /* line 70, ../scss/app.scss */
-  footer.page-footer div.footer div.social-media {
+  /* line 74, ../scss/app.scss */
+  div.social-media {
     text-align: left;
     float: none;
     margin-top: 1.5rem;
   }
 }
-/* line 80, ../scss/app.scss */
-footer.page-footer div.footer div.social-media div.social-media-top {
+/* line 84, ../scss/app.scss */
+div.social-media div.social-media-top {
   border-bottom: 1px solid #FFF;
   padding-bottom: 0.25rem;
 }
-/* line 87, ../scss/app.scss */
-footer.page-footer div.footer div.social-media div.social-media-buttons ul {
+/* line 91, ../scss/app.scss */
+div.social-media div.social-media-buttons ul {
   list-style-position: inside;
   margin: 0;
 }
-/* line 91, ../scss/app.scss */
-footer.page-footer div.footer div.social-media div.social-media-buttons ul li {
+/* line 95, ../scss/app.scss */
+div.social-media div.social-media-buttons ul li {
   font-size: 1.5rem;
   min-width: 2.875rem;
   margin-left: 0;
   float: none;
   display: inline-block;
 }
-/* line 98, ../scss/app.scss */
-footer.page-footer div.footer div.social-media div.social-media-buttons ul li a {
+/* line 102, ../scss/app.scss */
+div.social-media div.social-media-buttons ul li a {
   color: #FFF;
 }
-/* line 102, ../scss/app.scss */
-footer.page-footer div.footer div.social-media div.social-media-buttons ul li a:hover {
+/* line 106, ../scss/app.scss */
+div.social-media div.social-media-buttons ul li a:hover {
   color: #0078a0 !important;
 }
 
-/* line 113, ../scss/app.scss */
+/* line 115, ../scss/app.scss */
 div.background-image {
   height: 25rem;
   width: 100%;
@@ -9236,21 +9237,21 @@ div.background-image {
   background-size: cover;
   position: relative;
 }
-/* line 121, ../scss/app.scss */
+/* line 123, ../scss/app.scss */
 div.background-image h1, div.background-image h2 {
   margin: 0;
   color: #FFF;
   text-align: center;
 }
-/* line 127, ../scss/app.scss */
+/* line 129, ../scss/app.scss */
 div.background-image h1 {
   font-size: 3rem;
 }
-/* line 131, ../scss/app.scss */
+/* line 133, ../scss/app.scss */
 div.background-image h2 {
   font-size: 1.5rem;
 }
-/* line 135, ../scss/app.scss */
+/* line 137, ../scss/app.scss */
 div.background-image div.headers {
   position: absolute;
   top: 50%;
@@ -9259,49 +9260,49 @@ div.background-image div.headers {
   margin-right: -50%;
 }
 
-/* line 145, ../scss/app.scss */
+/* line 147, ../scss/app.scss */
 div.content-section {
   margin: 5rem auto;
   max-width: 960px;
 }
 
-/* line 151, ../scss/app.scss */
+/* line 153, ../scss/app.scss */
 div.three-columns-plugin {
   padding-top: 2rem;
   text-align: left;
 }
-/* line 155, ../scss/app.scss */
+/* line 157, ../scss/app.scss */
 div.three-columns-plugin div.large-4 {
   margin-bottom: 2rem;
 }
 
-/* line 162, ../scss/app.scss */
+/* line 164, ../scss/app.scss */
 div.block-quote-plugin blockquote {
   margin: 1rem 2rem;
 }
 @media only screen and (max-width: 40em) {
-  /* line 162, ../scss/app.scss */
+  /* line 164, ../scss/app.scss */
   div.block-quote-plugin blockquote {
     margin: 1rem 0 1rem 1rem;
   }
 }
-/* line 169, ../scss/app.scss */
+/* line 171, ../scss/app.scss */
 div.block-quote-plugin blockquote footer {
   text-align: right;
   font-weight: 600;
 }
 @media only screen and (max-width: 40em) {
-  /* line 169, ../scss/app.scss */
+  /* line 171, ../scss/app.scss */
   div.block-quote-plugin blockquote footer {
     margin-top: 0.5rem;
   }
 }
-/* line 177, ../scss/app.scss */
+/* line 179, ../scss/app.scss */
 div.block-quote-plugin blockquote footer span:before {
   content: "\2014\0020";
 }
 
-/* line 185, ../scss/app.scss */
+/* line 187, ../scss/app.scss */
 div.home-page-plugin {
   width: 100%;
   margin: 0;
@@ -9310,45 +9311,97 @@ div.home-page-plugin {
   background-size: cover;
   position: relative;
 }
-/* line 194, ../scss/app.scss */
+/* line 196, ../scss/app.scss */
 div.home-page-plugin div.content-container {
   color: #FFF;
   padding: 0;
 }
-/* line 198, ../scss/app.scss */
+/* line 200, ../scss/app.scss */
 div.home-page-plugin div.content-container h1, div.home-page-plugin div.content-container h2, div.home-page-plugin div.content-container h3, div.home-page-plugin div.content-container p {
   color: inherit;
 }
-/* line 202, ../scss/app.scss */
+/* line 204, ../scss/app.scss */
 div.home-page-plugin div.content-container h1 {
   font-size: 4rem;
 }
-/* line 206, ../scss/app.scss */
+/* line 208, ../scss/app.scss */
 div.home-page-plugin div.content-container h2 {
   font-size: 1.75rem;
 }
-/* line 210, ../scss/app.scss */
-div.home-page-plugin div.content-container p {
+/* line 212, ../scss/app.scss */
+div.home-page-plugin div.content-container p.description {
   margin: 3rem 15rem;
 }
-/* line 214, ../scss/app.scss */
+@media only screen and (max-width: 40em) {
+  /* line 212, ../scss/app.scss */
+  div.home-page-plugin div.content-container p.description {
+    margin: 2rem 0;
+    font-size: 1.15rem;
+  }
+}
+/* line 221, ../scss/app.scss */
+div.home-page-plugin div.content-container div.slideshow-container {
+  width: 22rem;
+  height: auto;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 40em) {
+  /* line 221, ../scss/app.scss */
+  div.home-page-plugin div.content-container div.slideshow-container {
+    width: auto;
+  }
+}
+/* line 231, ../scss/app.scss */
 div.home-page-plugin div.content-container footer {
   height: 8rem;
   width: 100%;
-  background-color: #CCC;
   position: absolute;
   bottom: 0;
+  padding: 1rem 2rem;
+}
+@media only screen and (max-width: 40em) {
+  /* line 231, ../scss/app.scss */
+  div.home-page-plugin div.content-container footer {
+    position: relative;
+    padding: 0;
+  }
+}
+/* line 243, ../scss/app.scss */
+div.home-page-plugin div.content-container footer div.footer-row {
+  width: 100%;
+}
+@media only screen and (max-width: 40em) {
+  /* line 243, ../scss/app.scss */
+  div.home-page-plugin div.content-container footer div.footer-row {
+    margin: 0;
+  }
+}
+@media only screen and (max-width: 40em) {
+  /* line 250, ../scss/app.scss */
+  div.home-page-plugin div.content-container footer div.footer-row div.social-media {
+    margin-bottom: 1.5rem;
+  }
+}
+@media only screen and (max-width: 40em) {
+  /* line 257, ../scss/app.scss */
+  div.home-page-plugin div.content-container footer div.address {
+    margin-bottom: 1.5rem;
+  }
+}
+/* line 262, ../scss/app.scss */
+div.home-page-plugin div.content-container footer div.address p {
+  margin-bottom: 0;
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 225, ../scss/app.scss */
+  /* line 274, ../scss/app.scss */
   nav.top-bar {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 231, ../scss/app.scss */
+  /* line 280, ../scss/app.scss */
   section.top-bar-section {
     display: inline-block;
   }
