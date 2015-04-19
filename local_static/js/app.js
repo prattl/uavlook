@@ -17,7 +17,6 @@ $(function() {
 
     // Expand the height of the contact form message textarea to fill the entire
     // height, only if it is present on the page
-
     var $contact_form_plugin = $(".contact-form-plugin");
     if ($contact_form_plugin.length > 0) {
         var $container_height = $contact_form_plugin.height();
@@ -31,19 +30,10 @@ $(function() {
         console.log($phone_margin_bottom);
     }
 
-    //// Disable menu click for items with a sub-menu
-    //$("li.has-dropdown > a").click(function(e) {
-    //    e.preventDefault();
-    //});
-
     $(window).resize();
 
-    // Fotorama API for slideshows
-    //var fotorama = $(".fotorama"). data("fotorama");
-    //$(".foto-next").click(function() {
-    //    fotorama.show(">");
-    //});
-    //$(".foto-prev").click(function() {
-    //    fotorama.show("<");
-    //})
+    // Expand contact form message height
+
+
 });
+

@@ -4,6 +4,8 @@ from django.utils.translation import ugettext_lazy as _
 
 from cms.models import CMSPlugin, Page
 
+import threading
+
 
 try:
     from cms.models import get_plugin_media_path
@@ -73,7 +75,7 @@ class ContactForm(UAVPlugin):
 class ContactFormSubmission(models.Model):
     name = models.CharField(_('Name'), max_length=240)
     email = models.CharField(_('Email'), max_length=240)
-    phone = models.CharField(_('Phone Number'), max_length=240, null=True, blank=True)
+    phone = models.CharField(_('Phone Number'), max_length=240)
     message = models.CharField(_('Message'), max_length=2400, null=True, blank=True)
 
     def save(self, *args, **kwargs):
