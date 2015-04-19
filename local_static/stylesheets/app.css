@@ -9398,15 +9398,21 @@ div.home-page-plugin div.content-container footer div.address p {
   margin-bottom: 0;
 }
 
+/* line 278, ../scss/app.scss */
+div.fotorama__wrap {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media only screen and (min-width: 40.063em) {
-  /* line 279, ../scss/app.scss */
+  /* line 284, ../scss/app.scss */
   nav.top-bar {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 285, ../scss/app.scss */
+  /* line 290, ../scss/app.scss */
   section.top-bar-section {
     display: inline-block;
   }

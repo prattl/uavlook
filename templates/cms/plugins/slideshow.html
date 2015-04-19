@@ -2,6 +2,7 @@
 {#<div style="max-width: 1200px;#}
 {#            height:auto;#}
 {#            margin: 0 auto;">#}
+<div class="fotorama-container">
 <div class="fotorama"
     {% if instance.show_thumbnails %}data-nav="thumbs"{% endif %}
     {% if instance.data_fit %}data-fit="{{ instance.data_fit }}"{% endif %}
@@ -27,5 +28,6 @@
             <a href="{{ item.video_url }}"></a>
         {% endif %}
     {% endfor %}
+</div>
 </div>
 {#</div>#}
