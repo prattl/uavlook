@@ -11,10 +11,6 @@
 <script src="{% static 'bower_components/modernizr/modernizr.js' %}"></script>
 
 
-<script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
-<!-- fotorama.css & fotorama.js. -->
-<link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.3/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
-<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.3/fotorama.js"></script> <!-- 16 KB -->
 
 </head>
 <body>
@@ -23,7 +19,7 @@
     {% cms_toolbar %}
 
     <!-- Medium and Large screen navigation -->
-    <nav class="top-bar" data-topbar role="navigation">
+    <nav class="top-bar" data-topbar role="navigation" >
         <ul class="title-area">
             <li class="name">
                 <h1 class="show-for-small"><a href="#">UAV Look</a></h1>
@@ -33,7 +29,7 @@
 
         <section class="top-bar-section">
             <ul class="right">
-                {% show_menu %}
+                {% show_menu 0 100 100 100 %}
             </ul>
         </section>
     </nav>
@@ -55,10 +51,13 @@
 
 {% render_block "js" %}
 
-
+<script src="{% static 'bower_components/jquery/dist/jquery.min.js' %}"></script>
 <script src="{% static 'bower_components/foundation/js/foundation.min.js' %}"></script>
-<script src="{% static 'bower_components/foundation/js/foundation/foundation.offcanvas.js' %}"></script>
+{#<script src="{% static 'bower_components/foundation/js/foundation/foundation.offcanvas.js' %}"></script>#}
 <script src="{% static 'bower_components/foundation/js/foundation/foundation.topbar.js' %}"></script>
+<!-- fotorama.css & fotorama.js. -->
+<link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.3/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.3/fotorama.js"></script> <!-- 16 KB -->
 <script src="{% static 'js/app.js' %}"></script>
 </body>
 </html>

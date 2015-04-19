@@ -1,6 +1,5 @@
 // Foundation JavaScript
 // Documentation can be found at: http://foundation.zurb.com/docs
-$(document).foundation();
 
 // Expand home page height to use the full page
 $( window ).resize(function() {
@@ -14,6 +13,8 @@ $( window ).resize(function() {
 });
 
 $(function() {
+    $(document).foundation();
+
     // Expand the height of the contact form message textarea to fill the entire
     // height, only if it is present on the page
 
@@ -29,6 +30,11 @@ $(function() {
         console.log($message_label_height);
         console.log($phone_margin_bottom);
     }
+
+    //// Disable menu click for items with a sub-menu
+    //$("li.has-dropdown > a").click(function(e) {
+    //    e.preventDefault();
+    //});
 
     $(window).resize();
 
