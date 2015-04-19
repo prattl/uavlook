@@ -89,9 +89,26 @@ class Slideshow(UAVPlugin):
         ('false', 'Never display arrows'),
     ]
 
+    DATA_FIT_CHOICES = [
+        ('contain', 'Contain'),
+        ('cover', 'Cover'),
+        ('scaledown', 'Scale Down'),
+        ('none', 'None'),
+    ]
+
     show_thumbnails = models.BooleanField(_('Show Thumbnails'), default=True, help_text='Check to display thmbnails below the slideshow.')
     show_arrows = models.CharField(_('Navigation Arrows'), default='true', help_text='Navigation Arrows',
                                    choices=ARROW_CHOICES, max_length=240)
+    data_fit = models.CharField(_('Data Fit'), default='cover',
+                                help_text='How the images should fit inside the slideshow. See http://fotorama.io/customize/fit/ for more informatioon,',
+                                choices=DATA_FIT_CHOICES, max_length=240)
+    data_width = models.CharField(_('Data Width'), null=True, blank=True, max_length=5,
+                                  help_text='Width of the slideshow. Specify a whole number (600) or a percent (100%).')
+    data_height = models.CharField(_('Data Height'), null=True, blank=True, max_length=5,
+                                  help_text='Height of the slideshow. Specify a whole number (600) or a percent (100%).')
+    data_ratio = models.CharField(_('Data Ratio'), null=True, blank=True, max_length=24,
+                                  help_text='Aspect Ratio of the slideshow. Specify either a decimal (1.333) or a fraction (800/600 or 4/3).')
+
 
     def copy_relations(self, oldinstance):
         print('Running copy_relations')

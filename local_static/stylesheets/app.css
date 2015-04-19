@@ -9341,7 +9341,7 @@ div.home-page-plugin div.content-container p.description {
 }
 /* line 221, ../scss/app.scss */
 div.home-page-plugin div.content-container div.slideshow-container {
-  width: 22rem;
+  max-width: 30rem;
   height: auto;
   margin: 0 auto;
 }
