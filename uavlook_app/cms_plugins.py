@@ -107,11 +107,12 @@ class BlockQuotePlugin(CMSPluginBase):
 
 
 class ContactFormPlugin(CMSPluginBase):
+    model = ContactForm
     name = _('Contact Form')
     render_template = 'cms/plugins/contact_form.html'
 
     def render(self, context, instance, placeholder):
-        form = ContactFormSubmissionForm()
+        form = ContactFormSubmissionForm(initial={'contact_form': instance})
         context.update({
             'instance': instance,
             'contact_form': form,

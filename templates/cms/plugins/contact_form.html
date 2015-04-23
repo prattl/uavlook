@@ -1,6 +1,7 @@
 {% load cms_tags %}
 <div class="contact-form-plugin">
-    <form action="{% url 'contact_form' %}" method="post">{% csrf_token %}
+    <form class="contact-form" action="{% url 'contact_form' %}" method="post">{% csrf_token %}
+        <input id="contact-form-id" type="hidden" name="contact_form" value="{{ instance.id }}">
         <div class="row">
             <div class="large-6 medium-6 columns">
                 <label for="{{ contact_form.name.auto_id }}">{{ contact_form.name.label }}</label>
@@ -11,14 +12,22 @@
                 {{ contact_form.phone }}
             </div>
             <div class="large-6 medium-6 columns">
+                <label for="{{ contact_form.inquiry_type.auto_id }}">{{ contact_form.inquiry_type.label }}</label>
+                {{ contact_form.inquiry_type }}
                 <label id="id_message_label" for="{{ contact_form.message.auto_id }}">{{ contact_form.message.label }}</label>
                 {{ contact_form.message }}
             </div>
         </div>
+        <div class="row errors">
+            <div class="small-12 columns">
+                <ul class="errors-list"></ul>
+            </div>
+        </div>
         <div class="row">
             <div class="large-12 columns">
-                <input type="submit" class="button" value="Submit" />
+                <input type="submit" class="button contact-submit" value="Submit" />
             </div>
         </div>
     </form>
+    <p class="contact-thank-you">Thank you for your message. We will get back to you as soon as possible.</p>
 </div>

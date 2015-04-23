@@ -1,5 +1,7 @@
 from django.conf import settings
 from django.db import models
+from django.contrib.auth.models import User
+from django.core.mail import send_mail
 from django.utils.translation import ugettext_lazy as _
 
 from cms.models import CMSPlugin, Page
@@ -69,19 +71,61 @@ class BlockQuote(UAVPlugin):
 
 
 class ContactForm(UAVPlugin):
-    pass
+    recipients = models.ManyToManyField(User, help_text='Recipients to send contact emails to.')
+
+    def recipients_list(self):
+        return [user.email for user in self.recipients.all()]
+
+    def __str__(self):
+        return 'Contact form for recipients: %s' % [rec.email for rec in self.recipients.all()]
+
+
+class InquiryType(models.Model):
+    type = models.CharField(_('Type'), max_length=240)
+
+    def __str__(self):
+        return self.type
 
 
 class ContactFormSubmission(models.Model):
     name = models.CharField(_('Name'), max_length=240)
     email = models.CharField(_('Email'), max_length=240)
-    phone = models.CharField(_('Phone Number'), max_length=240)
+    phone = models.CharField(_('Phone Number'), max_length=240, default='')
     message = models.CharField(_('Message'), max_length=2400, null=True, blank=True)
+    inquiry_type = models.ForeignKey(InquiryType)
+    contact_form = models.ForeignKey(ContactForm)\
+
+    def __str__(self):
+        return 'Contact Submission from {} at {}'.format(self.name, self.email)
 
     def save(self, *args, **kwargs):
-        # TODO: Send email to staff
-        print('Sending email to: ', settings.STAFF_USERS)
+        print('Contact form submission save.')
+        print('Sending email to: ', self.contact_form.recipients.all())
+        print('Starting email thread.')
+        email_thread = threading.Thread(target=send_email_thread,
+                                        args=(self,))
+        email_thread.start()
+        print('Email thread started.')
         super(ContactFormSubmission, self).save(*args, **kwargs)
+
+
+def send_email_thread(form_submission):
+    recipients = form_submission.contact_form.recipients_list()
+    # sender = 'support@uavlook.com'
+    sender = 'Lenny@prattdev.net'
+    subject = 'New Inquiry from uavlook.com'
+    message = """
+    Somebody submitted a Contact form on uavlook.com with the following information:
+
+    Name: {}
+    Email: {}
+    Phone: {}
+    Inquiry Type: {}
+    Message: {}
+
+    """.format(form_submission.name, form_submission.email, form_submission.phone,
+               form_submission.inquiry_type, form_submission.message)
+    send_mail(subject=subject, message=message, from_email=sender, recipient_list=recipients, fail_silently=False)
 
 
 class Slideshow(UAVPlugin):

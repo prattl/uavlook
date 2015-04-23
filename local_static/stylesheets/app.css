@@ -9417,3 +9417,9 @@ div.fotorama__wrap {
     display: inline-block;
   }
 }
+
+/* line 297, ../scss/app.scss */
+div.contact-form-plugin p.contact-thank-you {
+  display: none;
+  margin-bottom: 6rem;
+}
