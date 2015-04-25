@@ -6,7 +6,7 @@
     {% endif %}
 
     <div class="header">
-        <img src="{{ instance.logo.url }}" />
+        {% if instance.logo %}<img src="{{ instance.logo.url }}" />{% endif %}
         <h1>{{ instance.header }}</h1>
         <h2>{{ instance.subheader }}</h2>
     </div>
