@@ -9444,37 +9444,38 @@ nav.hovering-menu ul li a:hover {
 /* line 395, ../scss/app.scss */
 nav.hovering-menu ul li ul.dropdown {
   margin-left: 1.5rem;
+  text-align: left;
 }
-/* line 400, ../scss/app.scss */
+/* line 401, ../scss/app.scss */
 nav.hovering-menu ul li.has-dropdown a:after {
   border-color: black transparent transparent transparent !important;
 }
-/* line 404, ../scss/app.scss */
+/* line 405, ../scss/app.scss */
 nav.hovering-menu ul li.has-dropdown a:hover:after {
   border-color: white transparent transparent transparent !important;
 }
 
-/* line 413, ../scss/app.scss */
+/* line 414, ../scss/app.scss */
 div.fotorama__wrap {
   margin-left: auto;
   margin-right: auto;
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 419, ../scss/app.scss */
+  /* line 420, ../scss/app.scss */
   nav.top-bar {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 425, ../scss/app.scss */
+  /* line 426, ../scss/app.scss */
   section.top-bar-section {
     display: inline-block;
   }
 }
 
-/* line 432, ../scss/app.scss */
+/* line 433, ../scss/app.scss */
 div.contact-form-plugin p.contact-thank-you {
   display: none;
   margin-bottom: 6rem;
