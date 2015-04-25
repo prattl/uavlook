@@ -56,9 +56,9 @@
 
 // Allows the use of rem-calc() or lower-bound() in your settings
 @import "foundation/functions";
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:700,600,400);
-@import url(http://fonts.googleapis.com/css?family=Oswald:400,700);
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+//@import url(http://fonts.googleapis.com/css?family=Open+Sans:700,600,400);
+//@import url(http://fonts.googleapis.com/css?family=Oswald:400,700);
+//@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with browser-based text zoom or user-set defaults.
 
@@ -91,7 +91,7 @@ $include-html-global-classes: $include-html-classes;
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // We use these to define default font stacks
-$font-family-sans-serif: 'Open Sans', sans-serif;
+$font-family-sans-serif: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
 // $font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
 // $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 
@@ -200,7 +200,7 @@ $font-family-sans-serif: 'Open Sans', sans-serif;
 // $include-html-type-classes: $include-html-classes;
 
 // We use these to control header font styles
-$header-font-family: 'Oswald', sans-serif;
+$header-font-family: $font-family-sans-serif; //'Oswald', sans-serif;
 // $header-font-weight: $font-weight-normal;
 // $header-font-style: normal;
 // $header-font-color: $jet;

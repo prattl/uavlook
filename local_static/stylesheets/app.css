@@ -1,6 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:700,600,400);
-@import url(http://fonts.googleapis.com/css?family=Oswald:400,700);
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 /* line 348, ../bower_components/foundation/scss/foundation/components/_global.scss */
 meta.foundation-version {
   font-family: "/5.5.1/";
@@ -91,7 +88,7 @@ body {
   color: #222;
   padding: 0;
   margin: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
   font-weight: normal;
   font-style: normal;
   line-height: 1.5;
@@ -1704,7 +1701,7 @@ select {
   color: #222222;
   padding: 1rem;
   display: block;
-  font-family: "Open Sans", sans-serif;
+  font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
   font-size: 1rem;
 }
 /* line 143, ../bower_components/foundation/scss/foundation/components/_accordion.scss */
@@ -2411,7 +2408,7 @@ button, .button {
   border-style: solid;
   border-width: 0;
   cursor: pointer;
-  font-family: "Open Sans", sans-serif;
+  font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
   font-weight: normal;
   line-height: normal;
   margin: 0 0 1.25rem;
@@ -4262,7 +4259,7 @@ select {
   border-color: #cccccc;
   padding: 0.5rem;
   font-size: 0.875rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
   color: rgba(0, 0, 0, 0.75);
   line-height: normal;
   border-radius: 0;
@@ -4955,7 +4952,7 @@ kbd {
 /* line 91, ../bower_components/foundation/scss/foundation/components/_labels.scss */
 .label {
   font-weight: normal;
-  font-family: "Open Sans", sans-serif;
+  font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
   text-align: center;
   text-decoration: none;
   line-height: 1;
@@ -5526,7 +5523,7 @@ ul.pagination li {
   color: #EEEEEE;
   font-weight: normal;
   font-size: 1rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
 }
 /* line 143, ../bower_components/foundation/scss/foundation/components/_pricing-tables.scss */
 .pricing-table .price {
@@ -5536,7 +5533,7 @@ ul.pagination li {
   color: #333333;
   font-weight: normal;
   font-size: 2rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
 }
 /* line 144, ../bower_components/foundation/scss/foundation/components/_pricing-tables.scss */
 .pricing-table .description {
@@ -5892,7 +5889,7 @@ ul.pagination li {
   padding: 0.875rem 0;
   list-style-type: none;
   list-style-position: outside;
-  font-family: "Open Sans", sans-serif;
+  font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
 }
 /* line 70, ../bower_components/foundation/scss/foundation/components/_side-nav.scss */
 .side-nav li {
@@ -5916,7 +5913,7 @@ ul.pagination li {
 .side-nav li.active > a:first-child:not(.button) {
   color: #1cc7ff;
   font-weight: normal;
-  font-family: "Open Sans", sans-serif;
+  font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
 }
 /* line 93, ../bower_components/foundation/scss/foundation/components/_side-nav.scss */
 .side-nav li.divider {
@@ -6102,7 +6099,7 @@ ul.pagination li {
   float: left;
   margin-left: 1rem;
   margin-bottom: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
   font-weight: normal;
   font-size: 0.875rem;
   color: #999999;
@@ -6380,7 +6377,7 @@ table tr td {
   background-color: #EFEFEF;
   color: #222222;
   padding: 1rem 2rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
   font-size: 1rem;
 }
 /* line 48, ../bower_components/foundation/scss/foundation/components/_tabs.scss */
@@ -6822,7 +6819,7 @@ meta.foundation-mq-topbar {
   color: #FFFFFF;
   padding: 12px 0 12px 0;
   padding-left: 0.9375rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
   font-size: 0.8125rem;
   font-weight: normal;
   text-transform: none;
@@ -7654,7 +7651,7 @@ p aside {
 /* Default header styles */
 /* line 252, ../bower_components/foundation/scss/foundation/components/_type.scss */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Oswald", sans-serif;
+  font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
   font-weight: normal;
   font-style: normal;
   color: #222222;
@@ -9319,154 +9316,165 @@ div.home-page-plugin-2 div.header {
   left: 1rem;
   color: #FFF;
 }
-/* line 201, ../scss/app.scss */
+@media only screen and (max-width: 40em) {
+  /* line 195, ../scss/app.scss */
+  div.home-page-plugin-2 div.header {
+    left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+}
+/* line 206, ../scss/app.scss */
 div.home-page-plugin-2 div.header img {
-  max-width: 700px;
+  max-width: 500px;
 }
-/* line 205, ../scss/app.scss */
+@media only screen and (max-width: 40em) {
+  /* line 206, ../scss/app.scss */
+  div.home-page-plugin-2 div.header img {
+    max-width: 100%;
+  }
+}
+/* line 214, ../scss/app.scss */
 div.home-page-plugin-2 div.header h1, div.home-page-plugin-2 div.header h2 {
-  color: #FFF;
-  text-shadow: 0 0 5px #000, 0 0 10px #000;
+  color: #000;
 }
-/* line 210, ../scss/app.scss */
+/* line 218, ../scss/app.scss */
+div.home-page-plugin-2 div.header h1 {
+  font-size: 2rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+}
+@media only screen and (max-width: 40em) {
+  /* line 218, ../scss/app.scss */
+  div.home-page-plugin-2 div.header h1 {
+    font-size: 1.25rem;
+    margin-top: 1.25rem;
+  }
+}
+/* line 229, ../scss/app.scss */
 div.home-page-plugin-2 div.header h2 {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
+  margin-top: 0;
 }
-/* line 215, ../scss/app.scss */
+@media only screen and (max-width: 40em) {
+  /* line 229, ../scss/app.scss */
+  div.home-page-plugin-2 div.header h2 {
+    font-size: 1rem;
+  }
+}
+/* line 239, ../scss/app.scss */
 div.home-page-plugin-2 div.homepage-social-media {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
 }
-/* line 220, ../scss/app.scss */
+@media only screen and (max-width: 40em) {
+  /* line 239, ../scss/app.scss */
+  div.home-page-plugin-2 div.homepage-social-media {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* line 252, ../scss/app.scss */
 div.home-page-plugin-2 div.homepage-social-media ul {
   list-style-position: inside;
   margin: 0;
   padding-right: 10px;
   font-size: 2rem;
 }
-/* line 228, ../scss/app.scss */
+@media only screen and (max-width: 40em) {
+  /* line 252, ../scss/app.scss */
+  div.home-page-plugin-2 div.homepage-social-media ul {
+    padding: 0;
+    text-align: center;
+  }
+}
+/* line 265, ../scss/app.scss */
 div.home-page-plugin-2 div.homepage-social-media ul li a {
   color: #FFF;
   text-shadow: 0 0 5px #000, 0 0 10px #000;
 }
-/* line 233, ../scss/app.scss */
+/* line 270, ../scss/app.scss */
 div.home-page-plugin-2 div.homepage-social-media ul li a:hover {
   color: #0078a0 !important;
 }
+@media only screen and (max-width: 40em) {
+  /* line 263, ../scss/app.scss */
+  div.home-page-plugin-2 div.homepage-social-media ul li {
+    float: none;
+    display: inline-block;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+}
 
-/* line 242, ../scss/app.scss */
-div.home-page-plugin {
-  width: 100%;
-  margin: 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-/* line 251, ../scss/app.scss */
-div.home-page-plugin div.content-container {
-  color: #FFF;
-  padding: 0;
-}
-/* line 255, ../scss/app.scss */
-div.home-page-plugin div.content-container h1, div.home-page-plugin div.content-container h2, div.home-page-plugin div.content-container h3, div.home-page-plugin div.content-container p {
-  color: inherit;
-}
-/* line 259, ../scss/app.scss */
-div.home-page-plugin div.content-container h1 {
-  font-size: 4rem;
-}
-/* line 263, ../scss/app.scss */
-div.home-page-plugin div.content-container h2 {
-  font-size: 1.75rem;
-}
-/* line 267, ../scss/app.scss */
-div.home-page-plugin div.content-container p.description {
-  margin: 3rem 15rem;
-}
-@media only screen and (max-width: 40em) {
-  /* line 267, ../scss/app.scss */
-  div.home-page-plugin div.content-container p.description {
-    margin: 2rem 0;
-    font-size: 1.15rem;
-  }
-}
-/* line 276, ../scss/app.scss */
-div.home-page-plugin div.content-container div.slideshow-container {
-  max-width: 30rem;
-  height: auto;
-  margin: 0 auto;
-}
-@media only screen and (max-width: 40em) {
-  /* line 276, ../scss/app.scss */
-  div.home-page-plugin div.content-container div.slideshow-container {
-    width: auto;
-  }
-}
-/* line 286, ../scss/app.scss */
-div.home-page-plugin div.content-container footer {
-  height: 8rem;
-  width: 100%;
+/* line 369, ../scss/app.scss */
+nav.hovering-menu {
   position: absolute;
-  bottom: 0;
-  padding: 1rem 2rem;
+  top: 1rem;
+  z-index: 100;
+  background: none;
 }
-@media only screen and (max-width: 40em) {
-  /* line 286, ../scss/app.scss */
-  div.home-page-plugin div.content-container footer {
-    position: relative;
-    padding: 0;
+@media only screen and (min-width: 40.063em) {
+  /* line 369, ../scss/app.scss */
+  nav.hovering-menu {
+    right: 1rem;
   }
 }
-/* line 298, ../scss/app.scss */
-div.home-page-plugin div.content-container footer div.footer-row {
-  width: 100%;
+/* line 379, ../scss/app.scss */
+nav.hovering-menu ul {
+  margin: 0;
 }
-@media only screen and (max-width: 40em) {
-  /* line 298, ../scss/app.scss */
-  div.home-page-plugin div.content-container footer div.footer-row {
-    margin: 0;
-  }
+/* line 382, ../scss/app.scss */
+nav.hovering-menu ul li {
+  background: none !important;
 }
-@media only screen and (max-width: 40em) {
-  /* line 305, ../scss/app.scss */
-  div.home-page-plugin div.content-container footer div.footer-row div.social-media {
-    margin-bottom: 1.5rem;
-  }
+/* line 385, ../scss/app.scss */
+nav.hovering-menu ul li a {
+  color: #000 !important;
+  background: none !important;
+  font-size: 1rem !important;
 }
-@media only screen and (max-width: 40em) {
-  /* line 312, ../scss/app.scss */
-  div.home-page-plugin div.content-container footer div.address {
-    margin-bottom: 1.5rem;
-  }
+/* line 391, ../scss/app.scss */
+nav.hovering-menu ul li a:hover {
+  color: #FFF !important;
 }
-/* line 317, ../scss/app.scss */
-div.home-page-plugin div.content-container footer div.address p {
-  margin-bottom: 0;
+/* line 395, ../scss/app.scss */
+nav.hovering-menu ul li ul.dropdown {
+  margin-left: 1.5rem;
+}
+/* line 400, ../scss/app.scss */
+nav.hovering-menu ul li.has-dropdown a:after {
+  border-color: black transparent transparent transparent !important;
+}
+/* line 404, ../scss/app.scss */
+nav.hovering-menu ul li.has-dropdown a:hover:after {
+  border-color: white transparent transparent transparent !important;
 }
 
-/* line 328, ../scss/app.scss */
+/* line 413, ../scss/app.scss */
 div.fotorama__wrap {
   margin-left: auto;
   margin-right: auto;
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 334, ../scss/app.scss */
+  /* line 419, ../scss/app.scss */
   nav.top-bar {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 340, ../scss/app.scss */
+  /* line 425, ../scss/app.scss */
   section.top-bar-section {
     display: inline-block;
   }
 }
 
-/* line 347, ../scss/app.scss */
+/* line 432, ../scss/app.scss */
 div.contact-form-plugin p.contact-thank-you {
   display: none;
   margin-bottom: 6rem;

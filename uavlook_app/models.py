@@ -169,7 +169,8 @@ class Slideshow(UAVPlugin):
     data_loop = models.BooleanField(_('Data Loop'), default=False, help_text='Check this to loop to the beginning of the slideshow when the end is reached.')
     data_autoplay = models.IntegerField(_('Data Autoplay'), null=True, blank=True,
                                         help_text='Enter a number here to enable auto-play. Enter the number of milliseconds to specify how long each image should appear. For example, for 5 seconds enter 5000.')
-    data_stopautoplayontouch = models.BooleanField(_('Data Stop Autoplay On Touch'), default=True, help_text='Check this to enable autoplay on touch devices (if a number was entered above). By default, autoplay is not enabled on touch devices.')
+    data_stopautoplayontouch = models.BooleanField(_('Data Stop Autoplay On Touch'), default=True,
+                                                   help_text='Uncheck this to enable autoplay on touch devices (if a number was entered above). By default, autoplay is not enabled on touch devices.')
     data_transitionduration = models.IntegerField(_('Data Transition Duration'), null=True, blank=True,
                                                   help_text='Enter a number to control the duration of the transition effect in milliseconds. For example to fade to the next image in 0.5 seconds, enter 500.')
 
