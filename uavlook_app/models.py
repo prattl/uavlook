@@ -142,19 +142,36 @@ class Slideshow(UAVPlugin):
         ('none', 'None'),
     ]
 
+    DATA_TRANSITION_CHOICES = [
+        ('slide', 'Slide'),
+        ('crossfade', 'Crossfade (dissolve)'),
+    ]
+
     show_thumbnails = models.BooleanField(_('Show Thumbnails'), default=True, help_text='Check to display thmbnails below the slideshow.')
     show_arrows = models.CharField(_('Navigation Arrows'), default='true', help_text='Navigation Arrows',
                                    choices=ARROW_CHOICES, max_length=240)
+    data_click = models.BooleanField(_('Data Click'), default=True, help_text='Check to enable users to click anywhere on the slideshow to advance to the next or previous image. Default is True.')
+    data_swipe = models.BooleanField(_('Data Swipe'), default=True, help_text='Check to enable users to swipe on the slideshow to advance to the next or previous image. Default is True.')
     data_fit = models.CharField(_('Data Fit'), default='cover',
                                 help_text='How the images should fit inside the slideshow. See http://fotorama.io/customize/fit/ for more informatioon,',
                                 choices=DATA_FIT_CHOICES, max_length=240)
+    data_transition = models.CharField(_('Data Transition'), null=True, blank=True, max_length=56,
+                                       help_text='Type of transition. Default is slide.',
+                                       choices=DATA_TRANSITION_CHOICES)
+    data_shuffle = models.BooleanField(_('Data Shuffle'), default=False,
+                                       help_text='Check to shuffle the images in a random order when the page loads.')
     data_width = models.CharField(_('Data Width'), null=True, blank=True, max_length=5,
                                   help_text='Width of the slideshow. Specify a whole number (600) or a percent (100%).')
     data_height = models.CharField(_('Data Height'), null=True, blank=True, max_length=5,
                                   help_text='Height of the slideshow. Specify a whole number (600) or a percent (100%).')
     data_ratio = models.CharField(_('Data Ratio'), null=True, blank=True, max_length=24,
                                   help_text='Aspect Ratio of the slideshow. Specify either a decimal (1.333) or a fraction (800/600 or 4/3).')
-
+    data_loop = models.BooleanField(_('Data Loop'), default=False, help_text='Check this to loop to the beginning of the slideshow when the end is reached.')
+    data_autoplay = models.IntegerField(_('Data Autoplay'), null=True, blank=True,
+                                        help_text='Enter a number here to enable auto-play. Enter the number of milliseconds to specify how long each image should appear. For example, for 5 seconds enter 5000.')
+    data_stopautoplayontouch = models.BooleanField(_('Data Stop Autoplay On Touch'), default=True, help_text='Check this to enable autoplay on touch devices (if a number was entered above). By default, autoplay is not enabled on touch devices.')
+    data_transitionduration = models.IntegerField(_('Data Transition Duration'), null=True, blank=True,
+                                                  help_text='Enter a number to control the duration of the transition effect in milliseconds. For example to fade to the next image in 0.5 seconds, enter 500.')
 
     def copy_relations(self, oldinstance):
         print('Running copy_relations')
@@ -181,4 +198,4 @@ class HomePage(UAVPlugin):
     subheader = models.CharField(_('sub header'), max_length=240, null=True, blank=True)
     opacity = models.DecimalField(default=0.00, max_digits=3, decimal_places=2,
                                     help_text='The opacity of this page\'s background. 0.00 is transparent, and 1.00 is all black. Use up to 2 decimal places.')
-    image = models.ImageField(_("Background iImage"), null=True, blank=True, upload_to=get_plugin_media_path)
+    logo = models.ImageField(_("Logo Image"), null=True, blank=True, upload_to=get_plugin_media_path)

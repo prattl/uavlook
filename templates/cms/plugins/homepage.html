@@ -1,41 +1,65 @@
 {% load cms_tags %}
 
-<div class="home-page-plugin" style="{% if instance.image %}background-image: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) ), url('{{ instance.image.url }}');{% endif %}">
-    <div class="row">
-        <div class="large-12 columns content-container text-center" style="background: rgba(0, 0, 0, {% if instance.opacity %}{{ instance.opacity }}{% else %}0.5{% endif %});">
-            <div class="text-content" style="padding: 0 1rem;">
-                <h1 style="margin-top: 2rem;">UAV Look</h1>
-                <h2>Aerial Photography and Video</h2>
-                <p class="description">
-                    UAV Look is an aerial photography and video company that offers rare and captivating visuals for real
-                    estate, business marketing, and a variety of events.
-                </p>
+<div class="home-page-plugin-2">
+    {% if slideshow %}
+        {% render_plugin slideshow %}
+    {% endif %}
 
-                <div class="slideshow-container">
-                {% if slideshow %}
-                    {% render_plugin slideshow %}
-                {% endif %}
-                </div>
-            </div>
-
-            <footer>
-                <div class="row footer-row">
-                    <div class="large-6 medium-6 medium-push-6 columns">
-                        {% if social_media %}
-                            {% render_plugin social_media %}
-                        {% endif %}
-                    </div>
-                    <div class="large-6 medium-6 medium-pull-6 columns text-left">
-                        <div class="address">
-                            <p>Newburyport, MA</p>
-                            <p>978.123.4567</p>
-                            <p>ethan@uavlook.com</p>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
+    <div class="header">
+        <img src="{{ instance.logo.url }}" />
+        <h1>{{ instance.header }}</h1>
+        <h2>{{ instance.subheader }}</h2>
     </div>
+
+    {% if social_media %}
+    <div class="homepage-social-media">
+        <ul class="inline-list">
+            {% if social_media.facebook %}<li><a href="{{ social_media.facebook  }}" class="ion-social-facebook"></a></li>{% endif %}
+            {% if social_media.google_plus %}<li><a href="{{ social_media.google_plus }}" class="ion-social-googleplus"></a></li>{% endif %}
+            {% if social_media.twitter %}<li><a href="{{ social_media.twitter }}" class="ion-social-twitter"></a></li>{% endif %}
+            {% if social_media.instagram %}<li><a href="{{ social_media.instagram }}" class="ion-social-instagram"></a></li>{% endif %}
+            {% if social_media.youtube %}<li><a href="{{ social_media.youtube }}" class="ion-social-youtube"></a></li>{% endif %}
+        </ul>
+    </div>
+    {% endif %}
 </div>
+
+{#<div class="home-page-plugin" style="{% if instance.image %}background-image: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) ), url('{{ instance.image.url }}');{% endif %}">#}
+{#    <div class="row">#}
+{#        <div class="large-12 columns content-container text-center" style="background: rgba(0, 0, 0, {% if instance.opacity %}{{ instance.opacity }}{% else %}0.5{% endif %});">#}
+{#            <div class="text-content" style="padding: 0 1rem;">#}
+{#                <h1 style="margin-top: 2rem;">UAV Look</h1>#}
+{#                <h2>Aerial Photography and Video</h2>#}
+{#                <p class="description">#}
+{#                    UAV Look is an aerial photography and video company that offers rare and captivating visuals for real#}
+{#                    estate, business marketing, and a variety of events.#}
+{#                </p>#}
+{##}
+{#                <div class="slideshow-container">#}
+{#                {% if slideshow %}#}
+{#                    {% render_plugin slideshow %}#}
+{#                {% endif %}#}
+{#                </div>#}
+{#            </div>#}
+{##}
+{#            <footer>#}
+{#                <div class="row footer-row">#}
+{#                    <div class="large-6 medium-6 medium-push-6 columns">#}
+{#                        {% if social_media %}#}
+{#                            {% render_plugin social_media %}#}
+{#                        {% endif %}#}
+{#                    </div>#}
+{#                    <div class="large-6 medium-6 medium-pull-6 columns text-left">#}
+{#                        <div class="address">#}
+{#                            <p>Newburyport, MA</p>#}
+{#                            <p>978.123.4567</p>#}
+{#                            <p>ethan@uavlook.com</p>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </footer>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
 
 

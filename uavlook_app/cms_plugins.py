@@ -158,6 +158,7 @@ class HomePagePlugin(CMSPluginBase):
                 context.update({'social_media': plugin})
         context.update({
             'instance': instance,
+            'homepage': True,
         })
         return context
 

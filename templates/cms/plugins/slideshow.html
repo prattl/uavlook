@@ -1,33 +1,27 @@
 {% load cms_tags %}
-{#<div style="max-width: 1200px;#}
-{#            height:auto;#}
-{#            margin: 0 auto;">#}
 <div class="fotorama-container">
-<div class="fotorama"
-    {% if instance.show_thumbnails %}data-nav="thumbs"{% endif %}
-    {% if instance.data_fit %}data-fit="{{ instance.data_fit }}"{% endif %}
-    {% if instance.data_width %}data-width="{{ instance.data_width }}"{% endif %}
-    {% if instance.data_height %}data-height ="{{ instance.data_height  }}"{% endif %}
-    {% if instance.data_ratio %}data-ratio="{{ instance.data_ratio  }}"{% endif %}
-    {% if instance.show_arrows %}data-arrows="{{ instance.show_arrows  }}"{% endif %}
-    data-transition="crossfade">
-{#        data-nav="thumbs"#}
-{#        data-fit="cover"#}
-{#        data-width="100%"#}
-{#        data-maxwidth="1500"#}
-{#        data-minwidth="400"#}
-{#        data-maxheight="100%"#}
-{#        data-minheight="300"#}
-{#        data-ratio="3/2"#}
-{#<div class="fotorama" data-nav="thumbs" data-width="100%" data-height="80%">#}
-    {% for item in media %}
-        {% if item.image %}
-{#            <div data-img="{{ item.image.url }}"><span></span></div>#}
-            <img src="{{ item.image.url }}" >
-        {% elif item.video_url %}
-            <a href="{{ item.video_url }}"></a>
-        {% endif %}
-    {% endfor %}
+    <div class="fotorama"
+        {% if homepage %}data-nav="none" {% elif instance.show_thumbnails %}data-nav="thumbs"{% endif %}
+        {% if instance.data_fit %}data-fit="{{ instance.data_fit }}"{% endif %}
+        {% if instance.data_width %}data-width="{{ instance.data_width }}"{% endif %}
+        {% if instance.data_height %}data-height ="{{ instance.data_height  }}"{% endif %}
+        {% if instance.data_ratio %}data-ratio="{{ instance.data_ratio  }}"{% endif %}
+        {% if instance.show_arrows %}data-arrows="{{ instance.show_arrows  }}"{% endif %}
+        {% if instance.data_click %}data-click="true" {% else %}data-click="false"{% endif %}
+        {% if instance.data_swipe %}data-swipe="true" {% else%}data-swipe="false"{% endif %}
+        {% if instance.data_shuffle %}data-shuffle="true"{% else%}data-shuffle="false"{% endif %}
+        data-transition="crossfade"
+        {% if instance.data_transitionduration %}data-transitionduration="{{ instance.data_transitionduration }}"{% endif %}
+        {% if instance.data_loop %}data-loop="true" {% else%}data-loop="false"{% endif %}
+        {% if instance.data_autoplay %}data-autoplay="{{ instance.data_autoplay }}"{% endif %}
+        {% if instance.data_stopautoplayontouch %}data-stopautoplayontouch="true" {% else %}stopautoplayontouch="false"{% endif %}
+            >
+       {% for item in media %}
+            {% if item.image %}
+                <img src="{{ item.image.url }}" >
+            {% elif item.video_url %}
+                <a href="{{ item.video_url }}"></a>
+            {% endif %}
+        {% endfor %}
+    </div>
 </div>
-</div>
-{#</div>#}

@@ -18,6 +18,9 @@
 <div class="page-wrapper">
     {% cms_toolbar %}
 
+
+
+    {% block menu %}
     <!-- Medium and Large screen navigation -->
     <nav class="top-bar" data-topbar role="navigation" >
         <ul class="title-area">
@@ -33,6 +36,8 @@
             </ul>
         </section>
     </nav>
+    {% endblock %}
+
     {% block entire_page %}
 
     <section class="main-section">
@@ -46,8 +51,10 @@
         </footer>
         {% endblock %}
     </section>
+
+   {% endblock %}
+
 </div>
-{% endblock %}
 
 {% render_block "js" %}
 

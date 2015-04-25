@@ -9307,7 +9307,55 @@ div.block-quote-plugin blockquote footer span:before {
   content: "\2014\0020";
 }
 
-/* line 192, ../scss/app.scss */
+/* line 191, ../scss/app.scss */
+div.home-page-plugin-2 {
+  height: 100%;
+  width: 100%;
+}
+/* line 195, ../scss/app.scss */
+div.home-page-plugin-2 div.header {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: #FFF;
+}
+/* line 201, ../scss/app.scss */
+div.home-page-plugin-2 div.header img {
+  max-width: 700px;
+}
+/* line 205, ../scss/app.scss */
+div.home-page-plugin-2 div.header h1, div.home-page-plugin-2 div.header h2 {
+  color: #FFF;
+  text-shadow: 0 0 5px #000, 0 0 10px #000;
+}
+/* line 210, ../scss/app.scss */
+div.home-page-plugin-2 div.header h2 {
+  font-size: 1.75rem;
+}
+/* line 215, ../scss/app.scss */
+div.home-page-plugin-2 div.homepage-social-media {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+/* line 220, ../scss/app.scss */
+div.home-page-plugin-2 div.homepage-social-media ul {
+  list-style-position: inside;
+  margin: 0;
+  padding-right: 10px;
+  font-size: 2rem;
+}
+/* line 228, ../scss/app.scss */
+div.home-page-plugin-2 div.homepage-social-media ul li a {
+  color: #FFF;
+  text-shadow: 0 0 5px #000, 0 0 10px #000;
+}
+/* line 233, ../scss/app.scss */
+div.home-page-plugin-2 div.homepage-social-media ul li a:hover {
+  color: #0078a0 !important;
+}
+
+/* line 242, ../scss/app.scss */
 div.home-page-plugin {
   width: 100%;
   margin: 0;
@@ -9316,47 +9364,47 @@ div.home-page-plugin {
   background-size: cover;
   position: relative;
 }
-/* line 201, ../scss/app.scss */
+/* line 251, ../scss/app.scss */
 div.home-page-plugin div.content-container {
   color: #FFF;
   padding: 0;
 }
-/* line 205, ../scss/app.scss */
+/* line 255, ../scss/app.scss */
 div.home-page-plugin div.content-container h1, div.home-page-plugin div.content-container h2, div.home-page-plugin div.content-container h3, div.home-page-plugin div.content-container p {
   color: inherit;
 }
-/* line 209, ../scss/app.scss */
+/* line 259, ../scss/app.scss */
 div.home-page-plugin div.content-container h1 {
   font-size: 4rem;
 }
-/* line 213, ../scss/app.scss */
+/* line 263, ../scss/app.scss */
 div.home-page-plugin div.content-container h2 {
   font-size: 1.75rem;
 }
-/* line 217, ../scss/app.scss */
+/* line 267, ../scss/app.scss */
 div.home-page-plugin div.content-container p.description {
   margin: 3rem 15rem;
 }
 @media only screen and (max-width: 40em) {
-  /* line 217, ../scss/app.scss */
+  /* line 267, ../scss/app.scss */
   div.home-page-plugin div.content-container p.description {
     margin: 2rem 0;
     font-size: 1.15rem;
   }
 }
-/* line 226, ../scss/app.scss */
+/* line 276, ../scss/app.scss */
 div.home-page-plugin div.content-container div.slideshow-container {
   max-width: 30rem;
   height: auto;
   margin: 0 auto;
 }
 @media only screen and (max-width: 40em) {
-  /* line 226, ../scss/app.scss */
+  /* line 276, ../scss/app.scss */
   div.home-page-plugin div.content-container div.slideshow-container {
     width: auto;
   }
 }
-/* line 236, ../scss/app.scss */
+/* line 286, ../scss/app.scss */
 div.home-page-plugin div.content-container footer {
   height: 8rem;
   width: 100%;
@@ -9365,60 +9413,60 @@ div.home-page-plugin div.content-container footer {
   padding: 1rem 2rem;
 }
 @media only screen and (max-width: 40em) {
-  /* line 236, ../scss/app.scss */
+  /* line 286, ../scss/app.scss */
   div.home-page-plugin div.content-container footer {
     position: relative;
     padding: 0;
   }
 }
-/* line 248, ../scss/app.scss */
+/* line 298, ../scss/app.scss */
 div.home-page-plugin div.content-container footer div.footer-row {
   width: 100%;
 }
 @media only screen and (max-width: 40em) {
-  /* line 248, ../scss/app.scss */
+  /* line 298, ../scss/app.scss */
   div.home-page-plugin div.content-container footer div.footer-row {
     margin: 0;
   }
 }
 @media only screen and (max-width: 40em) {
-  /* line 255, ../scss/app.scss */
+  /* line 305, ../scss/app.scss */
   div.home-page-plugin div.content-container footer div.footer-row div.social-media {
     margin-bottom: 1.5rem;
   }
 }
 @media only screen and (max-width: 40em) {
-  /* line 262, ../scss/app.scss */
+  /* line 312, ../scss/app.scss */
   div.home-page-plugin div.content-container footer div.address {
     margin-bottom: 1.5rem;
   }
 }
-/* line 267, ../scss/app.scss */
+/* line 317, ../scss/app.scss */
 div.home-page-plugin div.content-container footer div.address p {
   margin-bottom: 0;
 }
 
-/* line 278, ../scss/app.scss */
+/* line 328, ../scss/app.scss */
 div.fotorama__wrap {
   margin-left: auto;
   margin-right: auto;
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 284, ../scss/app.scss */
+  /* line 334, ../scss/app.scss */
   nav.top-bar {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 290, ../scss/app.scss */
+  /* line 340, ../scss/app.scss */
   section.top-bar-section {
     display: inline-block;
   }
 }
 
-/* line 297, ../scss/app.scss */
+/* line 347, ../scss/app.scss */
 div.contact-form-plugin p.contact-thank-you {
   display: none;
   margin-bottom: 6rem;
