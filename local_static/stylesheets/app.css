@@ -9413,69 +9413,91 @@ div.home-page-plugin-2 div.homepage-social-media ul li a:hover {
 /* line 369, ../scss/app.scss */
 nav.hovering-menu {
   position: absolute;
-  top: 1rem;
+  top: 0;
   z-index: 100;
   background: none;
+  width: 100%;
 }
 @media only screen and (min-width: 40.063em) {
   /* line 369, ../scss/app.scss */
   nav.hovering-menu {
     right: 1rem;
+    top: 1rem;
+    width: auto;
   }
 }
-/* line 379, ../scss/app.scss */
+/* line 386, ../scss/app.scss */
 nav.hovering-menu ul {
   margin: 0;
 }
-/* line 382, ../scss/app.scss */
-nav.hovering-menu ul li {
-  background: none !important;
+@media only screen and (min-width: 40.063em) {
+  /* line 389, ../scss/app.scss */
+  nav.hovering-menu ul li {
+    background: none !important;
+  }
 }
-/* line 385, ../scss/app.scss */
+/* line 394, ../scss/app.scss */
 nav.hovering-menu ul li a {
-  color: #000 !important;
   background: none !important;
   font-size: 1rem !important;
 }
-/* line 391, ../scss/app.scss */
+@media only screen and (min-width: 40.063em) {
+  /* line 394, ../scss/app.scss */
+  nav.hovering-menu ul li a {
+    color: #000 !important;
+  }
+}
+/* line 403, ../scss/app.scss */
 nav.hovering-menu ul li a:hover {
   color: #FFF !important;
 }
-/* line 395, ../scss/app.scss */
+/* line 407, ../scss/app.scss */
 nav.hovering-menu ul li ul.dropdown {
-  margin-left: 1.5rem;
   text-align: left;
 }
-/* line 401, ../scss/app.scss */
-nav.hovering-menu ul li.has-dropdown a:after {
-  border-color: black transparent transparent transparent !important;
+@media only screen and (min-width: 40.063em) {
+  /* line 407, ../scss/app.scss */
+  nav.hovering-menu ul li ul.dropdown {
+    margin-left: 1.5rem;
+  }
 }
-/* line 405, ../scss/app.scss */
-nav.hovering-menu ul li.has-dropdown a:hover:after {
+@media only screen and (min-width: 40.063em) {
+  /* line 416, ../scss/app.scss */
+  nav.hovering-menu ul li.has-dropdown > a:after {
+    border-color: black transparent transparent transparent !important;
+    border: none;
+    content: "+";
+    margin: 0;
+    right: 2rem;
+    top: 0;
+  }
+}
+/* line 427, ../scss/app.scss */
+nav.hovering-menu ul li.has-dropdown > a:hover:after {
   border-color: white transparent transparent transparent !important;
 }
 
-/* line 414, ../scss/app.scss */
+/* line 436, ../scss/app.scss */
 div.fotorama__wrap {
   margin-left: auto;
   margin-right: auto;
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 420, ../scss/app.scss */
+  /* line 442, ../scss/app.scss */
   nav.top-bar {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 426, ../scss/app.scss */
+  /* line 448, ../scss/app.scss */
   section.top-bar-section {
     display: inline-block;
   }
 }
 
-/* line 433, ../scss/app.scss */
+/* line 455, ../scss/app.scss */
 div.contact-form-plugin p.contact-thank-you {
   display: none;
   margin-bottom: 6rem;

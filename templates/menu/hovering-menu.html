@@ -1,6 +1,12 @@
 {% load menu_tags %}
 
 <nav class="top-bar hovering-menu" data-topbar role="navigation">
+    <ul class="title-area">
+        <li class="name"></li>
+        <li class="toggle-topbar menu-icon">
+            <a href="#"><span></span></a>
+        </li>
+    </ul>
     <section class="top-bar-section">
         <ul>
         {% for child in children %}

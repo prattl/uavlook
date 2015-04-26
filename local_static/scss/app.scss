@@ -368,24 +368,36 @@ div.home-page-plugin-2 {
 
 nav.hovering-menu {
     position: absolute;
-    top: 1rem;
+    top: 0;
     z-index: 100;
     background: none;
+    width: 100%;
 
     @media #{$medium-up} {
         right: 1rem;
+        top: 1rem;
+        width: auto;
+    }
+
+    ul.title-area {
+
     }
 
     ul {
         margin: 0;
 
         li {
-            background: none !important;
+            @media #{$medium-up} {
+                background: none !important;
+            }
 
             a {
-                color: #000 !important;
                 background: none !important;
                 font-size: 1rem !important;
+
+                @media #{$medium-up} {
+                    color: #000 !important;
+                }
             }
 
             a:hover {
@@ -393,16 +405,26 @@ nav.hovering-menu {
             }
 
             ul.dropdown {
-                margin-left: 1.5rem;
+                @media #{$medium-up} {
+                    margin-left: 1.5rem;
+                }
+
                 text-align: left;
             }
         }
 
-        li.has-dropdown a:after {
-            border-color: rgba(0, 0, 0, 1) transparent transparent transparent !important;
+        li.has-dropdown > a:after {
+            @media #{$medium-up} {
+                border-color: rgba(0, 0, 0, 1) transparent transparent transparent !important;
+                border: none;
+                content: "+";
+                margin: 0;
+                right: 2rem;
+                top: 0;
+            }
         }
 
-        li.has-dropdown a:hover:after{
+        li.has-dropdown > a:hover:after{
             border-color: rgba(255, 255, 255, 1) transparent transparent transparent !important;
         }
 
