@@ -7,6 +7,14 @@
 
 {% block entire_page %}
 
+    <header class="site-header">
+        {% static_placeholder 'site_header' %}
+    </header>
+
     {% placeholder page_content %}
+
+    <footer class="page-footer">
+        {% static_placeholder 'footer' %}
+    </footer>
 
 {% endblock %}

@@ -52,12 +52,29 @@ div.page-wrapper {
 }
 
 footer.page-footer {
-    min-height: 15rem;
+//    min-height: 8rem;
     background: #333;
     color: #FFF;
 
     div.footer {
-        padding: 5rem 0.5rem 3rem 0.5rem;
+//        padding: 5rem 0.5rem 3rem 0.5rem;
+        height: 8rem;
+        position: relative;
+
+        div.footer-text {
+            position: absolute;
+            top: 50%;
+            left: 1rem;
+            transform: translateY(-50%);
+
+        }
+
+        div.footer-social {
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+        }
 
         @media #{$small-only} {
             padding: 3rem 0.5rem 3rem 0.5rem;
@@ -98,14 +115,14 @@ div.social-media {
             margin: 0;
 
             li {
-                font-size: 1.5rem;
-                min-width: 2.875rem;
+                font-size: 3rem;
+                min-width: 4rem;
                 margin-left: 0;
                 float: none;
                 display: inline-block;
 
                 a {
-                    color: #FFF;
+                    color: #DDD;
                 }
 
                 a:hover {

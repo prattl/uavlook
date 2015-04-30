@@ -34,7 +34,7 @@ class UAVPlugin(CMSPlugin):
 
 class BackgroundPicture(UAVPlugin):
     image = models.ImageField(_("image"), upload_to=get_plugin_media_path)
-    header = models.CharField(_('header'), max_length=240, null=True, blank=True)
+    # header = models.CharField(_('header'), max_length=240, null=True, blank=True)
     subheader = models.CharField(_('subheader'), max_length=240, null=True, blank=True)
     top = models.BooleanField(default=False, help_text='Check if this image should appear at the top of the page.')
     shade_amount = models.DecimalField(default=0.00, max_digits=3, decimal_places=2,
@@ -60,6 +60,15 @@ class ThreeColumns(UAVPlugin):
 
 class Footer(UAVPlugin):
     pass
+
+
+class SiteHeader(UAVPlugin):
+    logo = models.ImageField(_("Logo Image"), null=True, blank=True, upload_to=get_plugin_media_path)
+    logo_width = models.IntegerField('Logo Width',
+                                     default='500', help_text='Width of the logo image measured in px. The height will automatically scale with the width.')
+    image = models.ImageField(_("image"), upload_to=get_plugin_media_path)
+    height = models.DecimalField(default=10.00, max_digits=5, decimal_places=2,
+                                help_text='The height of this image measured in rem. 1 rem is about 16px.')
 
 
 class SocialMedia(UAVPlugin):

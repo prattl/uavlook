@@ -9,18 +9,18 @@
         {% if instance.show_arrows %}data-arrows="{{ instance.show_arrows  }}"{% endif %}
         {% if instance.data_click %}data-click="true" {% else %}data-click="false"{% endif %}
         {% if instance.data_swipe %}data-swipe="true" {% else%}data-swipe="false"{% endif %}
-        {% if instance.data_shuffle %}data-shuffle="true"{% else%}data-shuffle="false"{% endif %}
+        {% if instance.data_shuffle %}data-shuffle="true" {% else%}data-shuffle="false"{% endif %}
         data-transition="crossfade"
         {% if instance.data_transitionduration %}data-transitionduration="{{ instance.data_transitionduration }}"{% endif %}
         {% if instance.data_loop %}data-loop="true" {% else%}data-loop="false"{% endif %}
         {% if instance.data_autoplay %}data-autoplay="{{ instance.data_autoplay }}"{% endif %}
-        {% if instance.data_stopautoplayontouch %}data-stopautoplayontouch="true" {% else %}stopautoplayontouch="false"{% endif %}
+        {% if instance.data_stopautoplayontouch %}data-stopautoplayontouch="true" {% else %}data-stopautoplayontouch="false"{% endif %}
             >
-       {% for item in media %}
-            {% if item.image %}
-                <div data-img="{{ item.image.url }}">&nbsp;</div>
-            {% elif item.video_url %}
-                <a href="{{ item.video_url }}"></a>
+       {% for media_item in media %}
+            {% if media_item.image %}
+                <div data-img="{{ media_item.image.url }}">&nbsp;</div>
+            {% elif media_item.video_url %}
+                <a href="{{ media_item.video_url }}"></a>
             {% endif %}
         {% endfor %}
     </div>

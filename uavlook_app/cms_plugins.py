@@ -7,7 +7,7 @@ from djangocms_text_ckeditor.cms_plugins import TextPlugin
 from django.utils.translation import ugettext_lazy as _
 
 from uavlook_app.models import BackgroundPicture, ContentSection, ThreeColumns, \
-    Footer, SocialMedia, BlockQuote, ContactForm, Slideshow, SlideshowMedia, HomePage
+    SiteHeader, SocialMedia, BlockQuote, ContactForm, Slideshow, SlideshowMedia, HomePage
 from uavlook_app.forms import ContactFormSubmissionForm
 
 
@@ -18,21 +18,17 @@ class BackgroundPicturePlugin(CMSPluginBase):
     text_enabled = True
 
     def render(self, context, instance, placeholder):
-        header = instance.header
+        # header = instance.header
         subheader = instance.subheader
         context.update({
             'picture': instance,
-            'header': header,
+            # 'header': header,
             'subheader': subheader,
             'height': instance.height,
             'logo': instance.header_logo,
             'logo_width': instance.logo_width,
         })
         return context
-
-
-# class HeaderTextPlugin(TextPlugin):
-#     pass
 
 
 class ContentSectionPlugin(CMSPluginBase):
@@ -85,6 +81,23 @@ class FooterPlugin(CMSPluginBase):
     def render(self, context, instance, placeholder):
         children = instance.child_plugin_instances
         print("Number of children in footer: %s" % len(children))
+        context.update({
+            'instance': instance,
+        })
+        return context
+
+
+class SiteHeaderPlugin(CMSPluginBase):
+    model = SiteHeader
+    name = _('Header')
+    render_template = 'cms/plugins/site_header.html'
+    allow_children = True
+
+    def render(self, context, instance, placeholder):
+        for plugin in instance.child_plugin_instances:
+            if type(plugin) is Text:
+                print('Rendering text plugin')
+                context.update({'text_plugin': plugin})
         context.update({
             'instance': instance,
         })
@@ -179,6 +192,7 @@ plugin_pool.register_plugin(BackgroundPicturePlugin)
 plugin_pool.register_plugin(ContentSectionPlugin)
 plugin_pool.register_plugin(ThreeColumnsPlugin)
 plugin_pool.register_plugin(FooterPlugin)
+plugin_pool.register_plugin(SiteHeaderPlugin)
 plugin_pool.register_plugin(SocialMediaPlugin)
 plugin_pool.register_plugin(BlockQuotePlugin)
 plugin_pool.register_plugin(ContactFormPlugin)
