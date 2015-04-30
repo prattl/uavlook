@@ -9239,28 +9239,6 @@ div.background-image {
   background-size: cover;
   position: relative;
 }
-/* line 128, ../scss/app.scss */
-div.background-image h1, div.background-image h2 {
-  margin: 0;
-  color: #FFF;
-  text-align: center;
-}
-/* line 134, ../scss/app.scss */
-div.background-image h1 {
-  font-size: 3rem;
-}
-/* line 138, ../scss/app.scss */
-div.background-image h2 {
-  font-size: 1.5rem;
-}
-/* line 142, ../scss/app.scss */
-div.background-image div.headers {
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  margin-right: -50%;
-}
 
 /* line 152, ../scss/app.scss */
 div.content-section {
@@ -9305,70 +9283,71 @@ div.block-quote-plugin blockquote footer span:before {
 }
 
 /* line 191, ../scss/app.scss */
-div.home-page-plugin-2 {
-  height: 100%;
-  width: 100%;
-}
-/* line 195, ../scss/app.scss */
-div.home-page-plugin-2 div.header {
+div.site-header {
   position: absolute;
   top: 1rem;
   left: 1rem;
   color: #FFF;
 }
 @media only screen and (max-width: 40em) {
-  /* line 195, ../scss/app.scss */
-  div.home-page-plugin-2 div.header {
+  /* line 191, ../scss/app.scss */
+  div.site-header {
     left: 0.5rem;
     margin-right: 0.5rem;
   }
 }
-/* line 206, ../scss/app.scss */
-div.home-page-plugin-2 div.header img {
+/* line 202, ../scss/app.scss */
+div.site-header img {
   max-width: 500px;
 }
 @media only screen and (max-width: 40em) {
-  /* line 206, ../scss/app.scss */
-  div.home-page-plugin-2 div.header img {
+  /* line 202, ../scss/app.scss */
+  div.site-header img {
     max-width: 100%;
   }
 }
-/* line 214, ../scss/app.scss */
-div.home-page-plugin-2 div.header h1, div.home-page-plugin-2 div.header h2 {
+/* line 210, ../scss/app.scss */
+div.site-header h1, div.site-header h2 {
   color: #000;
 }
-/* line 218, ../scss/app.scss */
-div.home-page-plugin-2 div.header h1 {
+/* line 214, ../scss/app.scss */
+div.site-header h1 {
   font-size: 2rem;
   margin-top: 0.75rem;
   margin-bottom: 0;
 }
 @media only screen and (max-width: 40em) {
-  /* line 218, ../scss/app.scss */
-  div.home-page-plugin-2 div.header h1 {
+  /* line 214, ../scss/app.scss */
+  div.site-header h1 {
     font-size: 1.25rem;
     margin-top: 1.25rem;
   }
 }
-/* line 229, ../scss/app.scss */
-div.home-page-plugin-2 div.header h2 {
+/* line 225, ../scss/app.scss */
+div.site-header h2 {
   font-size: 1.25rem;
   margin-top: 0;
 }
 @media only screen and (max-width: 40em) {
-  /* line 229, ../scss/app.scss */
-  div.home-page-plugin-2 div.header h2 {
+  /* line 225, ../scss/app.scss */
+  div.site-header h2 {
     font-size: 1rem;
   }
 }
-/* line 239, ../scss/app.scss */
+
+/* line 235, ../scss/app.scss */
+div.home-page-plugin-2 {
+  height: 100%;
+  width: 100%;
+}
+/* line 241, ../scss/app.scss */
 div.home-page-plugin-2 div.homepage-social-media {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
 }
 @media only screen and (max-width: 40em) {
-  /* line 239, ../scss/app.scss */
+  /* line 241, ../scss/app.scss */
   div.home-page-plugin-2 div.homepage-social-media {
     bottom: 0;
     left: 0;
@@ -9377,7 +9356,7 @@ div.home-page-plugin-2 div.homepage-social-media {
     margin-right: auto;
   }
 }
-/* line 252, ../scss/app.scss */
+/* line 254, ../scss/app.scss */
 div.home-page-plugin-2 div.homepage-social-media ul {
   list-style-position: inside;
   margin: 0;
@@ -9385,23 +9364,23 @@ div.home-page-plugin-2 div.homepage-social-media ul {
   font-size: 2rem;
 }
 @media only screen and (max-width: 40em) {
-  /* line 252, ../scss/app.scss */
+  /* line 254, ../scss/app.scss */
   div.home-page-plugin-2 div.homepage-social-media ul {
     padding: 0;
     text-align: center;
   }
 }
-/* line 265, ../scss/app.scss */
+/* line 267, ../scss/app.scss */
 div.home-page-plugin-2 div.homepage-social-media ul li a {
   color: #FFF;
   text-shadow: 0 0 5px #000, 0 0 10px #000;
 }
-/* line 270, ../scss/app.scss */
+/* line 272, ../scss/app.scss */
 div.home-page-plugin-2 div.homepage-social-media ul li a:hover {
   color: #0078a0 !important;
 }
 @media only screen and (max-width: 40em) {
-  /* line 263, ../scss/app.scss */
+  /* line 265, ../scss/app.scss */
   div.home-page-plugin-2 div.homepage-social-media ul li {
     float: none;
     display: inline-block;
@@ -9410,7 +9389,7 @@ div.home-page-plugin-2 div.homepage-social-media ul li a:hover {
   }
 }
 
-/* line 369, ../scss/app.scss */
+/* line 371, ../scss/app.scss */
 nav.hovering-menu {
   position: absolute;
   top: 0;
@@ -9419,50 +9398,50 @@ nav.hovering-menu {
   width: 100%;
 }
 @media only screen and (min-width: 40.063em) {
-  /* line 369, ../scss/app.scss */
+  /* line 371, ../scss/app.scss */
   nav.hovering-menu {
     right: 1rem;
     top: 1rem;
     width: auto;
   }
 }
-/* line 386, ../scss/app.scss */
+/* line 388, ../scss/app.scss */
 nav.hovering-menu ul {
   margin: 0;
 }
 @media only screen and (min-width: 40.063em) {
-  /* line 389, ../scss/app.scss */
+  /* line 391, ../scss/app.scss */
   nav.hovering-menu ul li {
     background: none !important;
   }
 }
-/* line 394, ../scss/app.scss */
+/* line 396, ../scss/app.scss */
 nav.hovering-menu ul li a {
   background: none !important;
   font-size: 1rem !important;
 }
 @media only screen and (min-width: 40.063em) {
-  /* line 394, ../scss/app.scss */
+  /* line 396, ../scss/app.scss */
   nav.hovering-menu ul li a {
     color: #000 !important;
   }
 }
-/* line 403, ../scss/app.scss */
+/* line 405, ../scss/app.scss */
 nav.hovering-menu ul li a:hover {
   color: #FFF !important;
 }
-/* line 407, ../scss/app.scss */
+/* line 409, ../scss/app.scss */
 nav.hovering-menu ul li ul.dropdown {
   text-align: left;
 }
 @media only screen and (min-width: 40.063em) {
-  /* line 407, ../scss/app.scss */
+  /* line 409, ../scss/app.scss */
   nav.hovering-menu ul li ul.dropdown {
     margin-left: 1.5rem;
   }
 }
 @media only screen and (min-width: 40.063em) {
-  /* line 416, ../scss/app.scss */
+  /* line 418, ../scss/app.scss */
   nav.hovering-menu ul li.has-dropdown > a:after {
     border-color: black transparent transparent transparent !important;
     border: none;
@@ -9472,32 +9451,32 @@ nav.hovering-menu ul li ul.dropdown {
     top: 0;
   }
 }
-/* line 427, ../scss/app.scss */
+/* line 429, ../scss/app.scss */
 nav.hovering-menu ul li.has-dropdown > a:hover:after {
   border-color: white transparent transparent transparent !important;
 }
 
-/* line 436, ../scss/app.scss */
+/* line 438, ../scss/app.scss */
 div.fotorama__wrap {
   margin-left: auto;
   margin-right: auto;
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 442, ../scss/app.scss */
+  /* line 444, ../scss/app.scss */
   nav.top-bar {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 448, ../scss/app.scss */
+  /* line 450, ../scss/app.scss */
   section.top-bar-section {
     display: inline-block;
   }
 }
 
-/* line 455, ../scss/app.scss */
+/* line 457, ../scss/app.scss */
 div.contact-form-plugin p.contact-thank-you {
   display: none;
   margin-bottom: 6rem;

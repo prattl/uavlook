@@ -5,10 +5,13 @@
         {% render_plugin slideshow %}
     {% endif %}
 
-    <div class="header">
-        {% if instance.logo %}<img src="{{ instance.logo.url }}" />{% endif %}
-        <h1>{{ instance.header }}</h1>
-        <h2>{{ instance.subheader }}</h2>
+    <div class="site-header">
+        {% if instance.logo %}<img src="{{ instance.logo.url }}" style="width: {{ instance.logo_width }}px" />{% endif %}
+        {% if text_plugin %}
+            {% render_plugin text_plugin %}
+        {% endif %}
+{#        <h1>{{ instance.header }}</h1>#}
+{#        <h2>{{ instance.subheader }}</h2>#}
     </div>
 
     {% if social_media %}

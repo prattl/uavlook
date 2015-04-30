@@ -125,27 +125,27 @@ div.background-image {
     background-size: cover;
     position: relative;
 
-    h1, h2 {
-        margin: 0;
-        color: #FFF;
-        text-align: center;
-    }
-
-    h1 {
-        font-size: 3rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    div.headers {
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        left: 50%;
-        margin-right: -50%;
-    }
+//    h1, h2 {
+//        margin: 0;
+//        color: #FFF;
+//        text-align: center;
+//    }
+//
+//    h1 {
+//        font-size: 3rem;
+//    }
+//
+//    h2 {
+//        font-size: 1.5rem;
+//    }
+//
+//    div.headers {
+//        position: absolute;
+//        top: 50%;
+//        transform: translate(-50%, -50%);
+//        left: 50%;
+//        margin-right: -50%;
+//    }
 }
 
 // Content section plugin
@@ -188,53 +188,55 @@ div.block-quote-plugin {
     }
 }
 
+div.site-header {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: #FFF;
+
+    @media #{$small-only} {
+        left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+
+    img {
+        max-width: 500px;
+
+        @media #{$small-only} {
+            max-width: 100%;
+        }
+    }
+
+    h1, h2 {
+        color: #000;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-top: 0.75rem;
+        margin-bottom: 0;
+
+        @media #{$small-only} {
+            font-size: 1.25rem;
+            margin-top: 1.25rem;
+        }
+    }
+
+    h2 {
+        font-size: 1.25rem;
+        margin-top: 0;
+
+        @media #{$small-only} {
+            font-size: 1rem;
+        }
+    }
+}
+
 div.home-page-plugin-2 {
     height: 100%;
     width: 100%;
 
-    div.header {
-        position: absolute;
-        top: 1rem;
-        left: 1rem;
-        color: #FFF;
 
-        @media #{$small-only} {
-            left: 0.5rem;
-            margin-right: 0.5rem;
-        }
-
-        img {
-            max-width: 500px;
-
-            @media #{$small-only} {
-                max-width: 100%;
-            }
-        }
-
-        h1, h2 {
-            color: #000;
-        }
-
-        h1 {
-            font-size: 2rem;
-            margin-top: 0.75rem;
-            margin-bottom: 0;
-
-            @media #{$small-only} {
-                font-size: 1.25rem;
-                margin-top: 1.25rem;
-            }
-        }
-
-        h2 {
-            font-size: 1.25rem;
-            margin-top: 0;
-
-            @media #{$small-only} {
-                font-size: 1rem;
-            }
-        }
-    }
 
     div.homepage-social-media {
         position: absolute;

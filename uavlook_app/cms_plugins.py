@@ -2,6 +2,8 @@ from cms.plugin_pool import plugin_pool
 from cms.plugin_base import CMSPluginBase
 
 from django.contrib import admin
+from djangocms_text_ckeditor.models import Text
+from djangocms_text_ckeditor.cms_plugins import TextPlugin
 from django.utils.translation import ugettext_lazy as _
 
 from uavlook_app.models import BackgroundPicture, ContentSection, ThreeColumns, \
@@ -21,9 +23,16 @@ class BackgroundPicturePlugin(CMSPluginBase):
         context.update({
             'picture': instance,
             'header': header,
-            'subheader': subheader
+            'subheader': subheader,
+            'height': instance.height,
+            'logo': instance.header_logo,
+            'logo_width': instance.logo_width,
         })
         return context
+
+
+# class HeaderTextPlugin(TextPlugin):
+#     pass
 
 
 class ContentSectionPlugin(CMSPluginBase):
@@ -156,6 +165,9 @@ class HomePagePlugin(CMSPluginBase):
             if type(plugin) is SocialMedia:
                 print('Rendering social media')
                 context.update({'social_media': plugin})
+            if type(plugin) is Text:
+                print('Rendering text plugin')
+                context.update({'text_plugin': plugin})
         context.update({
             'instance': instance,
             'homepage': True,

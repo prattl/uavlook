@@ -1,8 +1,12 @@
 {% extends "base.html" %}
-{% load cms_tags sekizai_tags staticfiles %}
+{% load cms_tags sekizai_tags staticfiles menu_tags %}
 
-{% block page_content %}
-    
+{% block menu %}
+    {% show_menu 0 100 100 100 "menu/hovering-menu.html" %}
+{% endblock %}
+
+{% block entire_page %}
+
     {% placeholder page_content %}
 
 {% endblock %}

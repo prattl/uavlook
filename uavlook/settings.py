@@ -138,6 +138,28 @@ MIGRATION_MODULES = {
     'djangocms_text_ckeditor': 'djangocms_text_ckeditor.migrations_django',
 }
 
+CKEDITOR_SETTINGS = {
+    # 'toolbar': 'CMS',
+    'skin': 'moono',
+    # 'fontSize_sizes': '16/16px;24/24px;48/48px;',
+    # 'extraPlugins': 'font',
+    'toolbar_CMS': [
+        # ['Undo', 'Redo'],
+        # ['ShowBlocks'],
+        # ['Format', 'Styles'],
+        ['Source','-','Preview'],
+        ['Cut','Copy','Paste','PasteText','PasteFromWord',],
+        ['Undo','Redo','-','SelectAll','RemoveFormat'],
+        ['Styles','Format','FontSize'],['Maximize','-','About'],
+        ['Subscript', 'Superscript', 'TextColor'],
+        ['Bold','Italic','Underline','Strike'], ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'],
+        ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+        ['Link','Unlink','Anchor'],
+    ]
+
+
+}
+
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
