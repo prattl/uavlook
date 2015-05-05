@@ -53,7 +53,7 @@ div.page-wrapper {
 
 footer.page-footer {
 //    min-height: 8rem;
-    background: #333;
+    background: #37363a;
     color: #FFF;
 
     div.footer {
@@ -61,11 +61,20 @@ footer.page-footer {
         height: 8rem;
         position: relative;
 
+        @media #{$small-only} {
+            height: 12rem;
+        }
+
         div.footer-text {
             position: absolute;
             top: 50%;
             left: 1rem;
             transform: translateY(-50%);
+
+            @media #{$small-only} {
+                top: 1rem;
+                transform: none;
+            }
 
         }
 
@@ -74,6 +83,14 @@ footer.page-footer {
             top: 50%;
             right: 1rem;
             transform: translateY(-50%);
+
+            @media #{$small-only} {
+                top: none;
+                bottom: 1rem;
+                transform: none;
+                left: 1rem;
+                right: auto;
+            }
         }
 
         @media #{$small-only} {
@@ -121,13 +138,20 @@ div.social-media {
                 float: none;
                 display: inline-block;
 
+                @media #{$small-only} {
+                    font-size: 2rem;
+                    min-width: 2rem;
+                }
+
                 a {
                     color: #DDD;
                 }
 
                 a:hover {
-                    color: #0078a0 !important;
+                    color: #2a80a2 !important;
                 }
+
+
             }
         }
     }
@@ -210,6 +234,7 @@ div.site-header {
     top: 1rem;
     left: 1rem;
     color: #FFF;
+    max-width: 100%;
 
     @media #{$small-only} {
         left: 0.5rem;
@@ -234,8 +259,8 @@ div.site-header {
         margin-bottom: 0;
 
         @media #{$small-only} {
-            font-size: 1.25rem;
-            margin-top: 1.25rem;
+            font-size: 1.25rem !important;
+            margin-top: 1.25rem !important;
         }
     }
 
@@ -244,7 +269,7 @@ div.site-header {
         margin-top: 0;
 
         @media #{$small-only} {
-            font-size: 1rem;
+            font-size: 1rem !important;
         }
     }
 }
@@ -252,8 +277,6 @@ div.site-header {
 div.home-page-plugin-2 {
     height: 100%;
     width: 100%;
-
-
 
     div.homepage-social-media {
         position: absolute;
@@ -287,7 +310,7 @@ div.home-page-plugin-2 {
                 }
 
                 a:hover {
-                    color: #0078a0 !important;
+                    color: #2a80a2 !important;
                 }
 
                 @media #{$small-only} {
@@ -474,5 +497,9 @@ div.contact-form-plugin {
     p.contact-thank-you {
         display: none;
         margin-bottom: 6rem;
+    }
+
+    input.contact-submit {
+        font-weight: bold;
     }
 }

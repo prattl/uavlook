@@ -15,7 +15,7 @@
         {% if instance.data_loop %}data-loop="true" {% else%}data-loop="false"{% endif %}
         {% if instance.data_autoplay %}data-autoplay="{{ instance.data_autoplay }}"{% endif %}
         {% if instance.data_stopautoplayontouch %}data-stopautoplayontouch="true" {% else %}data-stopautoplayontouch="false"{% endif %}
-            >
+        {% if instance.data_allowfullscreen %}data-allowfullscreen="true"{% else %}data-allowfullscreen="false"{% endif %}    >
        {% for media_item in media %}
             {% if media_item.image %}
                 <div data-img="{{ media_item.image.url }}">&nbsp;</div>

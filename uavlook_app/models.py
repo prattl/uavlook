@@ -184,9 +184,11 @@ class Slideshow(UAVPlugin):
     data_autoplay = models.IntegerField(_('Data Autoplay'), null=True, blank=True,
                                         help_text='Enter a number here to enable auto-play. Enter the number of milliseconds to specify how long each image should appear. For example, for 5 seconds enter 5000.')
     data_stopautoplayontouch = models.BooleanField(_('Data Stop Autoplay On Touch'), default=True,
-                                                   help_text='Uncheck this to enable autoplay on touch devices (if a number was entered above). By default, autoplay is not enabled on touch devices.')
+                                                   help_text='Check this to make the slideshow stop autoplaying when clicked or touched.')
     data_transitionduration = models.IntegerField(_('Data Transition Duration'), null=True, blank=True,
                                                   help_text='Enter a number to control the duration of the transition effect in milliseconds. For example to fade to the next image in 0.5 seconds, enter 500.')
+    data_allowfullscreen = models.BooleanField(_('Data Allow Fullscreen'), default=False,
+                                               help_text='Check to display an icon in the top right corner to allow the image to display full screen when clicked.')
 
     def copy_relations(self, oldinstance):
         print('Running copy_relations')
@@ -223,6 +225,23 @@ class HomePage(UAVPlugin):
     # header_fontsize = models.CharField(_('Header Font Size'), max_length=12, null=True, blank=True,
     #                                    help_text='Use a decimal, 1 is normal text and 2 is double that size, etc.')
     # header_fontweight = models.CharFIeld('Header Font Weight', choices=FONT_WEIGHT_CHOICES)
+
+
+class MenuSettings(models.Model):
+    FONT_WEIGHT_CHOICES = [
+        ('normal', 'Normal'),
+        ('bold', 'Bold'),
+    ]
+    # menu_font_color = models.CharField('Menu Font Color', max_length=6, help_text='Enter a 6 digit color hex code.',
+    #                                    default='000000')
+    menu_font_weight = models.CharField('Menu Font Weight', max_length=24, choices=FONT_WEIGHT_CHOICES,
+                                        default='normal')
+    menu_font_size = models.CharField('Menu Font Size', max_length=2, default='1',
+                                      help_text='Specify a font size in rem units. 1 rem is normal text size.')
+
+    class Meta:
+        verbose_name = 'Menu Settings'
+        verbose_name_plural = 'Menu Settings'
 
 
 # class SiteHeader(UAVPlugin):
