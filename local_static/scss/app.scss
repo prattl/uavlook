@@ -47,14 +47,22 @@
 // Page components
 div.page-wrapper {
     min-height: 100%;
-    height: 100%;
+//    height: 100%;
     position: relative;
+}
+
+div.page-content {
+    padding-bottom: 8rem;
 }
 
 footer.page-footer {
 //    min-height: 8rem;
     background: #37363a;
     color: #FFF;
+    width: 100%;
+    position:absolute;
+    bottom:0;
+    left:0;
 
     div.footer {
 //        padding: 5rem 0.5rem 3rem 0.5rem;
@@ -323,90 +331,6 @@ div.home-page-plugin-2 {
         }
     }
 }
-//
-//// Home Page Plugin
-//div.home-page-plugin {
-////    min-height: 100%;
-//    width: 100%;
-//    margin: 0;
-//    background-position: center;
-//    background-repeat: no-repeat;
-//    background-size: cover;
-//    position: relative;
-//
-//    div.content-container {
-//        color: #FFF;
-//        padding: 0;
-//
-//        h1, h2, h3, p {
-//            color: inherit;
-//        }
-//
-//        h1 {
-//            font-size: 4rem;
-//        }
-//
-//        h2 {
-//            font-size: 1.75rem;
-//        }
-//
-//        p.description {
-//            margin: 3rem 15rem;
-//
-//            @media #{$small-only} {
-//                margin: 2rem 0;
-//                font-size: 1.15rem;
-//            }
-//        }
-//
-//        div.slideshow-container {
-//            max-width: 30rem;
-//            height:auto;
-//            margin: 0 auto;
-//
-//            @media #{$small-only} {
-//                width: auto;
-//            }
-//        }
-//
-//        footer {
-//            height: 8rem;
-//            width: 100%;
-//            position: absolute;
-//            bottom: 0;
-//            padding: 1rem 2rem;
-//
-//            @media #{$small-only} {
-//                position: relative;
-//                padding: 0;
-//            }
-//
-//            div.footer-row {
-//                width: 100%;
-//
-//                @media #{$small-only} {
-//                    margin: 0;
-//                }
-//
-//                div.social-media {
-//                    @media #{$small-only} {
-//                        margin-bottom: 1.5rem;
-//                    }
-//                }
-//            }
-//
-//            div.address {
-//                @media #{$small-only} {
-//                    margin-bottom: 1.5rem;
-//                }
-//
-//                p {
-//                    margin-bottom: 0;
-//                }
-//            }
-//        }
-//    }
-//}
 
 nav.hovering-menu {
     position: absolute;

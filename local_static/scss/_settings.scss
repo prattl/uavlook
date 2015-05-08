@@ -864,7 +864,7 @@ $header-font-family: $font-family-sans-serif; //'Oswald', sans-serif;
 // $off-canvas-back-hover-border-bottom: none;
 
 // Off Canvas Menu Icon Variables
-// $tabbar-menu-icon-color: $white;
+//$tabbar-menu-icon-color: #000;
 // $tabbar-menu-icon-hover: scale-color($tabbar-menu-icon-color, $lightness: -30%);
 
 // $tabbar-menu-icon-text-indent: rem-calc(35);
@@ -1437,7 +1437,7 @@ $header-font-family: $font-family-sans-serif; //'Oswald', sans-serif;
 // $topbar-menu-link-font-size: rem-calc(13);
 // $topbar-menu-link-weight: $font-weight-bold;
 // $topbar-menu-link-color: $white;
-// $topbar-menu-icon-color: $white;
+$topbar-menu-icon-color: #000;
 // $topbar-menu-link-color-toggled: $jumbo;
 // $topbar-menu-icon-color-toggled: $jumbo;
 // $topbar-menu-icon-position: $opposite-direction; // Change to $default-float for a left menu icon
