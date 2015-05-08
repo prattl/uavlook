@@ -236,8 +236,8 @@ class MenuSettings(models.Model):
     #                                    default='000000')
     menu_font_weight = models.CharField('Menu Font Weight', max_length=24, choices=FONT_WEIGHT_CHOICES,
                                         default='normal')
-    menu_font_size = models.CharField('Menu Font Size', max_length=2, default='1',
-                                      help_text='Specify a font size in rem units. 1 rem is normal text size.')
+    menu_font_size = models.CharField('Menu Font Size', max_length=4, default='1',
+                                      help_text='Specify a font size in rem units. 1 rem is normal text size, use only up to 2 decimal places..')
 
     class Meta:
         verbose_name = 'Menu Settings'
