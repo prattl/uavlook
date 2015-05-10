@@ -140,14 +140,10 @@ MIGRATION_MODULES = {
 }
 
 CKEDITOR_SETTINGS = {
-    # 'toolbar': 'CMS',
     'skin': 'moono',
-    # 'fontSize_sizes': '16/16px;24/24px;48/48px;',
-    # 'extraPlugins': 'font',
+    'toolbar': 'CMS',
     'toolbar_CMS': [
-        # ['Undo', 'Redo'],
-        # ['ShowBlocks'],
-        # ['Format', 'Styles'],
+        ['cmsplugins', '-', 'ShowBlocks'],
         ['Source','-','Preview'],
         ['Cut','Copy','Paste','PasteText','PasteFromWord',],
         ['Undo','Redo','-','SelectAll','RemoveFormat'],
@@ -157,8 +153,6 @@ CKEDITOR_SETTINGS = {
         ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
         ['Link','Unlink','Anchor'],
     ]
-
-
 }
 
 EMAIL_HOST = 'smtp.gmail.com'
