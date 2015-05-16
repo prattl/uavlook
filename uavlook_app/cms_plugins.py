@@ -54,7 +54,6 @@ class ThreeColumnsPlugin(CMSPluginBase):
 
     def render(self, context, instance, placeholder):
         children = instance.child_plugin_instances
-        print('Columns Instance ID: ', instance.pk)
         context.update({
             'instance': instance,
         })
@@ -80,7 +79,6 @@ class FooterPlugin(CMSPluginBase):
 
     def render(self, context, instance, placeholder):
         children = instance.child_plugin_instances
-        print("Number of children in footer: %s" % len(children))
         context.update({
             'instance': instance,
         })
@@ -96,7 +94,6 @@ class SiteHeaderPlugin(CMSPluginBase):
     def render(self, context, instance, placeholder):
         for plugin in instance.child_plugin_instances:
             if type(plugin) is Text:
-                print('Rendering text plugin')
                 context.update({'text_plugin': plugin})
         context.update({
             'instance': instance,
@@ -154,8 +151,6 @@ class SlideshowPlugin(CMSPluginBase):
 
     def render(self, context, instance, placeholder):
         media = instance.slideshowmedia_set.all()
-        print('Returning media: ', media)
-        print('Instance ID: ', instance.pk)
         context.update({
             'instance': instance,
             'media': media,
@@ -173,13 +168,10 @@ class HomePagePlugin(CMSPluginBase):
         for plugin in instance.child_plugin_instances:
             # import pdb; pdb.set_trace()
             if type(plugin) is Slideshow:
-                print('Rendering slideshow')
                 context.update({'slideshow': plugin})
             if type(plugin) is SocialMedia:
-                print('Rendering social media')
                 context.update({'social_media': plugin})
             if type(plugin) is Text:
-                print('Rendering text plugin')
                 context.update({'text_plugin': plugin})
         context.update({
             'instance': instance,

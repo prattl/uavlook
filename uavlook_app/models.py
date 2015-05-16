@@ -105,7 +105,7 @@ class ContactFormSubmission(models.Model):
     phone = models.CharField(_('Phone Number'), max_length=240, default='')
     message = models.CharField(_('Message'), max_length=2400, null=True, blank=True)
     inquiry_type = models.ForeignKey(InquiryType)
-    contact_form = models.ForeignKey(ContactForm)\
+    contact_form = models.ForeignKey(ContactForm)
 
     def __str__(self):
         return 'Contact Submission from {} at {}'.format(self.name, self.email)
@@ -124,7 +124,7 @@ class ContactFormSubmission(models.Model):
 def send_email_thread(form_submission):
     recipients = form_submission.contact_form.recipients_list()
     # sender = 'support@uavlook.com'
-    sender = 'Lenny@prattdev.net'
+    sender = settings.EMAIL_HOST_USER
     subject = 'New Inquiry from uavlook.com'
     message = """
     Somebody submitted a Contact form on uavlook.com with the following information:
