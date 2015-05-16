@@ -127,13 +127,13 @@ def send_email_thread(form_submission):
     sender = settings.EMAIL_HOST_USER
     subject = 'New Inquiry from uavlook.com'
     message = """
-    Somebody submitted a Contact form on uavlook.com with the following information:
+Somebody submitted a Contact form on uavlook.com with the following information:
 
-    Name: {}
-    Email: {}
-    Phone: {}
-    Inquiry Type: {}
-    Message: {}
+Name: {}
+Email: {}
+Phone: {}
+Inquiry Type: {}
+Message: {}
 
     """.format(form_submission.name, form_submission.email, form_submission.phone,
                form_submission.inquiry_type, form_submission.message)

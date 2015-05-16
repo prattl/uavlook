@@ -64,6 +64,10 @@ $(function() {
     // Add a class to any <p> elements that contain an image
     $("img").parent("p").addClass("img-container");
 
+    $("body").on("contextmenu", "img", function(e) {
+      return false;
+    });
+
     // Contact Form Ajax Submit
     var $contact_form = $("form.contact-form");
     var $contact_submit = $(".contact-submit");
