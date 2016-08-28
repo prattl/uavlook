@@ -8,7 +8,7 @@ import cms.models.pluginmodel
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('cms', '0004_auto_20150430_1405'),
+#        ('cms', '0004_auto_20150430_1405'),
         ('uavlook_app', '0041_auto_20150430_1407'),
     ]
 

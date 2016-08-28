@@ -7,7 +7,7 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('cms', '0004_auto_20150430_1405'),
+#        ('cms', '0004_auto_20150430_1405'),
         ('uavlook_app', '0040_remove_backgroundpicture_header'),
     ]
 
