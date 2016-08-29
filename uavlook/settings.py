@@ -51,6 +51,7 @@ INSTALLED_APPS = (
     'menus',
     'sekizai',
     'djangocms_admin_style',
+    'django_extensions',
 )
 
 MIDDLEWARE_CLASSES = (
