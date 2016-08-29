@@ -5,3 +5,4 @@ __pycache__/
 *.scssc
 *.idea
 media/
+local_settings.py
