@@ -52,7 +52,7 @@ div.page-wrapper {
 }
 
 div.page-content {
-    padding-bottom: 8rem;
+    //padding-bottom: 8rem;
 }
 
 footer.page-footer {
@@ -60,49 +60,61 @@ footer.page-footer {
     background: #37363a;
     color: #FFF;
     width: 100%;
-    position:absolute;
-    bottom:0;
-    left:0;
+    //position:absolute;
+    //bottom:0;
+    //left:0;
 
     div.footer {
 //        padding: 5rem 0.5rem 3rem 0.5rem;
-        height: 8rem;
+//        height: 8rem;
         position: relative;
+        padding: 1rem;
 
         @media #{$small-only} {
-            height: 12rem;
+            //height: 12rem;
+        }
+
+        div.footer-blurb {
+            text-align: center;
+
+            @media #{$small-only} {
+                text-align: left;
+            }
         }
 
         div.footer-text {
-            position: absolute;
-            top: 50%;
-            left: 1rem;
-            transform: translateY(-50%);
+            //position: absolute;
+            //top: 50%;
+            //left: 1rem;
+            //transform: translateY(-50%);
+            float: left;
 
             @media #{$small-only} {
-                top: 1rem;
-                transform: none;
+                //top: 1rem;
+                //transform: none;
             }
 
         }
 
         div.footer-social {
-            position: absolute;
-            top: 50%;
-            right: 1rem;
-            transform: translateY(-50%);
+            //position: absolute;
+            //top: 50%;
+            //right: 1rem;
+            //transform: translateY(-50%);
+            float: right;
 
             @media #{$small-only} {
-                top: none;
-                bottom: 1rem;
-                transform: none;
-                left: 1rem;
-                right: auto;
+                float: left;
+                //top: none;
+                //bottom: 1rem;
+                //transform: none;
+                //left: 1rem;
+                //right: auto;
             }
         }
 
         @media #{$small-only} {
-            padding: 3rem 0.5rem 3rem 0.5rem;
+            //padding: 3rem 0.5rem 3rem 0.5rem;
         }
 
         p {

@@ -1,15 +1,26 @@
 {% load cms_tags %}
 <div class="footer">
 {#    <div class="row">#}
-        {% if instance.child_plugin_instances|length == 2 %}
-        <div class="footer-text text-left">
-            {% render_plugin instance.child_plugin_instances.0 %}
-        </div>
-        <div class="footer-social">
-            {% render_plugin instance.child_plugin_instances.1 %}
-        </div>
+        {% if instance.child_plugin_instances|length == 2 or instance.child_plugin_instances|length == 3 %}
+            {% if instance.child_plugin_instances|length == 3 %}
+                <div class="footer-blurb">
+                    {% render_plugin instance.child_plugin_instances.2 %}
+                </div>
+            {% endif %}
+            <div class="footer-text text-left">
+                {% render_plugin instance.child_plugin_instances.0 %}
+            </div>
+            <div class="footer-social">
+                {% if instance.child_plugin_instances|length == 2 %}
+                    {% render_plugin instance.child_plugin_instances.2 %}
+                {% else %}
+                    {% render_plugin instance.child_plugin_instances.1 %}
+                {% endif %}
+            </div>
+
+            <div style="clear: both;"></div>
         {% else %}
-        <p>Make sure there are exactly 2 plugins within the Footer plugin.</p>
+            <p>Make sure there are exactly 2 plugins within the Footer plugin.</p>
         {% endif %}
 {#    </div>#}
 </div>
