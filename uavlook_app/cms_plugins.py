@@ -97,6 +97,7 @@ class SiteHeaderPlugin(CMSPluginBase):
                 context.update({'text_plugin': plugin})
         context.update({
             'instance': instance,
+            'max_height': instance.height - 2
         })
         return context
 

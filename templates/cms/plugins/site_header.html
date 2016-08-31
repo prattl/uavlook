@@ -3,7 +3,7 @@
     <div class="site-header">
         {% if instance.logo %}
             <img src="{{ instance.logo.url }}"
-                 style="max-height: {{ instance.height }}rem" />
+                 style="max-height: {{ max_height }}rem" />
         {% endif %}
         {% if text_plugin %}
             {% render_plugin text_plugin %}
