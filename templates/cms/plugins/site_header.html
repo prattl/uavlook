@@ -1,7 +1,10 @@
 {% load cms_tags %}
 <div class="background-image top" style="height: {{ instance.height }}rem; background-image: url('{{ instance.image.url }}');" >
     <div class="site-header">
-        {% if instance.logo %}<img src="{{ instance.logo.url }}" style="width: {{ instance.logo_width }}px" />{% endif %}
+        {% if instance.logo %}
+            <img src="{{ instance.logo.url }}"
+                 style="max-height: {{ instance.height }}rem" />
+        {% endif %}
         {% if text_plugin %}
             {% render_plugin text_plugin %}
         {% endif %}
