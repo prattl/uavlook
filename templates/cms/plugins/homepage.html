@@ -5,7 +5,7 @@
         {% render_plugin slideshow %}
     {% endif %}
 
-    <div class="site-header">
+    <div class="site-header site-header-homepage">
         {% if instance.logo %}<img src="{{ instance.logo.url }}" style="width: {{ instance.logo_width }}px" />{% endif %}
         {% if text_plugin %}
             {% render_plugin text_plugin %}

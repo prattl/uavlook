@@ -179,7 +179,7 @@ div.social-media {
 
 // Background image plugin
 div.background-image {
-    height: 25rem;
+    //height: 25rem;
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -291,22 +291,23 @@ div.block-quote-plugin {
 }
 
 div.site-header {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
+    padding: 1rem;
     color: #FFF;
     max-width: 100%;
 
     @media #{$small-only} {
-        left: 0.5rem;
-        margin-right: 0.5rem;
+        text-align: center;
+        //left: 0.5rem;
+        //margin-right: 0.5rem;
     }
 
     img {
         max-width: 500px;
+        max-height: 12rem;
 
         @media #{$small-only} {
             max-width: 100%;
+            max-height: 8rem;
         }
     }
 
@@ -332,6 +333,23 @@ div.site-header {
         @media #{$small-only} {
             font-size: 1rem !important;
         }
+    }
+}
+
+div.site-header.site-header-homepage {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0;
+
+    @media #{$small-only} {
+        left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+
+    img {
+        max-height: 9999rem;
+        margin-right: 0.5rem;
     }
 }
 
