@@ -217,19 +217,28 @@ div.content-section {
 
 div.content-section {
     div.services-page {
+        p {
+            margin: 2rem 0;
+        }
+        h3 {
+            font-weight: bold;
+            margin: 2rem 0;
+        }
         p.img-container {
             margin: 0;
             img.align-right {
                 float: right;
-                margin-left: 1rem;
+                margin-left: 2rem;
             }
             img.align-left {
                 float: left;
-                margin-right: 1rem;
+                margin-right: 2rem;
             }
             img {
                 margin-bottom: 1rem;
-
+                padding: 0.25rem;
+                border: 1px solid #EEE;
+                max-height: 15rem;
             }
         }
         @media #{$small-only} {

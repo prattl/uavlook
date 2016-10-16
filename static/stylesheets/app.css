@@ -9271,37 +9271,49 @@ div.content-section {
 }
 
 /* line 220, ../scss/app.scss */
+div.content-section div.services-page p {
+  margin: 2rem 0;
+}
+/* line 223, ../scss/app.scss */
+div.content-section div.services-page h3 {
+  font-weight: bold;
+  margin: 2rem 0;
+}
+/* line 227, ../scss/app.scss */
 div.content-section div.services-page p.img-container {
   margin: 0;
 }
-/* line 222, ../scss/app.scss */
+/* line 229, ../scss/app.scss */
 div.content-section div.services-page p.img-container img.align-right {
   float: right;
-  margin-left: 1rem;
+  margin-left: 2rem;
 }
-/* line 226, ../scss/app.scss */
+/* line 233, ../scss/app.scss */
 div.content-section div.services-page p.img-container img.align-left {
   float: left;
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
-/* line 230, ../scss/app.scss */
+/* line 237, ../scss/app.scss */
 div.content-section div.services-page p.img-container img {
   margin-bottom: 1rem;
+  padding: 0.25rem;
+  border: 1px solid #EEE;
+  max-height: 15rem;
 }
 @media only screen and (max-width: 40em) {
-  /* line 236, ../scss/app.scss */
+  /* line 245, ../scss/app.scss */
   div.content-section div.services-page h1, div.content-section div.services-page h2, div.content-section div.services-page h3, div.content-section div.services-page h4 {
     text-align: left !important;
   }
-  /* line 240, ../scss/app.scss */
+  /* line 249, ../scss/app.scss */
   div.content-section div.services-page p {
     text-align: left !important;
   }
-  /* line 244, ../scss/app.scss */
+  /* line 253, ../scss/app.scss */
   div.content-section div.services-page p.img-container {
     text-align: center !important;
   }
-  /* line 248, ../scss/app.scss */
+  /* line 257, ../scss/app.scss */
   div.content-section div.services-page img {
     max-height: 175px;
     float: none !important;
@@ -9310,96 +9322,96 @@ div.content-section div.services-page p.img-container img {
   }
 }
 
-/* line 260, ../scss/app.scss */
+/* line 269, ../scss/app.scss */
 div.three-columns-plugin {
   padding-top: 2rem;
   text-align: left;
 }
-/* line 264, ../scss/app.scss */
+/* line 273, ../scss/app.scss */
 div.three-columns-plugin div.large-4 {
   margin-bottom: 2rem;
 }
 
-/* line 271, ../scss/app.scss */
+/* line 280, ../scss/app.scss */
 div.block-quote-plugin blockquote {
   margin: 1rem 2rem;
 }
 @media only screen and (max-width: 40em) {
-  /* line 271, ../scss/app.scss */
+  /* line 280, ../scss/app.scss */
   div.block-quote-plugin blockquote {
     margin: 1rem 0 1rem 1rem;
   }
 }
-/* line 278, ../scss/app.scss */
+/* line 287, ../scss/app.scss */
 div.block-quote-plugin blockquote footer {
   text-align: right;
   font-weight: 600;
 }
 @media only screen and (max-width: 40em) {
-  /* line 278, ../scss/app.scss */
+  /* line 287, ../scss/app.scss */
   div.block-quote-plugin blockquote footer {
     margin-top: 0.5rem;
   }
 }
-/* line 286, ../scss/app.scss */
+/* line 295, ../scss/app.scss */
 div.block-quote-plugin blockquote footer span:before {
   content: "\2014\0020";
 }
 
-/* line 293, ../scss/app.scss */
+/* line 302, ../scss/app.scss */
 div.site-header {
   padding: 1rem;
   color: #FFF;
   max-width: 100%;
 }
 @media only screen and (max-width: 40em) {
-  /* line 293, ../scss/app.scss */
+  /* line 302, ../scss/app.scss */
   div.site-header {
     text-align: center;
   }
 }
-/* line 304, ../scss/app.scss */
+/* line 313, ../scss/app.scss */
 div.site-header img {
   max-width: 500px;
   max-height: 12rem;
 }
 @media only screen and (max-width: 40em) {
-  /* line 304, ../scss/app.scss */
+  /* line 313, ../scss/app.scss */
   div.site-header img {
     max-width: 100%;
     max-height: 8rem;
   }
 }
-/* line 314, ../scss/app.scss */
+/* line 323, ../scss/app.scss */
 div.site-header h1, div.site-header h2 {
   color: #000;
 }
-/* line 318, ../scss/app.scss */
+/* line 327, ../scss/app.scss */
 div.site-header h1 {
   font-size: 2rem;
   margin-top: 0.75rem;
   margin-bottom: 0;
 }
 @media only screen and (max-width: 40em) {
-  /* line 318, ../scss/app.scss */
+  /* line 327, ../scss/app.scss */
   div.site-header h1 {
     font-size: 1.25rem !important;
     margin-top: 1.25rem !important;
   }
 }
-/* line 329, ../scss/app.scss */
+/* line 338, ../scss/app.scss */
 div.site-header h2 {
   font-size: 1.25rem;
   margin-top: 0;
 }
 @media only screen and (max-width: 40em) {
-  /* line 329, ../scss/app.scss */
+  /* line 338, ../scss/app.scss */
   div.site-header h2 {
     font-size: 1rem !important;
   }
 }
 
-/* line 339, ../scss/app.scss */
+/* line 348, ../scss/app.scss */
 div.site-header.site-header-homepage {
   position: absolute;
   top: 1rem;
@@ -9407,31 +9419,31 @@ div.site-header.site-header-homepage {
   padding: 0;
 }
 @media only screen and (max-width: 40em) {
-  /* line 339, ../scss/app.scss */
+  /* line 348, ../scss/app.scss */
   div.site-header.site-header-homepage {
     left: 0.5rem;
     margin-right: 0.5rem;
   }
 }
-/* line 350, ../scss/app.scss */
+/* line 359, ../scss/app.scss */
 div.site-header.site-header-homepage img {
   max-height: 9999rem;
   margin-right: 0.5rem;
 }
 
-/* line 356, ../scss/app.scss */
+/* line 365, ../scss/app.scss */
 div.home-page-plugin-2 {
   height: 100%;
   width: 100%;
 }
-/* line 360, ../scss/app.scss */
+/* line 369, ../scss/app.scss */
 div.home-page-plugin-2 div.homepage-social-media {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
 }
 @media only screen and (max-width: 40em) {
-  /* line 360, ../scss/app.scss */
+  /* line 369, ../scss/app.scss */
   div.home-page-plugin-2 div.homepage-social-media {
     bottom: 0;
     left: 0;
@@ -9440,7 +9452,7 @@ div.home-page-plugin-2 div.homepage-social-media {
     margin-right: auto;
   }
 }
-/* line 373, ../scss/app.scss */
+/* line 382, ../scss/app.scss */
 div.home-page-plugin-2 div.homepage-social-media ul {
   list-style-position: inside;
   margin: 0;
@@ -9448,23 +9460,23 @@ div.home-page-plugin-2 div.homepage-social-media ul {
   font-size: 2rem;
 }
 @media only screen and (max-width: 40em) {
-  /* line 373, ../scss/app.scss */
+  /* line 382, ../scss/app.scss */
   div.home-page-plugin-2 div.homepage-social-media ul {
     padding: 0;
     text-align: center;
   }
 }
-/* line 386, ../scss/app.scss */
+/* line 395, ../scss/app.scss */
 div.home-page-plugin-2 div.homepage-social-media ul li a {
   color: #FFF;
   text-shadow: 0 0 5px #000, 0 0 10px #000;
 }
-/* line 391, ../scss/app.scss */
+/* line 400, ../scss/app.scss */
 div.home-page-plugin-2 div.homepage-social-media ul li a:hover {
   color: #2a80a2 !important;
 }
 @media only screen and (max-width: 40em) {
-  /* line 384, ../scss/app.scss */
+  /* line 393, ../scss/app.scss */
   div.home-page-plugin-2 div.homepage-social-media ul li {
     float: none;
     display: inline-block;
@@ -9473,7 +9485,7 @@ div.home-page-plugin-2 div.homepage-social-media ul li a:hover {
   }
 }
 
-/* line 406, ../scss/app.scss */
+/* line 415, ../scss/app.scss */
 nav.hovering-menu {
   position: absolute;
   top: 0;
@@ -9482,50 +9494,50 @@ nav.hovering-menu {
   width: 100%;
 }
 @media only screen and (min-width: 40.063em) {
-  /* line 406, ../scss/app.scss */
+  /* line 415, ../scss/app.scss */
   nav.hovering-menu {
     right: 1rem;
     top: 1rem;
     width: auto;
   }
 }
-/* line 423, ../scss/app.scss */
+/* line 432, ../scss/app.scss */
 nav.hovering-menu ul {
   margin: 0;
 }
 @media only screen and (min-width: 40.063em) {
-  /* line 426, ../scss/app.scss */
+  /* line 435, ../scss/app.scss */
   nav.hovering-menu ul li {
     background: none !important;
   }
 }
-/* line 431, ../scss/app.scss */
+/* line 440, ../scss/app.scss */
 nav.hovering-menu ul li a {
   background: none !important;
   font-size: 1rem !important;
 }
 @media only screen and (min-width: 40.063em) {
-  /* line 431, ../scss/app.scss */
+  /* line 440, ../scss/app.scss */
   nav.hovering-menu ul li a {
     color: #000 !important;
   }
 }
-/* line 440, ../scss/app.scss */
+/* line 449, ../scss/app.scss */
 nav.hovering-menu ul li a:hover {
   color: #FFF !important;
 }
-/* line 444, ../scss/app.scss */
+/* line 453, ../scss/app.scss */
 nav.hovering-menu ul li ul.dropdown {
   text-align: left;
 }
 @media only screen and (min-width: 40.063em) {
-  /* line 444, ../scss/app.scss */
+  /* line 453, ../scss/app.scss */
   nav.hovering-menu ul li ul.dropdown {
     margin-left: 1.5rem;
   }
 }
 @media only screen and (min-width: 40.063em) {
-  /* line 453, ../scss/app.scss */
+  /* line 462, ../scss/app.scss */
   nav.hovering-menu ul li.has-dropdown > a:after {
     border-color: black transparent transparent transparent !important;
     border: none;
@@ -9535,37 +9547,37 @@ nav.hovering-menu ul li ul.dropdown {
     top: 0;
   }
 }
-/* line 464, ../scss/app.scss */
+/* line 473, ../scss/app.scss */
 nav.hovering-menu ul li.has-dropdown > a:hover:after {
   border-color: white transparent transparent transparent !important;
 }
 
-/* line 473, ../scss/app.scss */
+/* line 482, ../scss/app.scss */
 div.fotorama__wrap {
   margin-left: auto;
   margin-right: auto;
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 479, ../scss/app.scss */
+  /* line 488, ../scss/app.scss */
   nav.top-bar {
     text-align: center;
   }
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 485, ../scss/app.scss */
+  /* line 494, ../scss/app.scss */
   section.top-bar-section {
     display: inline-block;
   }
 }
 
-/* line 492, ../scss/app.scss */
+/* line 501, ../scss/app.scss */
 div.contact-form-plugin p.contact-thank-you {
   display: none;
   margin-bottom: 6rem;
 }
-/* line 497, ../scss/app.scss */
+/* line 506, ../scss/app.scss */
 div.contact-form-plugin input.contact-submit {
   font-weight: bold;
 }
