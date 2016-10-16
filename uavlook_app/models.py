@@ -100,10 +100,11 @@ class InquiryType(models.Model):
 
 
 class ContactFormSubmission(models.Model):
+    created = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     name = models.CharField(_('Name'), max_length=240)
     email = models.CharField(_('Email'), max_length=240)
     phone = models.CharField(_('Phone Number'), max_length=240, default='')
-    message = models.CharField(_('Message'), max_length=2400, null=True, blank=True)
+    message = models.TextField(_('Message'), max_length=2400, null=True, blank=True)
     inquiry_type = models.ForeignKey(InquiryType)
     contact_form = models.ForeignKey(ContactForm)
 
