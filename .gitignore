@@ -7,3 +7,4 @@ __pycache__/
 media/
 local_settings.py
 env
+db.sqlite3
