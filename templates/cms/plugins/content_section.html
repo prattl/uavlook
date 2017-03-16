@@ -1,9 +1,0 @@
-{% load cms_tags %}
-<div class="row content-section">
-    <div class="large-12 columns{% if instance.center %} text-center{% endif %} {% if instance.classname %}{{ instance.classname }}{% endif %}">
-        {% if header %}<h2>{{ header }}</h2>{% endif %}
-        {% for plugin in instance.child_plugin_instances %}
-            {% render_plugin plugin %}
-        {% endfor %}
-    </div>
-</div>

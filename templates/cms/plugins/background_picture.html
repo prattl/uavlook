@@ -1,8 +1,0 @@
-<div class="background-image{% if top %} top{% endif %}" style="height: {{ height }}rem; background-image: linear-gradient( rgba(0, 0, 0, {{ picture.shade_amount }}), rgba(0, 0, 0, {{ picture.shade_amount }}) ), url('{{ picture.image.url }}');" >
-    {% if header or subheader %}
-        <div class="site-header content-page">
-        {% if logo %}<img src="{{ logo.url }}" style="width: {{ logo_width }}px" />{% endif %}
-        {% if header %}<h1>{{ header }}</h1>{% endif %}
-        {% if subheader %}<h2>{{ subheader }}</h2>{% endif %}
-    </div>{% endif %}
-</div>
