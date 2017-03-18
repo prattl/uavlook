@@ -8,4 +8,5 @@ media/
 local_settings.py
 env
 db.sqlite3
-uav/static/
+build/
+node_modules/

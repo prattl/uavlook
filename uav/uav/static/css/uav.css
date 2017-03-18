@@ -1,0 +1,9 @@
+/* Navbar */
+nav.navbar {
+
+}
+
+ul.nav.navbar-nav {
+    text-transform: uppercase;
+    font-size: 26px;
+}
