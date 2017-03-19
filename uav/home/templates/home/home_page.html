@@ -4,12 +4,17 @@
 {% block body_class %}template-homepage{% endblock %}
 
 {% block page_content %}
-    <div class="headers">
-
-    </div>
-    <div class="hero">
-        <div class="container">
-            {{ page.description|richtext }}
+    {% spaceless %}
+        <div class="headers hidden-xs hidden-sm">
+            {% for block in page.header_images %}
+                {% include_block block %}
+            {% endfor %}
+            {% for block in page.headers %}
+                {% include_block block %}
+            {% endfor %}
         </div>
+    {% endspaceless %}
+    <div class="hero">
+        {{ page.description|richtext }}
     </div>
 {% endblock %}
