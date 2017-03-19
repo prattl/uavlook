@@ -3,18 +3,10 @@
   white-space: nowrap;
   position: relative;
   height: 40rem;
-  .tablet({
-    height: 33rem;
-  });
-  .desktop({
-    height: 42rem;
-  });
-  .desktop-lg({
-    height: 56rem;
-  });
-  .desktop-xl({
-    height: 78rem;
-  });
+  .tablet({ height: 33rem; });
+  .desktop({ height: 42rem; });
+  .desktop-lg({ height: 56rem; });
+  .desktop-xl({ height: 78rem; });
   .contents {
     .header-block {
       position: absolute;
@@ -24,65 +16,36 @@
       white-space: normal;
       width: 33%;
       padding: 4rem 2rem;
-      .mq-max(@screen-sm-max, {
-        display: none;
-      });
-      .tablet({
-        padding: 6rem;
-      });
-      .desktop({
-        padding: 6rem;
-      });
-      .desktop-lg({
-        padding: 10rem 8rem;
-      });
-      .desktop-xl({
-        padding: 18rem 8rem;
-      });
+      .mq-max(@screen-sm-max, { display: none; });
+      .tablet({ padding: 6rem; });
+      .desktop({ padding: 6rem; });
+      .desktop-lg({ padding: 10rem 8rem; });
+      .desktop-xl({ padding: 18rem 8rem; });
 
       h2 {
         margin-bottom: 4rem;
         font-size: 36px;
         font-weight: 700;
-        .desktop({
-          font-size: 32px;
-        });
-        .desktop-lg({
-          font-size: 42px;
-        });
-        .desktop-xl({
-          font-size: 70px;
-        });
+        .desktop({ font-size: 32px; });
+        .desktop-lg({ font-size: 42px; });
+        .desktop-xl({ font-size: 70px; });
       }
       h3 {
         margin-bottom: 4rem;
         font-size: 22px;
-        .desktop-lg({
-          font-size: 26px;
-        });
-        .desktop-xl({
-          font-size: 36px;
-        });
+        .desktop-lg({ font-size: 26px; });
+        .desktop-xl({ font-size: 36px; });
       }
       .btn {
         font-size: 16px;
         margin-top: 1rem;
-        .desktop-lg({
-          font-size: 20px;
-        });
-        .desktop-xl({
-          font-size: 24px;
-          margin-top: 2rem;
-        });
+        .desktop-lg({ font-size: 20px; });
+        .desktop-xl({ font-size: 24px; margin-top: 2rem; });
       }
     }
     .header-block:nth-child(1) {
       left: 0;
-      .mq-max(@screen-sm-max, {
-        display: block;
-        width: 100%;
-        text-align: center;
-      });
+      .mq-max(@screen-sm-max, { display: block; width: 100%; text-align: center; });
     }
     .header-block:nth-child(2) {
       left: 33%;
@@ -105,17 +68,12 @@
     display: inline-block;
     white-space: normal;
     overflow: hidden;
-    .mq-max(@screen-sm-max, {
-      display: none;
-    });
+    .mq-max(@screen-sm-max, { display: none; });
     img {
       filter: brightness(50%);
     }
     &:first-child {
-      .mq-max(@screen-sm-max, {
-        display: block;
-        width: 100%;
-      });
+      .mq-max(@screen-sm-max, { display: block; width: 100%; });
     }
   }
 }
@@ -126,57 +84,104 @@
   text-align: center;
   font-size: 18px;
   padding: 6rem 2rem;
-  .tablet({
-    font-size: 22px;
-    padding: 6rem;
-  });
-  .desktop({
-    font-size: 28px;
-    padding: 8rem;
-  });
-  .desktop-lg({
-    font-size: 40px;
-    padding: 10rem 20rem;
-  });
-  .desktop-xl({
-    font-size: 40px;
-    padding: 10rem 20rem;
-  });
+  .tablet({ font-size: 22px; padding: 6rem; });
+  .desktop({ font-size: 28px; padding: 8rem; });
+  .desktop-lg({ font-size: 40px; padding: 10rem 20rem; });
+  .desktop-xl({ font-size: 40px; padding: 10rem 20rem; });
 }
 
 .main-content {
   padding: 2rem 0;
   background-color: @uav_white;
+  .desktop-lg({ padding: 4rem 0; });
+  .desktop-xl({ padding: 6rem 0; });
   h2 {
     font-size: 30px;
     margin-bottom: 4rem;
+    .desktop-lg({ font-size: 60px; margin-bottom: 6rem; });
+    .desktop-xl({ font-size: 70px; margin-bottom: 8rem; });
   }
 }
 
 .home-page-section {
-  padding: 2rem;
+  padding: 1rem;
   background-color: @uav_dark;
   margin-bottom: 30px;
+  .mq(@screen-sm-min, {
+    padding: 1.5rem;
+  });
   .content {
-    padding: 4rem 6rem;
+    padding: 5rem 3rem 2rem 3rem;
     border: 4px solid @uav_accent;
+    .tablet({
+      padding: 10rem 6rem 6rem 6rem;
+    });
+    .desktop({
+      padding: 10rem 3rem 3rem 3rem;
+    });
+    .desktop-lg({
+      padding: 15rem 6rem 6rem 6rem;
+    });
+    .desktop-xl({
+      padding: 20rem 6rem 6rem 6rem;
+    });
   }
   h3 {
     color: @uav_accent;
     text-transform: uppercase;
-    margin: 25rem 0 2rem 0;
     font-weight: 700;
-    font-size: 40px;
-    height: 88px;
+    @size: 26px;
+    font-size: @size;
+    height: (2 * @size);
+    margin-bottom: (2 * @size);
+    .tablet({
+      @size: 32px;
+      font-size: @size;
+      height: (2 * @size);
+      margin-bottom: (2 * @size);
+    });
+    .desktop({
+      @size: 28px;
+      font-size: @size;
+      height: (2 * @size);
+      margin-bottom: (2 * @size);
+    });
+    .desktop-lg({
+      @size: 32px;
+      font-size: @size;
+      height: (2 * @size);
+      margin-bottom: (2 * @size);
+    });
+    .desktop-xl({
+      @size: 38px;
+      font-size: @size;
+      height: (2 * @size);
+      margin-bottom: (2 * @size);
+    })
   }
   p {
     color: #FFF;
-    font-size: 24px;
+    font-size: 18px;
+    .tablet({
+      font-size: 22px;
+    });
+    .desktop-lg({
+      font-size: 24px;
+    });
+    .desktop-xl({
+      font-size: 28px;
+    });
   }
 }
 
 .sections {
   margin-bottom: 4rem;
+  .desktop-lg({
+    padding: 0 6rem;
+  });
+  .desktop-xl({
+    padding: 0 16rem;
+  });
 }
 
 .additional-info {

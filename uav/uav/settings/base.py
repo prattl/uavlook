@@ -135,6 +135,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 ALLOWED_HOSTS = [
+    'localhost',
     'demo.uavlook.com',
     'uavlook.com'
 ]
