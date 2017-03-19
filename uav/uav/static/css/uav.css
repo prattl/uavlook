@@ -13,15 +13,15 @@ a.navbar-brand img {
 }
 
 .skew {
-    -ms-transform: skewX(-25deg);
-    -webkit-transform: skewX(-25deg);
-    transform: skewX(-25deg);
+    -ms-transform: skewX(-20deg);
+    -webkit-transform: skewX(-20deg);
+    transform: skewX(-20deg);
 }
 
 .unskew {
-    -ms-transform: skewX(25deg);
-    -webkit-transform: skewX(25deg);
-    transform: skewX(25deg);
+    -ms-transform: skewX(20deg);
+    -webkit-transform: skewX(20deg);
+    transform: skewX(20deg);
     /*display: inline-block;*/
 }
 
@@ -66,9 +66,9 @@ a.navbar-brand img {
     background-color: #E8E7E1;
     color: #242422;
     height: 100%;
-    -ms-transform: skewX(-25deg);
-    -webkit-transform: skewX(-25deg);
-    transform: skewX(-25deg);
+    -ms-transform: skewX(-20deg);
+    -webkit-transform: skewX(-20deg);
+    transform: skewX(-20deg);
 }
 .headers .contents .header-block:nth-child(2) h3 {
     color: #959284;
@@ -96,6 +96,39 @@ a.navbar-brand img {
     text-align: center;
 }
 
+.main-content {
+    padding: 4rem;
+    background-color: #E8E7E1;
+}
+
+.main-content h2 {
+    font-size: 30px;
+    margin-bottom: 4rem;
+}
+
+.home-page-section {
+    padding: 2rem;
+    background-color: #242422;
+}
+
+.home-page-section .content {
+    padding: 4rem 6rem;
+    border: 4px solid #C19C00;
+}
+
+.home-page-section h3 {
+    color: #C19C00;
+    text-transform: uppercase;
+    margin: 25rem 0 2rem 0;
+    font-weight: 700;
+    font-size: 40px;
+}
+.home-page-section p {
+    color: #FFF;
+    font-size: 24px;
+}
+
+
 @media (min-width: 1800px) {
     .headers {
         height: 78rem;
@@ -119,6 +152,10 @@ a.navbar-brand img {
     .hero {
         font-size: 40px;
         padding: 10rem 20rem;
+    }
+    .main-content h2 {
+        font-size: 60px;
+        margin-bottom: 8rem;
     }
 }
 
@@ -145,6 +182,9 @@ a.navbar-brand img {
         font-size: 40px;
         padding: 10rem 20rem;
     }
+    .main-content h2 {
+        font-size: 60px;
+    }
 }
 
 /* Landscape tablets and medium desktops */
@@ -169,6 +209,9 @@ a.navbar-brand img {
     .hero {
         font-size: 28px;
         padding: 8rem;
+    }
+    .main-content h2 {
+        font-size: 60px;
     }
 }
 
@@ -227,6 +270,9 @@ a.navbar-brand img {
         font-size: 22px;
         padding: 6rem;
     }
+    .main-content {
+        padding: 2rem 0;
+    }
 }
 /* Portrait phones and smaller */
 @media (max-width: 480px) {
@@ -249,7 +295,7 @@ a.navbar-brand img {
     }
     .hero {
         font-size: 22px;
-        padding: 6rem;
+        padding: 6rem 2rem;
     }
 }
 

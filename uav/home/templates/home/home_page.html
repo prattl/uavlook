@@ -21,4 +21,17 @@
     <div class="hero">
         {{ page.description|richtext }}
     </div>
+    <div class="main-content">
+        <h2 class="text-center">{{ page.header }}</h2>
+        <div class="container-fluid">
+            {% for block in page.content_sections %}
+                <div class="col-md-4">
+                    {% include_block block %}
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
+                    <div class="clearfix hidden-xs-block"></div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
