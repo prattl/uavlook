@@ -6990,6 +6990,12 @@ a.navbar-brand img {
     padding: 10rem 20rem;
   }
 }
+@media screen and (min-width: 1600px) {
+  .hero {
+    font-size: 40px;
+    padding: 10rem 20rem;
+  }
+}
 .main-content {
   padding: 2rem 0;
   background-color: #E8E7E1;
