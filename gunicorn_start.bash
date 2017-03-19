@@ -1,13 +1,14 @@
 #!/bin/bash
 
 NAME="uavlook_rebuild"                                    # Name of the application
-DJANGODIR=/home/ubuntu/uavlook/uavlook                    # Django project directory
-SOCKFILE=/var/sock/uavlook.sock  # we will communicte using this unix socket
+DJANGODIR=/home/ubuntu/uavlook/uav                    # Django project directory
+#SOCKFILE=/var/sock/uavlook.sock  # we will communicte using this unix socket
+SOCKFILE=/home/ubuntu/uavlook.sock  # we will communicte using this unix socket
 USER=ubuntu                                        # the user to run as
-GROUP=webapps                                     # the group to run as
+GROUP=ubuntu                                     # the group to run as
 NUM_WORKERS=3                                     # how many worker processes should Gunicorn spawn
-DJANGO_SETTINGS_MODULE=uavlook.settings             # which settings file should Django use
-DJANGO_WSGI_MODULE=uavlook.wsgi                     # WSGI module name
+DJANGO_SETTINGS_MODULE=uav.settings.production             # which settings file should Django use
+DJANGO_WSGI_MODULE=uav.wsgi                     # WSGI module name
 
 echo "Starting $NAME as `whoami`"
 
@@ -16,7 +17,6 @@ cd $DJANGODIR
 source /home/ubuntu/uavlook/env/bin/activate
 export DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
 export PYTHONPATH=$DJANGODIR:$PYTHONPATH
-echo PYTHONPATH
 
 # Create the run directory if it doesn't exist
 RUNDIR=$(dirname $SOCKFILE)
