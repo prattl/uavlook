@@ -11,3 +11,4 @@ db.sqlite3
 build/
 node_modules/
 logs/
+local.py
