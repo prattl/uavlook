@@ -5,13 +5,17 @@
 
 {% block page_content %}
     {% spaceless %}
-        <div class="headers hidden-xs hidden-sm">
-            {% for block in page.header_images %}
-                {% include_block block %}
-            {% endfor %}
-            {% for block in page.headers %}
-                {% include_block block %}
-            {% endfor %}
+        <div class="headers">
+            <div class="images">
+                {% for block in page.header_images %}
+                    {% include_block block %}
+                {% endfor %}
+            </div>
+            <div class="contents">
+                {% for block in page.headers %}
+                    {% include_block block %}
+                {% endfor %}
+            </div>
         </div>
     {% endspaceless %}
     <div class="hero">
