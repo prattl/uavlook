@@ -1,0 +1,55 @@
+@import "layout.less";
+@import "home.less";
+
+@skew_amount: 20deg;
+
+.mobile(@rules) {
+  @media screen and (max-width: @screen-xs-max) { @rules(); }
+}
+.tablet(@rules) {
+  @media screen and (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { @rules(); }
+}
+.desktop(@rules) {
+  @media screen and (min-width: @screen-md-min) and (max-width: @screen-md-max) { @rules(); }
+}
+.desktop-lg(@rules) {
+  @media screen and (min-width: @screen-lg-min) and (max-width: @screen-lg-max) { @rules(); }
+}
+.desktop-lg(@rules) {
+  @media screen and (min-width: @screen-lg-min) and (max-width: @screen-lg-max) { @rules(); }
+}
+.desktop-xl(@rules) {
+  @media screen and (min-width: @screen-xl-min) { @rules(); }
+}
+
+.mq(@width; @rules) {
+  @media only screen and (min-width: @width) {
+      @rules();
+  }
+}
+.mq-max(@width; @rules) {
+  @media only screen and (max-width: @width) {
+      @rules();
+  }
+}
+
+.skew {
+    -ms-transform: skewX(-@skew_amount);
+    -webkit-transform: skewX(-@skew_amount);
+    transform: skewX(-@skew_amount);
+}
+
+.unskew {
+    -ms-transform: skewX(@skew_amount);
+    -webkit-transform: skewX(@skew_amount);
+    transform: skewX(@skew_amount);
+}
+
+.btn {
+    text-transform: uppercase;
+    padding: 12px 24px;
+}
+
+.btn .unskew {
+    display: inline-block;
+}

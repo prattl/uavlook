@@ -23,7 +23,7 @@
     </div>
     <div class="main-content">
         <h2 class="text-center">{{ page.header }}</h2>
-        <div class="container-fluid">
+        <div class="sections container-fluid">
             {% for block in page.content_sections %}
                 <div class="col-md-4">
                     {% include_block block %}
@@ -33,5 +33,17 @@
                 {% endif %}
             {% endfor %}
         </div>
+        <div class="additional-info">
+            <div class="icon-header">
+                <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+            </div>
+            <div>
+                <h3>{{ page.additional_header|richtext }}</h3>
+                <div class="description container">
+                    {{ page.additional_description|richtext }}
+                </div>
+            </div>
+        </div>
+
     </div>
 {% endblock %}
