@@ -24,9 +24,6 @@
         <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}?b={% now 'U' %}">
 
-        {# Global stylesheets #}
-        <link rel="stylesheet" type="text/css" href="{% static 'css/uav.css' %}?b={% now 'U' %}">
-
         {% block extra_css %}
             {# Override this in templates to add extra stylesheets #}
         {% endblock %}

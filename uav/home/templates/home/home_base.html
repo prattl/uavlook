@@ -7,8 +7,8 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="collapsed btn btn-link navbar-toggle-link" data-toggle="collapse"
-                   data-target="#uav-navbar-collapse" aria-expanded="false">Menu</a>
+                <a class="collapsed btn btn-link navbar-toggle-link"
+                   data-toggle="collapse" data-target="#uav-navbar-collapse" aria-expanded="false">Menu</a>
 {#                <button type="button" class="navbar-toggle collapsed btn-link" data-toggle="collapse"#}
 {#                        data-target="#uav-navbar-collapse" aria-expanded="false">#}
 {#                    <span class="sr-only">Toggle navigation</span>#}
@@ -28,16 +28,15 @@
                     <li><a href="#">Services</a></li>
                     <li><a href="#">Blog</a></li>
                 </ul>
-
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
+                <span class="contact-us-container">
+                    <a href="#" class="btn btn-primary skew navbar-btn">
+                        <span class="unskew">Contact Us</span>
+                    </a>
+                </span>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
 
-{#    <div class="container-fluid">#}
         {% block page_content %}{% endblock %}
-{#    </div>#}
 
 {% endblock %}
