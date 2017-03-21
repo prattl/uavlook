@@ -1,6 +1,10 @@
 {% load wagtailimages_tags %}
+{% image value.image height-760 as background_image %}
 
-<div class="home-page-section">
+<div class="home-page-section"
+     {% if value.image %}
+        style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('{{ background_image.url }}')"
+     {% endif %}>
     <div class="content">
         <h3>{{ value.title }}</h3>
         <p>{{ value.description }}</p>

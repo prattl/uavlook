@@ -7038,6 +7038,7 @@ a.navbar-brand img {
   padding: 1rem;
   background-color: #242422;
   margin-bottom: 30px;
+  background-position: center;
 }
 @media only screen and (min-width: 768px) {
   .home-page-section {
@@ -7122,6 +7123,11 @@ a.navbar-brand img {
   .home-page-section p {
     font-size: 28px;
   }
+}
+.home-page-section img {
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 .sections {
   margin-bottom: 4rem;
