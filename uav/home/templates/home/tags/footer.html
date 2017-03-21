@@ -1,0 +1,27 @@
+{% load static wagtailimages_tags %}
+{% image footer.logo original as logo %}
+
+<footer class="site-footer container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <img alt="Brand" src="{{ logo.url }}" class="img-responsive">
+        </div>
+        <div class="col-md-3">
+            <address>
+                {{ footer.address_1 }}<br/>
+                <a href='tel:+19782705399'>{{ footer.address_2 }}</a><br/>
+                <a href='mailto:{{ footer.address_3 }}'>{{ footer.address_3 }}</a><br/>
+                {{ footer_address_4 }}
+            </address>
+        </div>
+        <div class="col-md-3">
+            {{ footer.additional_text_1 }}<br/>
+            {{ footer.additional_text_2 }}
+        </div>
+        <div class="col-md-3">
+            <a class="btn btn-primary skew">
+                <span class="unskew">contact us</span>
+            </a>
+        </div>
+    </div>
+</footer>

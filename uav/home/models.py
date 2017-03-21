@@ -8,11 +8,10 @@ from wagtail.wagtailcore.fields import (
 )
 from wagtail.wagtailadmin.edit_handlers import (
     FieldPanel,
-    FieldRowPanel,
-    MultiFieldPanel,
     StreamFieldPanel
 )
 from wagtail.wagtailimages.blocks import ImageChooserBlock
+from wagtail.wagtailsnippets.models import register_snippet
 
 
 class HeaderBlock(blocks.StructBlock):
@@ -57,3 +56,27 @@ class HomePage(Page):
         FieldPanel('additional_header', classname="full"),
         FieldPanel('additional_description', classname="full"),
     ]
+
+
+@register_snippet
+class SiteFooter(models.Model):
+    logo = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+    description = models.CharField(max_length=128, blank=True, null=True)
+    address_1 = models.CharField(max_length=128, blank=True, null=True)
+    address_2 = models.CharField(max_length=128, blank=True, null=True)
+    address_3 = models.CharField(max_length=128, blank=True, null=True)
+    address_4 = models.CharField(max_length=128, blank=True, null=True)
+
+    additional_text_1 = models.CharField(max_length=128, blank=True, null=True)
+    additional_text_2 = models.CharField(max_length=128, blank=True, null=True)
+
+    facebook = models.URLField(blank=True, null=True)
+    google = models.URLField(blank=True, null=True)
+    twitter = models.URLField(blank=True, null=True)
+    youtube = models.URLField(blank=True, null=True)

@@ -45,9 +45,6 @@ ul.nav.navbar-nav {
 
 a.navbar-brand img {
   max-height: 58px;
-  //.mq(@screen-sm-min, {
-  //  max-height: 72px;
-  //});
   .mq(@grid-float-breakpoint, {
     max-height: 158px;
   });
@@ -79,5 +76,16 @@ a.navbar-brand img {
     font-size: 16px;
     .desktop-lg({ font-size: 20px; });
     .desktop-xl({ font-size: 24px; });
+  }
+}
+
+footer.site-footer {
+  background-color: @uav_dark;
+  padding: 2rem 2rem;
+  text-align: center;
+  color: #FFF;
+  img {
+    max-height: 100px;
+    margin: 0 auto 2rem auto;
   }
 }
