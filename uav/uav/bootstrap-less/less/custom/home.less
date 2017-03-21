@@ -91,7 +91,7 @@
 }
 
 .main-content {
-  padding: 2rem 0;
+  padding: 2rem 0 4rem 0;
   background-color: @uav_white;
   .desktop-lg({ padding: 4rem 0; });
   .desktop-xl({ padding: 6rem 0; });
@@ -106,10 +106,8 @@
 .home-page-section {
   padding: 1rem;
   background-color: @uav_dark;
-  margin-bottom: 30px;
-  //overflow: hidden;
-  //position: relative;
   background-position: center;
+  margin-bottom: 30px;
   .mq(@screen-sm-min, {
     padding: 1.5rem;
   });
@@ -123,7 +121,7 @@
       padding: 10rem 3rem 3rem 3rem;
     });
     .desktop-lg({
-      padding: 15rem 6rem 6rem 6rem;
+      padding: 15rem 4rem 4rem 4rem;
     });
     .desktop-xl({
       padding: 20rem 6rem 6rem 6rem;
@@ -150,7 +148,7 @@
       margin-bottom: (2 * @size);
     });
     .desktop-lg({
-      @size: 32px;
+      @size: 28px;
       font-size: @size;
       height: (2 * @size);
       margin-bottom: (2 * @size);
@@ -195,14 +193,32 @@
 .additional-info {
   text-align: center;
   h3 {
-    font-size: 60px;
+    font-size: 40px;
     margin-bottom: 4rem;
+    .desktop({
+      font-size: 44px;
+    });
+    .desktop-lg({
+      font-size: 48px;
+    });
+    .desktop-xl({
+      font-size: 60px;
+    });
   }
   .icon-header {
     font-size: 160px;
   }
   .description {
-    font-size: 30px;
+    font-size: 22px;
     color: #959284;
+    .desktop({
+      font-size: 26px;
+    });
+    .desktop-lg({
+      font-size: 28px;
+    });
+    .desktop-xl({
+      font-size: 32px;
+    });
   }
 }

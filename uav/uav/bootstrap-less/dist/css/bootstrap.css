@@ -6821,13 +6821,104 @@ a.navbar-brand img {
 }
 footer.site-footer {
   background-color: #242422;
-  padding: 2rem 2rem;
+  padding: 4rem 2rem;
   text-align: center;
   color: #FFF;
+  font-size: 16px;
+}
+@media only screen and (min-width: 768px) {
+  footer.site-footer {
+    text-align: left;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  footer.site-footer {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  footer.site-footer {
+    padding: 6rem 10rem;
+  }
 }
 footer.site-footer img {
-  max-height: 100px;
+  max-width: 150px;
   margin: 0 auto 2rem auto;
+}
+@media only screen and (min-width: 768px) {
+  footer.site-footer img {
+    margin: 0 0 2rem 0;
+  }
+}
+@media screen and (min-width: 1200px) and (max-width: 1599px) {
+  footer.site-footer img {
+    max-width: 200px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  footer.site-footer img {
+    max-width: 200px;
+  }
+}
+footer.site-footer address {
+  margin-bottom: 3rem;
+}
+footer.site-footer .additional-text,
+footer.site-footer .description {
+  color: #959284;
+}
+footer.site-footer .description {
+  max-width: 200px;
+}
+@media screen and (min-width: 1200px) and (max-width: 1599px) {
+  footer.site-footer .description {
+    max-width: 250px;
+  }
+}
+footer.site-footer .additional-text {
+  margin-bottom: 3rem;
+}
+@media only screen and (min-width: 768px) {
+  footer.site-footer .additional-text {
+    margin-bottom: 1rem;
+  }
+}
+footer.site-footer .btn {
+  margin-bottom: 3rem;
+  font-size: 16px;
+}
+@media screen and (min-width: 1200px) and (max-width: 1599px) {
+  footer.site-footer .btn {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  footer.site-footer .btn {
+    font-size: 24px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  footer.site-footer .btn {
+    margin-bottom: 0;
+  }
+}
+footer.site-footer .social-icons {
+  font-size: 22px;
+}
+@media only screen and (min-width: 768px) {
+  footer.site-footer .col-sm-3 {
+    padding-top: 5rem;
+  }
+}
+@media screen and (min-width: 1600px) {
+  footer.site-footer .col-sm-3 {
+    padding-top: 7rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer.site-footer .col-sm-3:first-child {
+    padding-top: 0;
+  }
 }
 .headers {
   overflow: hidden;
@@ -7015,7 +7106,7 @@ footer.site-footer img {
   }
 }
 .main-content {
-  padding: 2rem 0;
+  padding: 2rem 0 4rem 0;
   background-color: #E8E7E1;
 }
 @media screen and (min-width: 1200px) and (max-width: 1599px) {
@@ -7047,8 +7138,8 @@ footer.site-footer img {
 .home-page-section {
   padding: 1rem;
   background-color: #242422;
-  margin-bottom: 30px;
   background-position: center;
+  margin-bottom: 30px;
 }
 @media only screen and (min-width: 768px) {
   .home-page-section {
@@ -7071,7 +7162,7 @@ footer.site-footer img {
 }
 @media screen and (min-width: 1200px) and (max-width: 1599px) {
   .home-page-section .content {
-    padding: 15rem 6rem 6rem 6rem;
+    padding: 15rem 4rem 4rem 4rem;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -7103,9 +7194,9 @@ footer.site-footer img {
 }
 @media screen and (min-width: 1200px) and (max-width: 1599px) {
   .home-page-section h3 {
-    font-size: 32px;
-    height: 64px;
-    margin-bottom: 64px;
+    font-size: 28px;
+    height: 56px;
+    margin-bottom: 56px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -7156,15 +7247,45 @@ footer.site-footer img {
   text-align: center;
 }
 .additional-info h3 {
-  font-size: 60px;
+  font-size: 40px;
   margin-bottom: 4rem;
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .additional-info h3 {
+    font-size: 44px;
+  }
+}
+@media screen and (min-width: 1200px) and (max-width: 1599px) {
+  .additional-info h3 {
+    font-size: 48px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .additional-info h3 {
+    font-size: 60px;
+  }
 }
 .additional-info .icon-header {
   font-size: 160px;
 }
 .additional-info .description {
-  font-size: 30px;
+  font-size: 22px;
   color: #959284;
+}
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .additional-info .description {
+    font-size: 26px;
+  }
+}
+@media screen and (min-width: 1200px) and (max-width: 1599px) {
+  .additional-info .description {
+    font-size: 28px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .additional-info .description {
+    font-size: 32px;
+  }
 }
 .skew {
   -ms-transform: skewX(-20deg);
