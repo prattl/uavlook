@@ -10,8 +10,20 @@ from wagtail.wagtailadmin.edit_handlers import (
     FieldPanel,
     StreamFieldPanel
 )
+from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 from wagtail.wagtailsnippets.models import register_snippet
+
+
+def create_image_field(**kwargs):
+    return models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        **kwargs
+    )
 
 
 class HeaderBlock(blocks.StructBlock):
@@ -58,15 +70,39 @@ class HomePage(Page):
     ]
 
 
+class AboutPageSectionBlock(blocks.StructBlock):
+    title = blocks.CharBlock(required=True)
+    description = blocks.CharBlock(required=True)
+    image = ImageChooserBlock(required=False)
+    content = blocks.RichTextBlock(required=True)
+
+    class Meta:
+        template = 'home/blocks/about_page_section.html'
+
+
+class AboutPage(Page):
+    header_image = create_image_field()
+    header_text = models.CharField(max_length=128, blank=True, null=True)
+    header_description = RichTextField(blank=True, null=True)
+    description = RichTextField(blank=True)
+    content_sections = StreamField([
+        ('sections', AboutPageSectionBlock())
+    ], null=True)
+
+    content_panels = Page.content_panels + [
+        ImageChooserPanel('header_image'),
+        FieldPanel('header_text', classname="full"),
+        FieldPanel('header_description', classname="full"),
+        FieldPanel('description', classname="full"),
+        StreamFieldPanel('content_sections'),
+    ]
+
+    parent_page_types = ['home.HomePage']
+
+
 @register_snippet
 class SiteFooter(models.Model):
-    logo = models.ForeignKey(
-        'wagtailimages.Image',
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+'
-    )
+    logo = create_image_field()
     description = models.CharField(max_length=128, blank=True, null=True)
     address_1 = models.CharField(max_length=128, blank=True, null=True)
     address_2 = models.CharField(max_length=128, blank=True, null=True)

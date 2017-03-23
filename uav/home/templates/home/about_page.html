@@ -1,0 +1,19 @@
+{% extends "home/home_base.html" %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block page_content %}
+    {% image page.header_image min-1920x900 as header_image %}
+    <header class="about" style="background-image: url('{{ header_image.url }}')">
+        <div class="shader">
+            <div class="content">
+                <h1>{{ page.header_text }}</h1>
+                <div>
+                    {{ page.header_description|richtext }}
+                </div>
+                <a class="btn btn-primary" href="">
+                    <span>Learn More</span>
+                </a>
+            </div>
+        </div>
+    </header>
+{% endblock %}

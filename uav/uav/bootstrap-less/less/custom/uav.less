@@ -1,5 +1,6 @@
 @import "layout.less";
 @import "home.less";
+@import "about.less";
 
 @skew_amount: 20deg;
 
@@ -48,8 +49,11 @@
 .btn {
     text-transform: uppercase;
     padding: 12px 24px;
-}
-
-.btn .unskew {
-    display: inline-block;
+    font-size: 16px;
+    margin-top: 1rem;
+    .desktop-lg({ font-size: 20px; });
+    .desktop-xl({ font-size: 24px; margin-top: 2rem; padding: 12px 36px; });
+    .unskew {
+      display: inline-block;
+    }
 }
