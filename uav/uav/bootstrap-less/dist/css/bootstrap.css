@@ -6724,6 +6724,7 @@ button.close {
 }
 nav.navbar {
   margin-bottom: 0;
+  border: none;
 }
 @media only screen and (min-width: 992px) {
   nav.navbar {
@@ -6755,6 +6756,21 @@ nav.navbar .navbar-toggle-link:hover {
 @media only screen and (min-width: 992px) {
   nav.navbar .navbar-toggle-link {
     display: none;
+  }
+}
+nav.navbar ul.dropdown-menu {
+  background-color: #959284;
+  border: none;
+  border-radius: 0;
+}
+nav.navbar ul.dropdown-menu > li > a {
+  color: #FFF;
+  padding: 1rem 2rem;
+}
+@media only screen and (min-width: 992px) {
+  nav.navbar ul.dropdown-menu > li > a:hover,
+  nav.navbar ul.dropdown-menu > li > a:focus {
+    background-color: #7c796a;
   }
 }
 ul.nav.navbar-nav {
@@ -6789,8 +6805,8 @@ a.navbar-brand img {
 }
 @media only screen and (min-width: 992px) {
   .contact-us-container {
-    padding-top: 56px;
-    padding-bottom: 56px;
+    padding-top: 55px;
+    padding-bottom: 55px;
   }
 }
 @media screen and (min-width: 1200px) and (max-width: 1599px) {

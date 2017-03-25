@@ -1,5 +1,7 @@
 nav.navbar {
   margin-bottom: 0;
+  border: none;
+
   .mq(@grid-float-breakpoint, {
     min-height: 158px;
   });
@@ -27,6 +29,20 @@ nav.navbar {
     .mq(@grid-float-breakpoint, {
       display: none;
     });
+  }
+  ul.dropdown-menu {
+    background-color: @uav_muted;
+    border: none;
+    border-radius: 0;
+    & > li > a {
+      color: #FFF;
+      padding: 1rem 2rem;
+      .mq(@grid-float-breakpoint, {
+        &:hover, &:focus {
+          background-color: darken(@uav_muted, 10%);
+        }
+      });
+    }
   }
 }
 
@@ -60,8 +76,8 @@ a.navbar-brand img {
     display: inline;
   });
   .mq(@screen-md-min, {
-    padding-top:    ((132px - @line-height-computed) / 2);
-    padding-bottom: ((132px - @line-height-computed) / 2);
+    padding-top:    ((130px - @line-height-computed) / 2);
+    padding-bottom: ((130px - @line-height-computed) / 2);
   });
   .desktop-lg({
     padding-top: ((120px - @line-height-computed) / 2);
