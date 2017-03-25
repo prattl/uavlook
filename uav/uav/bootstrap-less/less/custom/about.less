@@ -26,8 +26,14 @@ header.about {
       color: @uav_dark;
       .skew();
     });
+    .desktop({
+      padding: 8rem 6rem;
+    });
+    .desktop-lg({
+      padding: 8rem 6rem;
+    });
     .desktop-xl({
-      padding: 10rem 10rem;
+      padding: 10rem;
     });
 
     h1 {
@@ -37,8 +43,9 @@ header.about {
       .mq(@screen-sm-min, {
         .unskew();
       });
-      .desktop({ font-size: 32px; });
-      .desktop-lg({ font-size: 42px; });
+      .tablet({ font-size: 40px; });
+      .desktop({ font-size: 60px; });
+      .desktop-lg({ font-size: 72px; });
       .desktop-xl({ font-size: 120px; margin-bottom: 6rem; });
     }
     p {
@@ -48,14 +55,14 @@ header.about {
       .mq(@screen-sm-min, {
         .unskew();
       });
-      .tablet({ font-size: 22px; });
+      .tablet({ font-size: 20px; });
       .desktop({ font-size: 28px; });
-      .desktop-lg({ font-size: 40px; });
+      .desktop-lg({ font-size: 38px; });
       .desktop-xl({ font-size: 40px; margin-bottom: 6rem; });
     }
     .btn {
       .desktop-xl({ font-size: 32px; });
-      .mq-max(@screen-sm-max, {
+      .mq-max(@screen-xs-max, {
         .skew();
       });
       & > * {

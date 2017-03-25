@@ -7308,9 +7308,19 @@ header.about .content {
     transform: skewX(-20deg);
   }
 }
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  header.about .content {
+    padding: 8rem 6rem;
+  }
+}
+@media screen and (min-width: 1200px) and (max-width: 1599px) {
+  header.about .content {
+    padding: 8rem 6rem;
+  }
+}
 @media screen and (min-width: 1600px) {
   header.about .content {
-    padding: 10rem 10rem;
+    padding: 10rem;
   }
 }
 header.about .content h1 {
@@ -7325,14 +7335,19 @@ header.about .content h1 {
     transform: skewX(20deg);
   }
 }
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  header.about .content h1 {
+    font-size: 40px;
+  }
+}
 @media screen and (min-width: 992px) and (max-width: 1199px) {
   header.about .content h1 {
-    font-size: 32px;
+    font-size: 60px;
   }
 }
 @media screen and (min-width: 1200px) and (max-width: 1599px) {
   header.about .content h1 {
-    font-size: 42px;
+    font-size: 72px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -7355,7 +7370,7 @@ header.about .content p {
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
   header.about .content p {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 @media screen and (min-width: 992px) and (max-width: 1199px) {
@@ -7365,7 +7380,7 @@ header.about .content p {
 }
 @media screen and (min-width: 1200px) and (max-width: 1599px) {
   header.about .content p {
-    font-size: 40px;
+    font-size: 38px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -7379,7 +7394,7 @@ header.about .content p {
     font-size: 32px;
   }
 }
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 767px) {
   header.about .content .btn {
     -ms-transform: skewX(-20deg);
     -webkit-transform: skewX(-20deg);
