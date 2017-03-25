@@ -91,6 +91,15 @@
           max-width: 600px;
         });
       }
+      .text {
+        padding-left: 2rem;
+        .desktop-lg({
+          padding: 2rem 0 2rem 6rem;
+        });
+        .desktop-xl({
+          padding: 2rem 0 2rem 6rem;
+        });
+      }
       .btn-container {
         .desktop-lg({
           padding-left: 6rem;
@@ -136,10 +145,6 @@
           width: 40%;
           max-width: none;
         });
-        //.desktop-lg({
-        //  left: 33%;
-        //  width: 33%;
-        //});
       }
       .mq(@screen-md-min, {
         .text, .btn-container {
@@ -153,7 +158,6 @@
           text-align: center;
         }
       });
-
       .text {
         .desktop-lg({
           padding: 0 8rem;
@@ -180,7 +184,9 @@
         right: 0;
         width: 100px;
         .mq(@screen-md-min, {
-          display: none;
+          right: 0;
+          left: auto;
+          width: 200px;
         });
       }
       &:after {
@@ -194,11 +200,51 @@
         .mq(@screen-xs-min, {
           max-width: 300px;
         });
-        //.mq(@screen-sm-min) {
-        //  left: 33%;
-        //  width: 33%;
-        //  max-width: none;
-        //}
+        .mq(@screen-md-min, {
+          max-width: none;
+          left: 60%;
+        });
+        //.desktop({
+        //  max-width: 400px;
+        //});
+        .desktop-lg({
+          //max-width: 600px;
+          left: 55%;
+        });
+        .desktop-xl({
+          left: 60%;
+        });
+        @media screen and (min-width: 2000px) {
+          left: 70%;
+        }
+      }
+      .text {
+        padding-left: 2rem;
+        .mq(@screen-md-min, {
+          margin-left: auto;
+        });
+        .desktop-lg({
+          padding: 2rem 4rem 2rem 4rem;
+        });
+        .desktop-xl({
+          padding: 2rem 4rem 2rem 4rem;
+        });
+      }
+      .btn-container {
+        .mq(@screen-md-min, {
+          text-align: center;
+          margin-left: auto;
+          max-width: 400px;
+        });
+        .desktop({
+          max-width: 400px;
+        });
+        .desktop-lg({
+          max-width: 600px;
+        });
+        .desktop-xl({
+          max-width: 600px;
+        });
       }
     }
     // END third section
@@ -213,6 +259,7 @@
       padding: 2rem;
       z-index: 4;
       position: relative;
+      overflow: hidden;
       &:after {
         display: block;
         content:'';
@@ -223,7 +270,6 @@
         padding: 6rem 4rem;
       });
       .text {
-        padding-left: 2rem;
         max-width: 80%;
         .mq(@screen-xs-min, {
           max-width: 200px;
@@ -233,11 +279,9 @@
         });
         .desktop-lg({
           max-width: 500px;
-          padding: 2rem 0 2rem 6rem;
         });
         .desktop-xl({
           max-width: 500px;
-          padding: 2rem 0 2rem 6rem;
         });
         h3 {
           font-size: 40px;
@@ -256,7 +300,6 @@
         text-align: center;
         padding: 0 2rem;
         .mq(@screen-xs-min, { text-align: left; });
-
       }
       .btn {
         margin-bottom: 2rem;
