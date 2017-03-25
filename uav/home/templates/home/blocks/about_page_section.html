@@ -6,47 +6,53 @@
 {% image value.image min-1440x900 as background_image_lg %}
 {% image value.image min-1920x1200 as background_image_xl %}
 
-<style>
-    @media screen and (max-width: 479px) {
-        #content-section-{{ value.title }} {
-            background-image: url('{{ background_image_xs.url }}');
+<div class="content-section">
+    <style>
+        @media screen and (max-width: 479px) {
+            #content-section-{{ value.title }} {
+                background-image: url('{{ background_image_xs.url }}');
+            }
         }
-    }
-    @media screen and (max-width: 991px) and (min-width: 480px) {
-        #content-section-{{ value.title }} {
-            background-image: url('{{ background_image_sm.url }}');
+        @media screen and (max-width: 991px) and (min-width: 480px) {
+            #content-section-{{ value.title }} {
+                background-image: url('{{ background_image_sm.url }}');
+            }
         }
-    }
-    @media screen and (max-width: 1199px) and (min-width: 992px) {
-        #content-section-{{ value.title }} {
-            background-image: url('{{ background_image_md.url }}');
+        @media screen and (max-width: 1199px) and (min-width: 992px) {
+            #content-section-{{ value.title }} {
+                background-image: url('{{ background_image_md.url }}');
+            }
         }
-    }
-    @media screen and (max-width: 1599px) and (min-width: 1200px) {
-        #content-section-{{ value.title }} {
-            background-image: url('{{ background_image_lg.url }}');
+        @media screen and (max-width: 1599px) and (min-width: 1200px) {
+            #content-section-{{ value.title }} {
+                background-image: url('{{ background_image_lg.url }}');
+            }
         }
-    }
-    @media screen and (min-width: 1600px) {
-        #content-section-{{ value.title }} {
-            background-image: url('{{ background_image_xl.url }}');
+        @media screen and (min-width: 1600px) {
+            #content-section-{{ value.title }} {
+                background-image: url('{{ background_image_xl.url }}');
+            }
         }
-    }
-</style>
-
-<div class="content-section" id="content-section-{{ value.title }}">
-    <div class="header">
-        <div class="text">
-            <h3>{{ value.title }}</h3>
-            <p>{{ value.description }}</p>
-        </div>
-        <div class="btn-container">
-            <a class="btn btn-default skew" href="">
-                <span class="unskew">Learn More</span>
-            </a>
+    </style>
+    <div class="content-section-header" id="content-section-{{ value.title }}">
+        <div class="header">
+            <div class="text">
+                <h3>{{ value.title }}</h3>
+                <p>{{ value.description }}</p>
+            </div>
+            <div class="btn-container">
+                <button class="btn skew {% if forloop.counter0 == 0 %}btn-default{% else %}btn-primary{% endif %}"
+                        type="button" data-toggle="collapse"
+                        data-target="#collapse-{{ value.title }}"
+                        aria-expanded="false" aria-controls="collapse-{{ value.title }}">
+                    <span class="unskew">Learn More</span>
+                </button>
+            </div>
         </div>
     </div>
-{#    <div class="content">#}
-{#        {{ value.content|richtext }}#}
-{#    </div>#}
+    <div class="content-section-content collapse" id="collapse-{{ value.title }}">
+        {{ value.content|richtext }}
+    </div>
 </div>
+
+

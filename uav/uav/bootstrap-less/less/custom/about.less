@@ -54,19 +54,14 @@
     color: @uav_muted;
   }
   .content-section {
-    background-position: center;
-    background-size: cover;
-    z-index: 1;
-    .header {
-      background-color: transparent;
+    // BEGIN first section
+    &:nth-child(3n + 1) .header {
       color: #FFF;
-      padding: 2rem;
-      z-index: 4;
-      position: relative;
+      @background-color: @uav_accent;
       &:before {
+        background-color: @background-color;
         display: block;
         content: '';
-        background-color: @uav_accent;
         z-index: -1;
         position: absolute;
         top: 0;
@@ -76,11 +71,7 @@
         width: 100px;
       }
       &:after {
-        display: block;
-        content:'';
-        background-color: @uav_accent;
-        z-index: -1;
-        .skew();
+        background-color: @background-color;
         position: absolute;
         top: 0;
         left: 0;
@@ -100,6 +91,137 @@
           max-width: 600px;
         });
       }
+      .btn-container {
+        .desktop-lg({
+          padding-left: 6rem;
+        });
+        .desktop-xl({
+          padding-left: 6rem;
+        });
+      }
+    }
+    // END first section
+    // BEGIN second section
+    &:nth-child(3n + 2) .header {
+      color: @uav_dark;
+      @background-color: @uav_white;
+      &:before {
+        background-color: @background-color;
+        display: block;
+        content: '';
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100px;
+        .mq(@screen-md-min, {
+          display: none;
+        });
+      }
+      &:after {
+        background-color: @background-color;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        max-width: 80%;
+        .mq(@screen-xs-min, {
+          max-width: 300px;
+        });
+        .mq(@screen-md-min, {
+          left: 30%;
+          width: 40%;
+          max-width: none;
+        });
+        //.desktop-lg({
+        //  left: 33%;
+        //  width: 33%;
+        //});
+      }
+      .mq(@screen-md-min, {
+        .text, .btn-container {
+          margin: 0 auto;
+        }
+        .text {
+          padding: 0 2rem;
+        }
+        .btn-container {
+          max-width: 400px;
+          text-align: center;
+        }
+      });
+
+      .text {
+        .desktop-lg({
+          padding: 0 8rem;
+        });
+        .desktop-xl({
+          padding: 2rem 8rem;
+        });
+      }
+    }
+    // END second section
+    // BEGIN third section
+    &:nth-child(3n + 3) .header {
+      color: #FFF;
+      @background-color: @uav_dark;
+      &:before {
+        background-color: @background-color;
+        display: block;
+        content: '';
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100px;
+        .mq(@screen-md-min, {
+          display: none;
+        });
+      }
+      &:after {
+        background-color: @background-color;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        max-width: 80%;
+        .mq(@screen-xs-min, {
+          max-width: 300px;
+        });
+        //.mq(@screen-sm-min) {
+        //  left: 33%;
+        //  width: 33%;
+        //  max-width: none;
+        //}
+      }
+    }
+    // END third section
+  }
+  .content-section-header {
+    background-position: center;
+    background-size: cover;
+    z-index: 1;
+
+    .header {
+      background-color: transparent;
+      padding: 2rem;
+      z-index: 4;
+      position: relative;
+      &:after {
+        display: block;
+        content:'';
+        z-index: -1;
+        .skew();
+      }
+      .desktop-xl({
+        padding: 6rem 4rem;
+      });
       .text {
         padding-left: 2rem;
         max-width: 80%;
@@ -134,17 +256,16 @@
         text-align: center;
         padding: 0 2rem;
         .mq(@screen-xs-min, { text-align: left; });
-        .desktop-lg({
-          padding-left: 6rem;
-        });
-        .desktop-xl({
-          padding-left: 6rem;
-        });
-      }
 
+      }
       .btn {
         margin-bottom: 2rem;
       }
     }
+  }
+  .content-section-content {
+    .hero();
+    text-align: left;
+    color: @uav_muted;
   }
 }

@@ -22,7 +22,7 @@
                 {{ page.description|richtext }}
             </div>
         </section>
-        <section>
+        <section class="content-sections">
             {% for block in page.content_sections %}
                 {% include_block block %}
             {% endfor %}
