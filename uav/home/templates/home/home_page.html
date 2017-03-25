@@ -4,45 +4,47 @@
 {% block body_class %}template-homepage{% endblock %}
 
 {% block page_content %}
-    {% spaceless %}
-        <div class="headers">
-            <div class="images">
-                {% for block in page.header_images %}
-                    {% include_block block %}
-                {% endfor %}
-            </div>
-            <div class="contents">
-                {% for block in page.headers %}
-                    {% include_block block %}
-                {% endfor %}
-            </div>
-        </div>
-    {% endspaceless %}
-    <div class="hero">
-        {{ page.description|richtext }}
-    </div>
-    <div class="main-content">
-        <h2 class="text-center">{{ page.header }}</h2>
-        <div class="sections container-fluid">
-            <div class="row">
-                {% for block in page.content_sections %}
-                    <div class="col-md-4">
+    <div class="home">
+        {% spaceless %}
+            <div class="headers">
+                <div class="images">
+                    {% for block in page.header_images %}
                         {% include_block block %}
-                    </div>
-                    {% if forloop.counter|divisibleby:3 %}
-                        <div class="clearfix hidden-xs-block"></div>
-                    {% endif %}
-                {% endfor %}
+                    {% endfor %}
+                </div>
+                <div class="contents">
+                    {% for block in page.headers %}
+                        {% include_block block %}
+                    {% endfor %}
+                </div>
             </div>
+        {% endspaceless %}
+        <div class="hero">
+            {{ page.description|richtext }}
         </div>
-        <div class="additional-info">
-            <div class="icon-header">
-                <i class="fa fa-globe" aria-hidden="true"></i>
+        <div class="main-content">
+            <h2 class="text-center">{{ page.header }}</h2>
+            <div class="sections container-fluid">
+                <div class="row">
+                    {% for block in page.content_sections %}
+                        <div class="col-md-4">
+                            {% include_block block %}
+                        </div>
+                        {% if forloop.counter|divisibleby:3 %}
+                            <div class="clearfix hidden-xs-block"></div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </div>
-            <div>
-                <h3>{{ page.additional_header|richtext }}</h3>
-                <div class="description container">
-                    {{ page.additional_description|richtext }}
+            <div class="additional-info">
+                <div class="icon-header">
+                    <i class="fa fa-globe" aria-hidden="true"></i>
+                </div>
+                <div>
+                    <h3>{{ page.additional_header|richtext }}</h3>
+                    <div class="description container">
+                        {{ page.additional_description|richtext }}
+                    </div>
                 </div>
             </div>
         </div>

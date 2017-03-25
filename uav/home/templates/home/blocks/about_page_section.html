@@ -1,0 +1,52 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+{#{% image value.image min-1920x900 as background_image %}#}
+{% image value.image min-550x300 as background_image_xs %}
+{% image value.image min-768x1024 as background_image_sm %}
+{% image value.image min-1366x768 as background_image_md %}
+{% image value.image min-1440x900 as background_image_lg %}
+{% image value.image min-1920x1200 as background_image_xl %}
+
+<style>
+    @media screen and (max-width: 479px) {
+        #content-section-{{ value.title }} {
+            background-image: url('{{ background_image_xs.url }}');
+        }
+    }
+    @media screen and (max-width: 991px) and (min-width: 480px) {
+        #content-section-{{ value.title }} {
+            background-image: url('{{ background_image_sm.url }}');
+        }
+    }
+    @media screen and (max-width: 1199px) and (min-width: 992px) {
+        #content-section-{{ value.title }} {
+            background-image: url('{{ background_image_md.url }}');
+        }
+    }
+    @media screen and (max-width: 1599px) and (min-width: 1200px) {
+        #content-section-{{ value.title }} {
+            background-image: url('{{ background_image_lg.url }}');
+        }
+    }
+    @media screen and (min-width: 1600px) {
+        #content-section-{{ value.title }} {
+            background-image: url('{{ background_image_xl.url }}');
+        }
+    }
+</style>
+
+<div class="content-section" id="content-section-{{ value.title }}">
+    <div class="header">
+        <div class="text">
+            <h3>{{ value.title }}</h3>
+            <p>{{ value.description }}</p>
+        </div>
+        <div class="btn-container">
+            <a class="btn btn-default skew" href="">
+                <span class="unskew">Learn More</span>
+            </a>
+        </div>
+    </div>
+{#    <div class="content">#}
+{#        {{ value.content|richtext }}#}
+{#    </div>#}
+</div>

@@ -5,7 +5,10 @@
 @skew_amount: 20deg;
 
 .mobile(@rules) {
-  @media screen and (max-width: @screen-xs-max) { @rules(); }
+  @media screen and (max-width: @screen-xs-min) { @rules(); }
+}
+.mobile-lg(@rules) {
+  @media screen and (min-width: @screen-xs-min) and (max-width: @screen-xs-max) { @rules(); }
 }
 .tablet(@rules) {
   @media screen and (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { @rules(); }
@@ -56,4 +59,22 @@
     .unskew {
       display: inline-block;
     }
+}
+
+.hero-text() {
+  font-size: 18px;
+  .tablet({ font-size: 22px; });
+  .desktop({ font-size: 28px; });
+  .desktop-lg({ font-size: 40px; });
+  .desktop-xl({ font-size: 40px; });
+}
+
+.hero {
+  text-align: center;
+  padding: 6rem 2rem;
+  .hero-text();
+  .tablet({ padding: 6rem; });
+  .desktop({ padding: 8rem; });
+  .desktop-lg({ padding: 10rem 20rem; });
+  .desktop-xl({ padding: 10rem 20rem; });
 }
