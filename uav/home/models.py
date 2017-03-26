@@ -1,13 +1,15 @@
 from django.db import models
 
+from modelcluster.fields import ParentalKey
 from wagtail.wagtailcore import blocks
-from wagtail.wagtailcore.models import Page
+from wagtail.wagtailcore.models import Orderable, Page
 from wagtail.wagtailcore.fields import (
     RichTextField,
     StreamField,
 )
 from wagtail.wagtailadmin.edit_handlers import (
     FieldPanel,
+    InlinePanel,
     StreamFieldPanel
 )
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
@@ -16,13 +18,16 @@ from wagtail.wagtailsnippets.models import register_snippet
 
 
 def create_image_field(**kwargs):
+    args = {
+        'null': True,
+        'blank': True,
+        'on_delete': models.SET_NULL,
+        'related_name': '+',
+    }
+    args.update(kwargs)
     return models.ForeignKey(
         'wagtailimages.Image',
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+',
-        **kwargs
+        **args
     )
 
 
@@ -98,6 +103,44 @@ class AboutPage(Page):
     ]
 
     parent_page_types = ['home.HomePage']
+
+
+class PhotographyPage(Page):
+    content_panels = Page.content_panels + [
+        InlinePanel('gallery_images', label='Gallery Images')
+    ]
+
+    parent_page_types = ['home.HomePage']
+
+
+class PhotographyPageGalleryImage(Orderable):
+    page = ParentalKey(PhotographyPage, related_name='gallery_images')
+    image = create_image_field(on_delete=models.CASCADE)
+    title = models.CharField(blank=True, max_length=256)
+    description = RichTextField(blank=True)
+
+    panels = [
+        ImageChooserPanel('image'),
+        FieldPanel('title'),
+        FieldPanel('description'),
+    ]
+
+
+class VideoPage(Page):
+    content_panels = Page.content_panels + [
+        InlinePanel('gallery_videos', label='Gallery Videos')
+    ]
+
+    parent_page_types = ['home.HomePage']
+
+
+class VideoPageGalleryVideo(Orderable):
+    page = ParentalKey(PhotographyPage, related_name='gallery_images')
+    video_url = models.URLField(help_text='Full link to a YouTube or Vimeo video page.')
+
+    panels = [
+        FieldPanel('video_url'),
+    ]
 
 
 @register_snippet

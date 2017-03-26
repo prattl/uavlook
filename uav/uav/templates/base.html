@@ -24,10 +24,15 @@
         <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}?b={% now 'U' %}">
         <link rel="stylesheet" href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/image-grid.css' %}">
+        <link rel="stylesheet" href="{% static 'fotorama-4.6.4/fotorama.css' %}" >
 
         {% block extra_css %}
             {# Override this in templates to add extra stylesheets #}
         {% endblock %}
+
+        <script src="{% static 'fotorama-4.6.4/fotorama.js' %}"></script>
+        <script src="{% static 'js/modernizr-custom.js' %}"></script>
     </head>
 
     <body class="{% block body_class %}{% endblock %}">

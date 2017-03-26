@@ -1,0 +1,91 @@
+{% extends "home/home_base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block page_content %}
+    <div class="photography">
+        <header>
+            <h1>{{ page.title }}</h1>
+        </header>
+        <main>
+            <div class="grid">
+                {% for photo in page.gallery_images.all %}
+                    {% image photo.image width-900 as thumbnail_img %}
+                    {% image photo.image original as img %}
+                    <style>
+                        .photography a.img-wrap-{{ forloop.counter0 }} {
+
+                        }
+                    </style>
+                    <div class="grid__item" data-size="{{ img.height }}x{{ img.width }}">
+                        <a href="{{ img.url }}" class="img-wrap img-wrap-sm-{{ forloop.counter0 }}">
+                            <img src="{{ thumbnail_img.url }}" alt="{{ thumbnail_img.alt }}" />
+                            <div class="description description--grid">
+                                {{ photo.description|richtext }}<br/>
+                                {% for tag in photo.tags.all %}
+                                    {{ tag }}
+                                {% endfor %}
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="preview">
+                <button class="action action--close"><i class="fa fa-times"></i><span class="text-hidden">Close</span></button>
+                <div class="description description--preview"></div>
+            </div>
+        </main>
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/masonry.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/classie.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script>
+        (function() {
+            // create SVG circle overlay and append it to the preview element
+            function createCircleOverlay(previewEl) {
+                var dummy = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                dummy.setAttributeNS(null, 'version', '1.1');
+                dummy.setAttributeNS(null, 'width', '100%');
+                dummy.setAttributeNS(null, 'height', '100%');
+                dummy.setAttributeNS(null, 'class', 'overlay');
+                var g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                var circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                circle.setAttributeNS(null, 'cx', 0);
+                circle.setAttributeNS(null, 'cy', 0);
+                circle.setAttributeNS(null, 'r', Math.sqrt(Math.pow(previewEl.offsetWidth,2) + Math.pow(previewEl.offsetHeight,2)));
+                dummy.appendChild(g);
+                g.appendChild(circle);
+                previewEl.appendChild(dummy);
+            }
+            
+            new GridFx(document.querySelector('.grid'), {
+                onInit : function(instance) {
+                    createCircleOverlay(instance.previewEl);
+                },
+                onResize : function(instance) {
+                    instance.previewEl.querySelector('svg circle').setAttributeNS(null, 'r', Math.sqrt(Math.pow(instance.previewEl.offsetWidth,2) + Math.pow(instance.previewEl.offsetHeight,2)));
+                },
+                onOpenItem : function(instance, item) {
+                    // item's image
+                    var gridImg = item.querySelector('img'),
+                        gridImgOffset = gridImg.getBoundingClientRect(),
+                        win = {width: document.documentElement.clientWidth, height: window.innerHeight},
+                        SVGCircleGroupEl = instance.previewEl.querySelector('svg > g'),
+                        SVGCircleEl = SVGCircleGroupEl.querySelector('circle');
+                        
+                    SVGCircleEl.setAttributeNS(null, 'r', Math.sqrt(Math.pow(instance.previewEl.offsetWidth,2) + Math.pow(instance.previewEl.offsetHeight,2)));
+                    // set the transform for the SVG g node. This will animate the circle overlay. The origin of the circle depends on the position of the clicked item.
+                    if( gridImgOffset.left + gridImg.offsetWidth/2 < win.width/2 ) {
+                        SVGCircleGroupEl.setAttributeNS(null, 'transform', 'translate(' + win.width + ', ' + (gridImgOffset.top + gridImg.offsetHeight/2 < win.height/2 ? win.height : 0) + ')');
+                    }
+                    else {
+                        SVGCircleGroupEl.setAttributeNS(null, 'transform', 'translate(0, ' + (gridImgOffset.top + gridImg.offsetHeight/2 < win.height/2 ? win.height : 0) + ')');
+                    }
+                }
+            });
+        })();
+    </script>
+{% endblock %}
