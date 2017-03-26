@@ -2,7 +2,7 @@
 {% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block page_content %}
-    <div class="photography">
+    <div class="photography portfolio">
         <header>
             <h1>{{ page.title }}</h1>
         </header>
@@ -11,11 +11,6 @@
                 {% for photo in page.gallery_images.all %}
                     {% image photo.image width-900 as thumbnail_img %}
                     {% image photo.image original as img %}
-                    <style>
-                        .photography a.img-wrap-{{ forloop.counter0 }} {
-
-                        }
-                    </style>
                     <div class="grid__item" data-size="{{ img.height }}x{{ img.width }}">
                         <a href="{{ img.url }}" class="img-wrap img-wrap-sm-{{ forloop.counter0 }}">
                             <img src="{{ thumbnail_img.url }}" alt="{{ thumbnail_img.alt }}" />

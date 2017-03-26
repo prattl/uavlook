@@ -135,11 +135,17 @@ class VideoPage(Page):
 
 
 class VideoPageGalleryVideo(Orderable):
-    page = ParentalKey(PhotographyPage, related_name='gallery_images')
+    page = ParentalKey(VideoPage, related_name='gallery_videos')
     video_url = models.URLField(help_text='Full link to a YouTube or Vimeo video page.')
+    splash_image = create_image_field(
+        help_text='If provided, will be used as the splash image before the video starts.')
+    thumbnail_image = create_image_field(
+        help_text='If provided, will be used as the thumbnail at the bottom of the video player.')
 
     panels = [
         FieldPanel('video_url'),
+        ImageChooserPanel('splash_image'),
+        ImageChooserPanel('thumbnail_image'),
     ]
 
 

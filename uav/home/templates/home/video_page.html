@@ -1,0 +1,23 @@
+{% extends "home/home_base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block page_content %}
+    <div class="video portfolio">
+        <header>
+            <h1>{{ page.title }}</h1>
+        </header>
+        <main>
+            <div class="fotorama" data-nav="thumbs" data-fit="cover" data-width="100%" data-height="100%"
+                 data-ratio="16/10" data-click="true" data-swipe="true" data-thumbwidth="100" data-thumbheight="60">
+                {% for video in page.gallery_videos.all %}
+                    {% image video.splash_image original as splash_image %}
+                    <a href="{{ video.video_url }}" {% if video.splash_image %}data-img="{{ splash_image.url }}"{% endif %}>
+                        {% if video.thumbnail_image %}
+                            {% image video.thumbnail_image original %}
+                        {% endif %}
+                    </a>
+                {% endfor %}
+            </div>
+        </main>
+    </div>
+{% endblock %}
