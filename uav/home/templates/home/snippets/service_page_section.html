@@ -1,3 +1,10 @@
 <div>
-
+    {% cycle 'left' 'right' as orientation %}
+    {% if orientation == 'left' %}
+        {% include 'home/snippets/service_page_section_image.html' %}
+    {% endif %}
+    {% include 'home/snippets/service_page_section_text.html' %}
+    {% if orientation == 'right' %}
+        {% include 'home/snippets/service_page_section_image.html' %}
+    {% endif %}
 </div>
