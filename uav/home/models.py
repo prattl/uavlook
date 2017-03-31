@@ -149,6 +149,41 @@ class VideoPageGalleryVideo(Orderable):
     ]
 
 
+class ServicesPage(Page):
+    header_image = create_image_field()
+    header_text = models.CharField(max_length=128, blank=True, null=True)
+    header_description = RichTextField(blank=True, null=True)
+    description = RichTextField(blank=True)
+
+    content_panels = Page.content_panels + [
+        ImageChooserPanel('header_image'),
+        FieldPanel('header_text', classname="full"),
+        FieldPanel('header_description', classname="full"),
+        FieldPanel('description', classname="full"),
+        InlinePanel('service_sections', label='Service Sections')
+    ]
+
+    parent_page_types = ['home.HomePage']
+
+
+class ServicesPageSection(Orderable):
+    page = ParentalKey(ServicesPage, related_name='service_sections')
+    title = models.CharField(max_length=128, blank=True, null=True)
+    description = RichTextField(blank=True)
+    image = create_image_field()
+    icon = models.CharField(
+        max_length=128, blank=True, null=True,
+        help_text="Use the icon name from this list: http://fontawesome.io/icons/ (e.g. 'fa-address-book')"
+    )
+
+    panels = [
+        FieldPanel('title'),
+        FieldPanel('description'),
+        ImageChooserPanel('image'),
+        FieldPanel('icon'),
+    ]
+
+
 @register_snippet
 class SiteFooter(models.Model):
     logo = create_image_field()
