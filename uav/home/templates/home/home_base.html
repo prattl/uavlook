@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -17,6 +17,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="uav-navbar-collapse">
                 <ul class="nav navbar-nav">
+                    {% include 'nav_menu_item.html' with name='Home' path='/' %}
                     {% include 'nav_menu_item.html' with name='About' path='/about/' %}
                     <li class="dropdown{% if request.path == '/photography/' or request.path == '/video/' %} active{% endif %}">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
@@ -27,7 +28,7 @@
                         </ul>
                     </li>
                     {% include 'nav_menu_item.html' with name='Services' path='/services/' %}
-                    {% include 'nav_menu_item.html' with name='Blog' path='/blog/' %}
+{#                    {% include 'nav_menu_item.html' with name='Blog' path='/blog/' %}#}
                 </ul>
                 <span class="contact-us-container">
                     <a href="/contact-us/" class="btn btn-primary skew navbar-btn">

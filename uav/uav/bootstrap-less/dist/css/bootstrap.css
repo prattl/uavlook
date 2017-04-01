@@ -7433,6 +7433,9 @@ button.close {
     font-size: 32px;
   }
 }
+body {
+  padding-top: 158px;
+}
 nav.navbar {
   margin-bottom: 0;
   border: none;
