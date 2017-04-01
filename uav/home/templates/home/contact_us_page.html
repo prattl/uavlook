@@ -1,8 +1,30 @@
-{% load wagtailcore_tags %}
-<h1>{{ page.title }}</h1>
-{{ page.description|richtext }}
-<form action="{% pageurl page %}" method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit">
-</form>
+{% extends "home/home_base.html" %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block page_content %}
+    {% image page.header_image min-1920x900 as header_image %}
+    <div class="contact-us content-page">
+        <header style="background-image: url('{{ header_image.url }}')">
+            <div class="shader">
+                <div class="content">
+                    <h1>{{ page.header_text }}</h1>
+                    <a class="btn btn-primary" href="">
+                        <span>Call Us</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <section>
+            <div class="description hero">
+                {{ page.description|richtext }}
+            </div>
+        </section>
+        <main class="form-container">
+            <form action="{% pageurl page %}" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit">
+            </form>
+        </main>
+    </div>
+{% endblock %}

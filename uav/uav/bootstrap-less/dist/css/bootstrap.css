@@ -7101,6 +7101,13 @@ button.close {
     padding: 10rem 20rem;
   }
 }
+.contact-us section .description {
+  background-color: #959284;
+  color: #FFF;
+}
+.contact-us main {
+  padding: 10rem;
+}
 .home .headers {
   overflow: hidden;
   white-space: nowrap;
