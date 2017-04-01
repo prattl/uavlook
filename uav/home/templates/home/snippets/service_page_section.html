@@ -1,13 +1,3 @@
-{#<div class="service-page-section">#}
-{#    {% if forloop.counter0|divisibleby:2 %}#}
-{#        {% include 'home/snippets/service_page_section_image.html' %}#}
-{#    {% endif %}#}
-{#    {% include 'home/snippets/service_page_section_text.html' %}#}
-{#    {% if not forloop.counter0|divisibleby:2 %}#}
-{#        {% include 'home/snippets/service_page_section_image.html' %}#}
-{#    {% endif %}#}
-{#</div>#}
-
 {% load wagtailcore_tags wagtailimages_tags %}
 {% image section.image min-550x300 as background_image_xs %}
 {% image section.image min-768x1024 as background_image_sm %}
@@ -49,13 +39,8 @@
                 <i class="fa {{ section.icon }}"></i>
             </div>
         {% endif %}
-        <div class="image-overlay">
-
-        </div>
-        <div class="img-container" id="service-page-section-image-{{ forloop.counter0 }}">
-
-        </div>
-{#        {% image section.image original %}#}
+        <div class="image-overlay"></div>
+        <div class="img-container" id="service-page-section-image-{{ forloop.counter0 }}"></div>
     </div>
     <div class="service-page-section-text">
         <h2>{{ section.title }}</h2>

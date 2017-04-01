@@ -9,9 +9,12 @@ from wagtail.wagtailcore.fields import (
 )
 from wagtail.wagtailadmin.edit_handlers import (
     FieldPanel,
+    FieldRowPanel,
     InlinePanel,
+    MultiFieldPanel,
     StreamFieldPanel
 )
+from wagtail.wagtailforms.models import AbstractEmailForm, AbstractFormField
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 from wagtail.wagtailsnippets.models import register_snippet
@@ -182,6 +185,35 @@ class ServicesPageSection(Orderable):
         ImageChooserPanel('image'),
         FieldPanel('icon'),
     ]
+
+
+class ContactUsPage(AbstractEmailForm):
+    header_image = create_image_field()
+    header_text = models.CharField(max_length=128, blank=True, null=True)
+    description = RichTextField(blank=True)
+    thank_you_text = RichTextField(blank=True)
+
+    content_panels = AbstractEmailForm.content_panels + [
+        ImageChooserPanel('header_image'),
+        FieldPanel('header_text', classname="full"),
+        FieldPanel('description', classname="full"),
+        FieldPanel('thank_you_text', classname="full"),
+        MultiFieldPanel([
+            FieldRowPanel([
+                FieldPanel('from_address', classname="col6"),
+                FieldPanel('to_address', classname="col6"),
+            ]),
+            FieldPanel('subject'),
+        ], "Email"),
+        InlinePanel('form_fields', label='Form Fields')
+    ]
+
+    # def get_form_fields(self):
+    #     return self.custom_form_fields.all()
+
+
+class FormField(AbstractFormField):
+    page = ParentalKey(ContactUsPage, related_name='form_fields')
 
 
 @register_snippet
