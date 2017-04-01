@@ -1,2 +1,38 @@
 {% load wagtailcore_tags wagtailimages_tags %}
-{% image section.image width-900 %}
+{% image section.image min-550x300 as background_image_xs %}
+{% image section.image min-768x1024 as background_image_sm %}
+{% image section.image min-1366x768 as background_image_md %}
+{% image section.image min-1440x900 as background_image_lg %}
+{% image section.image min-1920x1200 as background_image_xl %}
+
+<style>
+    @media screen and (max-width: 479px) {
+        #service-page-section-image-{{ forloop.counter0 }} {
+            background-image: url('{{ background_image_xs.url }}');
+        }
+    }
+    @media screen and (max-width: 991px) and (min-width: 480px) {
+        #service-page-section-image-{{ forloop.counter0 }} {
+            background-image: url('{{ background_image_sm.url }}');
+        }
+    }
+    @media screen and (max-width: 1199px) and (min-width: 992px) {
+        #service-page-section-image-{{ forloop.counter0 }} {
+            background-image: url('{{ background_image_md.url }}');
+        }
+    }
+    @media screen and (max-width: 1599px) and (min-width: 1200px) {
+        #service-page-section-image-{{ forloop.counter0 }} {
+            background-image: url('{{ background_image_lg.url }}');
+        }
+    }
+    @media screen and (min-width: 1600px) {
+        #service-page-section-image-{{ forloop.counter0 }} {
+            background-image: url('{{ background_image_xl.url }}');
+        }
+    }
+</style>
+
+<div class="service-page-section-half">
+    <div class="service-page-section-image" id="service-page-section-image-{{ forloop.counter0 }}"></div>
+</div>

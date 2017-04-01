@@ -23,9 +23,11 @@
             </div>
         </section>
         <main class="content-sections">
-            {% for section in page.service_sections.all %}
-                {% include 'home/snippets/service_page_section.html' %}
-            {% endfor %}
+            {% spaceless %}
+                {% for section in page.service_sections.all %}
+                    {% include 'home/snippets/service_page_section.html' %}
+                {% endfor %}
+            {% endspaceless %}
         </main>
     </div>
 {% endblock %}

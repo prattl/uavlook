@@ -1,10 +1,66 @@
-<div>
-    {% cycle 'left' 'right' as orientation %}
-    {% if orientation == 'left' %}
-        {% include 'home/snippets/service_page_section_image.html' %}
-    {% endif %}
-    {% include 'home/snippets/service_page_section_text.html' %}
-    {% if orientation == 'right' %}
-        {% include 'home/snippets/service_page_section_image.html' %}
-    {% endif %}
+{#<div class="service-page-section">#}
+{#    {% if forloop.counter0|divisibleby:2 %}#}
+{#        {% include 'home/snippets/service_page_section_image.html' %}#}
+{#    {% endif %}#}
+{#    {% include 'home/snippets/service_page_section_text.html' %}#}
+{#    {% if not forloop.counter0|divisibleby:2 %}#}
+{#        {% include 'home/snippets/service_page_section_image.html' %}#}
+{#    {% endif %}#}
+{#</div>#}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+{% image section.image min-550x300 as background_image_xs %}
+{% image section.image min-768x1024 as background_image_sm %}
+{% image section.image min-1366x768 as background_image_md %}
+{% image section.image min-1440x900 as background_image_lg %}
+{% image section.image min-1920x1200 as background_image_xl %}
+
+<div class="service-page-section">
+    <style>
+        @media screen and (max-width: 479px) {
+            #service-page-section-image-{{ forloop.counter0 }} {
+                background-image: url('{{ background_image_xs.url }}');
+            }
+        }
+        @media screen and (max-width: 991px) and (min-width: 480px) {
+            #service-page-section-image-{{ forloop.counter0 }} {
+                background-image: url('{{ background_image_sm.url }}');
+            }
+        }
+        @media screen and (max-width: 1199px) and (min-width: 992px) {
+            #service-page-section-image-{{ forloop.counter0 }} {
+                background-image: url('{{ background_image_md.url }}');
+            }
+        }
+        @media screen and (max-width: 1599px) and (min-width: 1200px) {
+            #service-page-section-image-{{ forloop.counter0 }} {
+                background-image: url('{{ background_image_lg.url }}');
+            }
+        }
+        @media screen and (min-width: 1600px) {
+            #service-page-section-image-{{ forloop.counter0 }} {
+                background-image: url('{{ background_image_xl.url }}');
+            }
+        }
+    </style>
+    <div class="service-page-section-image">
+        {% if section.icon %}
+            <div class="icon-container">
+                <i class="fa {{ section.icon }}"></i>
+            </div>
+        {% endif %}
+        <div class="image-overlay">
+
+        </div>
+        <div class="img-container" id="service-page-section-image-{{ forloop.counter0 }}">
+
+        </div>
+{#        {% image section.image original %}#}
+    </div>
+    <div class="service-page-section-text">
+        <h2>{{ section.title }}</h2>
+        <div class="section-content">
+            {{ section.description|richtext }}
+        </div>
+    </div>
 </div>
