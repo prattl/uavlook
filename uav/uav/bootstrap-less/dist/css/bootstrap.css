@@ -7593,7 +7593,9 @@ footer.site-footer img {
 footer.site-footer address {
   margin-bottom: 3rem;
 }
-footer.site-footer .additional-text,
+footer.site-footer .additional-text {
+  color: #FFF;
+}
 footer.site-footer .description {
   color: #959284;
 }
