@@ -26,6 +26,7 @@
         <link rel="stylesheet" href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css' %}">
         <link rel="stylesheet" href="{% static 'css/image-grid.css' %}">
         <link rel="stylesheet" href="{% static 'fotorama-4.6.4/fotorama.css' %}" >
+        <link rel="stylesheet" href="{% static 'css/animsition.min.css' %}">
 
         {% block extra_css %}
             {# Override this in templates to add extra stylesheets #}
@@ -35,20 +36,28 @@
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
-        {% wagtailuserbar %}
+        <div class="animsition">
+            {% wagtailuserbar %}
 
-        {% block content %}{% endblock %}
-        {% include 'footer.html' %}
+            {% block content %}{% endblock %}
+            {% include 'footer.html' %}
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="{% static 'js/bootstrap.js' %}"></script>
-        <script src="{% static 'fotorama-4.6.4/fotorama.js' %}"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script src="{% static 'js/bootstrap.js' %}"></script>
+            <script src="{% static 'fotorama-4.6.4/fotorama.js' %}"></script>
+            <script src="{% static 'js/animsition.min.js' %}"></script>
+            <script>
+                $(document).ready(function() {
+                    $('.animsition').animsition();
+                });
+            </script>
 
-        {# Global javascript #}
-        <script type="text/javascript" src="{% static 'js/uav.js' %}"></script>
+            {# Global javascript #}
+            <script type="text/javascript" src="{% static 'js/uav.js' %}"></script>
 
-        {% block extra_js %}
-            {# Override this in templates to add extra javascript #}
-        {% endblock %}
+            {% block extra_js %}
+                {# Override this in templates to add extra javascript #}
+            {% endblock %}
+        </div>
     </body>
 </html>
