@@ -23,10 +23,12 @@
 
         <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}?b={% now 'U' %}">
-        <link rel="stylesheet" href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css' %}">
-        <link rel="stylesheet" href="{% static 'css/image-grid.css' %}">
-        <link rel="stylesheet" href="{% static 'fotorama-4.6.4/fotorama.css' %}" >
-        <link rel="stylesheet" href="{% static 'css/animsition.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/image-grid.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'fotorama-4.6.4/fotorama.css' %}" >
+        <link rel="stylesheet" type="text/css" href="{% static 'css/animsition.min.css' %}">
+{#        <link rel="stylesheet" type="text/css" href="{% static 'css/pater.css' %}" />#}
+        <link rel="stylesheet" type="text/css" href="{% static 'tilt/css/component.css' %}" />
 
         {% block extra_css %}
             {# Override this in templates to add extra stylesheets #}
@@ -45,11 +47,92 @@
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <script src="{% static 'js/bootstrap.js' %}"></script>
             <script src="{% static 'fotorama-4.6.4/fotorama.js' %}"></script>
+            <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+            <script src="{% static 'tilt/js/anime.min.js' %}"></script>
+            <script src="{% static 'tilt/js/main.js' %}"></script>
             <script src="{% static 'js/animsition.min.js' %}"></script>
             <script>
                 $(document).ready(function() {
                     $('.animsition').animsition();
                 });
+                (function() {
+                    var tiltSettings = [
+                        {},
+                        {
+                            movement: {
+                                imgWrapper : {
+                                    translation : {x: 10, y: 10, z: 30},
+                                    rotation : {x: 0, y: -10, z: 0},
+                                    reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
+                                },
+                                lines : {
+                                    translation : {x: 10, y: 10, z: [0,70]},
+                                    rotation : {x: 0, y: 0, z: -2},
+                                    reverseAnimation : {duration : 2000, easing : 'easeOutExpo'}
+                                },
+                                caption : {
+                                    rotation : {x: 0, y: 0, z: 2},
+                                    reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
+                                },
+                                overlay : {
+                                    translation : {x: 10, y: -10, z: 0},
+                                    rotation : {x: 0, y: 0, z: 2},
+                                    reverseAnimation : {duration : 2000, easing : 'easeOutExpo'}
+                                },
+                                shine : {
+                                    translation : {x: 100, y: 100, z: 0},
+                                    reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
+                                }
+                            }
+                        }
+                    ];
+
+                    function init() {
+                        var idx = 0;
+                        [].slice.call(document.querySelectorAll('a.tilter')).forEach(function(el, pos) {
+                            idx = pos%2 === 0 ? idx+1 : idx;
+                            new TiltFx(el, tiltSettings[idx-1]);
+                        });
+                    }
+
+                    // Preload all images.
+                    imagesLoaded(document.querySelector('body'), function() {
+                        document.body.classList.remove('loading');
+                        init();
+                    });
+
+                    // REMOVE THIS!
+                    // For Demo purposes only. Prevent the click event.
+{#                    [].slice.call(document.querySelectorAll('a[href="#"]')).forEach(function(el) {#}
+{#                        el.addEventListener('click', function(ev) { ev.preventDefault(); });#}
+{#                    });#}
+
+{#                    var pater = document.querySelector('.pater'),#}
+{#                        paterSVG = pater.querySelector('.pater__svg'),#}
+{#                        pathEl = paterSVG.querySelector('path'),#}
+{#                        paths = {default: pathEl.getAttribute('d'), active: paterSVG.getAttribute('data-path-hover')};#}
+{#        #}
+{#                    pater.addEventListener('mouseenter', function() {#}
+{#                        anime.remove(pathEl);#}
+{#                        anime({#}
+{#                            targets: pathEl,#}
+{#                            d: paths.active,#}
+{#                            duration: 400,#}
+{#                            easing: 'easeOutQuad'#}
+{#                        });#}
+{#                    });#}
+{#        #}
+{#                    pater.addEventListener('mouseleave', function() {#}
+{#                        anime.remove(pathEl);#}
+{#                        anime({#}
+{#                            targets: pathEl,#}
+{#                            d: paths.default,#}
+{#                            duration: 400,#}
+{#                            easing: 'easeOutExpo'#}
+{#                        });#}
+{#                    });#}
+                })();
+
             </script>
 
             {# Global javascript #}
