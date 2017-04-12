@@ -22,6 +22,40 @@
         <main class="form-container">
             <form action="{% pageurl page %}" method="POST">
                 {% csrf_token %}
+                {{ form.non_field_errors }}
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="name" placeholder="Name"
+                                   value={{ form.name.value }}>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" placeholder="Email"
+                                   value={{ form.email.value }}>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Phone Number" maxlength="255"
+                                   name="phone" value={{ form.phone.value }}>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                                {{ form.fields | get_key_value:"inquiry-type" }}
+                        <div class="form-group">
+                            <select class="form-control"  name="inquiry-type">
+                                <option>Inquiry Type</option>
+                                {% for id, name in form.inquiry_type.field.choices %}
+                                    <option value="{{ id }}"{% if form.inquiry_type.field.choices == d %} selected{% endif %}>{{ name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
                 {{ form.as_p }}
                 <input type="submit">
             </form>
