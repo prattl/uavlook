@@ -7574,6 +7574,14 @@ body {
     padding-top: 158px;
   }
 }
+button.action--close {
+  top: 58px;
+}
+@media only screen and (min-width: 992px) {
+  button.action--close {
+    top: 158px;
+  }
+}
 nav.navbar {
   margin-bottom: 0;
   border: none;
