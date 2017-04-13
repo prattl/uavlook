@@ -29,13 +29,15 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <input type="text" class="form-control" name="name" placeholder="{{ form.name.label }}"
-                                       value="{{ form.name.value }}" required="required">
+                                       value="{{ form.name.value }}"
+                                       {% if form.name.field.required %}required="required"{% endif %}>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <input type="email" class="form-control" name="email" placeholder="{{ form.email.label }}"
-                                       value="{{ form.email.value }}">
+                                       value="{{ form.email.value }}"
+                                       {% if form.email.field.required %}required="required"{% endif %}>
                             </div>
                         </div>
                     </div>
@@ -43,7 +45,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="{{ form.phone.label }}" maxlength="255"
-                                       name="phone" value="{{ form.phone.value }}">
+                                       name="phone" value="{{ form.phone.value }}"
+                                       {% if form.phone.field.required %}required="required"{% endif %}>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -64,7 +67,8 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <textarea class="form-control" placeholder="{{ form.message.label }}"
-                                          name="message" rows="10" >{{ form.message.value }}</textarea>
+                                          name="message" rows="10"
+                                       {% if form.message.field.required %}required="required"{% endif %}>{{ form.message.value }}</textarea>
                             </div>
                         </div>
                     </div>
