@@ -57,7 +57,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 {% with inquiry_field=form.fields|get_key_value:"inquiry-type" %}
-                                <select class="form-control" name="inquiry-type">
+                                <select class="form-control" name="inquiry-type" required="required">
                                     <option value="">{{ inquiry_field.label }}</option>
                                     {% for id, name in inquiry_field.choices %}
                                         <option value="{{ id }}"{% if inquiry_type.value == id %} selected{% endif %}>{{ name }}</option>
