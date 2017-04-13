@@ -24,51 +24,57 @@
                 <form action="{% pageurl page %}" method="POST">
                     {% csrf_token %}
                     {{ form.non_field_errors }}
-                    {{ form.errors }}
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="name" placeholder="{{ form.name.label }}"
+                            <div class="form-group {% if form.name.errors %}has-error{% endif %}">
+                                <input type="text" class="form-control" name="{{ form.name.name }}"
+                                       placeholder="{{ form.name.label }}"
                                        value="{{ form.name.value }}"
-                                       {% if form.name.field.required %}required="required"{% endif %}>
+                                       {% if form.name.field.required %}required="required"{% endif %}
+                                >
+                                {% if form.name.errors %}<span class="help-block">{{ form.name.errors }}</span>{% endif %}
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="email" class="form-control" name="email" placeholder="{{ form.email.label }}"
+                            <div class="form-group {% if form.email.errors %}has-error{% endif %}">
+                                <input type="email" class="form-control" name="{{ form.email.name }}"
+                                       placeholder="{{ form.email.label }}"
                                        value="{{ form.email.value }}"
                                        {% if form.email.field.required %}required="required"{% endif %}>
+                                {% if form.email.errors %}<span class="help-block">{{ form.email.errors }}</span>{% endif %}
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group">
+                            <div class="form-group {% if form.phone.errors %}has-error{% endif %}">
                                 <input type="text" class="form-control" placeholder="{{ form.phone.label }}" maxlength="255"
-                                       name="phone" value="{{ form.phone.value }}"
+                                       name="{{ form.phone.name }}" value="{{ form.phone.value }}"
                                        {% if form.phone.field.required %}required="required"{% endif %}>
+                                {% if form.phone.errors %}<span class="help-block">{{ form.phone.errors }}</span>{% endif %}
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 {% with inquiry_field=form.fields|get_key_value:"inquiry-type" %}
-                                <select class="form-control" name="inquiry-type" required="required">
+                                <select class="form-control" name="inquiry-type">
                                     <option value="">{{ inquiry_field.label }}</option>
                                     {% for id, name in inquiry_field.choices %}
-                                        <option value="{{ id }}"{% if inquiry_field.choices == id %} selected{% endif %}>{{ name }}</option>
+                                        <option value="{{ id }}"{% if inquiry_type.value == id %} selected{% endif %}>{{ name }}</option>
                                     {% endfor %}
                                 </select>
-                                {{ inquiry_field.errors }}
+{#                                {% if inquiry_type.errors %}<span class="help-block">{{ inquiry_type.errors }}</span>{% endif %}#}
                                 {% endwith %}
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="form-group">
+                            <div class="form-group {% if form.message.errors %}has-error{% endif %}">
                                 <textarea class="form-control" placeholder="{{ form.message.label }}"
-                                          name="message" rows="10"
-                                       {% if form.message.field.required %}required="required"{% endif %}>{{ form.message.value }}</textarea>
+                                          name="{{ form.message.name }}" rows="10"
+                                          {% if form.message.field.required %}required="required"{% endif %}>{{ form.message.value }}</textarea>
+                                {% if form.message.errors %}<span class="help-block">{{ form.message.errors }}</span>{% endif %}
                             </div>
                         </div>
                     </div>
