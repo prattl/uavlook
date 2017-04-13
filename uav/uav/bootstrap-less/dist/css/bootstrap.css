@@ -7106,7 +7106,17 @@ button.close {
   color: #FFF;
 }
 .contact-us main {
-  padding: 10rem;
+  padding: 2rem 0;
+}
+@media screen and (min-width: 1200px) and (max-width: 1599px) {
+  .contact-us main {
+    padding: 12rem;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .contact-us main {
+    padding: 10rem 15rem;
+  }
 }
 .home .headers {
   overflow: hidden;
@@ -7557,7 +7567,12 @@ button.close {
   }
 }
 body {
-  padding-top: 158px;
+  padding-top: 58px;
+}
+@media only screen and (min-width: 992px) {
+  body {
+    padding-top: 158px;
+  }
 }
 nav.navbar {
   margin-bottom: 0;

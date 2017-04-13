@@ -1,5 +1,5 @@
 {% extends "home/home_base.html" %}
-{% load wagtailcore_tags wagtailimages_tags %}
+{% load wagtailcore_tags wagtailimages_tags custom %}
 
 {% block page_content %}
     {% image page.header_image min-1920x900 as header_image %}
@@ -8,7 +8,7 @@
             <div class="shader">
                 <div class="content">
                     <h1>{{ page.header_text }}</h1>
-                    <a class="btn btn-primary" href="">
+                    <a class="btn btn-primary" href='tel:+19782705399'>
                         <span>Call Us</span>
                     </a>
                 </div>
@@ -20,45 +20,61 @@
             </div>
         </section>
         <main class="form-container">
-            <form action="{% pageurl page %}" method="POST">
-                {% csrf_token %}
-                {{ form.non_field_errors }}
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="name" placeholder="Name"
-                                   value={{ form.name.value }}>
+            <div class="container">
+                <form action="{% pageurl page %}" method="POST">
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+                    {{ form.errors }}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="name" placeholder="{{ form.name.label }}"
+                                       value="{{ form.name.value }}" required="required">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="email" placeholder="{{ form.email.label }}"
+                                       value="{{ form.email.value }}">
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="email" placeholder="Email"
-                                   value={{ form.email.value }}>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="{{ form.phone.label }}" maxlength="255"
+                                       name="phone" value="{{ form.phone.value }}">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                {% with inquiry_field=form.fields|get_key_value:"inquiry-type" %}
+                                <select class="form-control" name="inquiry-type" required="required">
+                                    <option value="">{{ inquiry_field.label }}</option>
+                                    {% for id, name in inquiry_field.choices %}
+                                        <option value="{{ id }}"{% if inquiry_field.choices == id %} selected{% endif %}>{{ name }}</option>
+                                    {% endfor %}
+                                </select>
+                                {{ inquiry_field.errors }}
+                                {% endwith %}
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Phone Number" maxlength="255"
-                                   name="phone" value={{ form.phone.value }}>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="{{ form.message.label }}"
+                                          name="message" rows="10" >{{ form.message.value }}</textarea>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                                {{ form.fields | get_key_value:"inquiry-type" }}
-                        <div class="form-group">
-                            <select class="form-control"  name="inquiry-type">
-                                <option>Inquiry Type</option>
-                                {% for id, name in form.inquiry_type.field.choices %}
-                                    <option value="{{ id }}"{% if form.inquiry_type.field.choices == d %} selected{% endif %}>{{ name }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary skew">
+                            <span class="unskew">Submit</span>
+                        </button>
                     </div>
-                </div>
-                {{ form.as_p }}
-                <input type="submit">
-            </form>
+                </form>
+            </div>
         </main>
     </div>
 {% endblock %}
