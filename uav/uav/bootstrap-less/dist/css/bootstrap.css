@@ -8012,6 +8012,8 @@ footer.site-footer .social-icons {
   margin: 0 0 2rem 0;
   color: #C19C00;
   font-size: 28px;
+  padding-top: 58px;
+  margin-top: -58px;
 }
 @media screen and (min-width: 1200px) and (max-width: 1599px) {
   .services main.content-sections .service-page-section .service-page-section-text h2 {
@@ -8021,6 +8023,12 @@ footer.site-footer .social-icons {
 @media screen and (min-width: 1600px) {
   .services main.content-sections .service-page-section .service-page-section-text h2 {
     font-size: 46px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .services main.content-sections .service-page-section .service-page-section-text h2 {
+    padding-top: 158px;
+    margin-top: -158px;
   }
 }
 .services main.content-sections .service-page-section .service-page-section-text .section-content {

@@ -128,6 +128,25 @@
           font-size: 28px;
           .desktop-lg({ font-size: 36px; });
           .desktop-xl({ font-size: 46px; });
+
+          padding-top: 58px;
+          margin-top: -58px;
+
+          .mq(@grid-float-breakpoint, {
+            padding-top: 158px;
+            margin-top: -158px;
+          });
+
+
+          //&:before {
+          //  display: block;
+          //  content: " ";
+          //
+          //  height: 258px;
+          //  visibility: hidden;
+          //}
+
+
         }
         .section-content {
           color: @uav_muted;

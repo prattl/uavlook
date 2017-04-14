@@ -47,6 +47,7 @@ class HomePageSectionBlock(blocks.StructBlock):
     title = blocks.CharBlock(required=True)
     description = blocks.CharBlock(required=True)
     image = ImageChooserBlock(required=False)
+    link = blocks.URLBlock(required=False)
 
     class Meta:
         template = 'home/blocks/home_page_section.html'

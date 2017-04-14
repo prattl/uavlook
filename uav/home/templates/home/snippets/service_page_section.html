@@ -43,7 +43,9 @@
         <div class="img-container" id="service-page-section-image-{{ forloop.counter0 }}"></div>
     </div>
     <div class="service-page-section-text">
-        <h2>{{ section.title }}</h2>
+        <div id="{{ section.title|cut:" " }}">
+            <h2>{{ section.title }}</h2>
+        </div>
         <div class="section-content">
             {{ section.description|richtext }}
         </div>
