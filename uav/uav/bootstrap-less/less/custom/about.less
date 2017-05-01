@@ -257,4 +257,50 @@
     text-align: left;
     color: @uav_muted;
   }
+  .learn-more-container {
+    .hero();
+    background-color: @uav_accent;
+
+    .learn-more {
+      display: inline-block;
+      border-color: @uav_dark;
+      border-left: 2rem solid;
+      border-right: 2rem solid;
+      padding: 0 1rem;
+      .skew();
+
+      .mq(@screen-sm-min, {
+        border-left: 4rem solid;
+        border-right: 4rem solid;
+        padding: 0 2rem;
+      });
+
+      a {
+        color: #FFF;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      h3 {
+        .unskew();
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        margin-top: 0.5rem;
+        .desktop({ font-size: 44px; });
+        .desktop-lg({ font-size: 48px; });
+        .desktop-xl({ font-size: 60px; });
+      }
+
+      h4 {
+        .unskew();
+        font-size: 16px;
+        text-transform: uppercase;
+        .desktop({ font-size: 18px; });
+        .desktop-lg({ font-size: 20px; });
+        .desktop-xl({ font-size: 20px; });
+      }
+    }
+  }
 }

@@ -97,6 +97,10 @@ class AboutPage(Page):
     content_sections = StreamField([
         ('sections', AboutPageSectionBlock())
     ], null=True)
+    bottom_section_title = models.CharField(max_length=128, blank=True, null=True)
+    bottom_section_header = models.CharField(max_length=128, blank=True, null=True)
+    bottom_section_link = models.CharField(max_length=128, blank=True, null=True,
+                                           help_text='Name of page to link to. Example: services')
 
     content_panels = Page.content_panels + [
         ImageChooserPanel('header_image'),
@@ -104,6 +108,9 @@ class AboutPage(Page):
         FieldPanel('header_description', classname="full"),
         FieldPanel('description', classname="full"),
         StreamFieldPanel('content_sections'),
+        FieldPanel('bottom_section_title', classname="full"),
+        FieldPanel('bottom_section_header', classname="full"),
+        FieldPanel('bottom_section_link', classname="full"),
     ]
 
     parent_page_types = ['home.HomePage']
