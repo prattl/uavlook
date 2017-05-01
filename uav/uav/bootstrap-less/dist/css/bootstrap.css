@@ -7563,7 +7563,7 @@ button.close {
 }
 @media screen and (min-width: 1600px) {
   .border {
-    padding: 20rem 6rem 6rem 6rem;
+    padding: 15rem 5rem 6rem 5rem;
   }
 }
 body {
@@ -7644,11 +7644,17 @@ ul.nav.navbar-nav {
   }
 }
 a.navbar-brand img {
-  max-height: 58px;
+  height: 58px;
 }
 @media only screen and (min-width: 992px) {
   a.navbar-brand img {
-    max-height: 158px;
+    height: 158px;
+    padding: 40px 0;
+  }
+}
+@media screen and (min-width: 1200px) and (max-width: 1599px) {
+  a.navbar-brand img {
+    padding: 20px 0;
   }
 }
 .contact-us-container {

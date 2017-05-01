@@ -68,10 +68,14 @@ ul.nav.navbar-nav {
 }
 
 a.navbar-brand img {
-  max-height: 58px;
+  height: 58px;
   .mq(@grid-float-breakpoint, {
-    max-height: 158px;
+    height: 158px;
+    padding: 40px 0;
   });
+  .desktop-lg({
+    padding: 20px 0;
+  })
 }
 
 .contact-us-container {
