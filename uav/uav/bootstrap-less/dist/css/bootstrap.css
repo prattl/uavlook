@@ -7251,12 +7251,12 @@ button.close {
 }
 @media screen and (min-width: 1200px) and (max-width: 1599px) {
   .home .headers {
-    height: 56rem;
+    height: 54rem;
   }
 }
 @media screen and (min-width: 1600px) {
   .home .headers {
-    height: 78rem;
+    height: 76rem;
   }
 }
 .home .headers .contents .header-block {
@@ -7266,30 +7266,32 @@ button.close {
   text-align: center;
   white-space: normal;
   width: 33%;
-  padding: 4rem 2rem;
 }
 @media only screen and (max-width: 991px) {
   .home .headers .contents .header-block {
     display: none;
   }
 }
+.home .headers .contents .header-block .padder {
+  padding: 4rem 2rem;
+}
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .home .headers .contents .header-block {
+  .home .headers .contents .header-block .padder {
     padding: 6rem;
   }
 }
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .home .headers .contents .header-block {
+  .home .headers .contents .header-block .padder {
     padding: 6rem;
   }
 }
 @media screen and (min-width: 1200px) and (max-width: 1599px) {
-  .home .headers .contents .header-block {
+  .home .headers .contents .header-block .padder {
     padding: 10rem 8rem;
   }
 }
 @media screen and (min-width: 1600px) {
-  .home .headers .contents .header-block {
+  .home .headers .contents .header-block .padder {
     padding: 18rem 8rem;
   }
 }
@@ -7339,18 +7341,37 @@ button.close {
 }
 .home .headers .contents .header-block:nth-child(2) {
   left: 33%;
-  background-color: #E8E7E1;
-  color: #242422;
   height: 100%;
   -ms-transform: skewX(-20deg);
   -webkit-transform: skewX(-20deg);
   transform: skewX(-20deg);
 }
-.home .headers .contents .header-block:nth-child(2) h3 {
+.home .headers .contents .header-block:nth-child(2):hover .padder {
+  background-color: #E8E7E1;
+  color: #242422;
+}
+.home .headers .contents .header-block:nth-child(2):hover .padder h3 {
   color: #959284;
 }
 .home .headers .contents .header-block:nth-child(3) {
   left: 66%;
+}
+.home .headers .contents .header-img-container {
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -50%;
+  z-index: -1;
+  right: -50%;
+}
+@media only screen and (min-width: 992px) {
+  .home .headers .contents .header-img-container {
+    -ms-transform: skewX(20deg);
+    -webkit-transform: skewX(20deg);
+    transform: skewX(20deg);
+  }
 }
 .home .headers .header-block-img {
   width: 50%;
