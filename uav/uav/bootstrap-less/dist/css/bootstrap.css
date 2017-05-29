@@ -8180,6 +8180,22 @@ footer.site-footer .social-icons {
     font-size: 26px;
   }
 }
+.services main.content-sections .come-in {
+  transform: translateX(1000px);
+  animation: come-in 0.8s ease forwards;
+}
+.services main.content-sections .come-in:nth-child(odd) {
+  animation-duration: 0.6s;
+}
+.services main.content-sections .already-visible {
+  transform: translateX(0);
+  animation: none;
+}
+@keyframes come-in {
+  to {
+    transform: translateX(0);
+  }
+}
 @media screen and (min-width: 992px) and (max-width: 1199px) {
   .video main {
     padding: 4rem;
