@@ -237,6 +237,8 @@ class SiteFooter(models.Model):
     additional_text_2 = models.CharField(max_length=128, blank=True, null=True)
 
     facebook = models.URLField(blank=True, null=True)
+    instagram = models.URLField(blank=True, null=True)
     google = models.URLField(blank=True, null=True)
     twitter = models.URLField(blank=True, null=True)
     youtube = models.URLField(blank=True, null=True)
+    instagram = models.URLField(blank=True, null=True)
